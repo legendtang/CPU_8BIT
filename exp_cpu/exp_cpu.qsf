@@ -1,0 +1,91 @@
+# Copyright (C) 1991-2005 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		exp_cpu_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C20Q240C8
+set_global_assignment -name TOP_LEVEL_ENTITY exp_cpu
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 5.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:16:18  AUGUST 25, 2002"
+set_global_assignment -name LAST_QUARTUS_VERSION 5.1
+set_global_assignment -name VHDL_FILE decoder_2_to_4.vhd
+set_global_assignment -name VHDL_FILE decoder_unit.vhd
+set_global_assignment -name VHDL_FILE exe_unit.vhd
+set_global_assignment -name VHDL_FILE exp_cpu.vhd
+set_global_assignment -name VHDL_FILE exp_cpu_components.vhd
+set_global_assignment -name VHDL_FILE instru_fetch.vhd
+set_global_assignment -name VHDL_FILE memory_unit.vhd
+set_global_assignment -name VHDL_FILE mux_4_to_1.vhd
+set_global_assignment -name VHDL_FILE reg.vhd
+set_global_assignment -name VHDL_FILE regfile.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE exp_cpu.vwf
+set_global_assignment -name VECTOR_INPUT_SOURCE "G:\\exp_cpu\\exe_unit.vwf"
+set_global_assignment -name GLITCH_DETECTION ON
+set_global_assignment -name GLITCH_INTERVAL "2 ns"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "G:/ma/cpu/decoder_2_to_4.vwf"
+set_global_assignment -name SIMULATOR_GENERATE_SIGNAL_ACTIVITY_FILE ON
+set_global_assignment -name SIMULATOR_SIGNAL_ACTIVITY_FILE_OUTPUT_DESTINATION exe_unit.saf
+set_global_assignment -name VECTOR_WAVEFORM_FILE "G:/exp_cpu/decoder_2_to_4.vwf"
+set_global_assignment -name SIMULATION_MODE TIMING
+set_global_assignment -name VECTOR_WAVEFORM_FILE "G:/exp_cpu/mux_4_to_1.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "G:/exp_cpu/reg.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "G:/exp_cpu/instru_fetch.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "G:/exp_cpu/decoder_unit.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "G:/exp_cpu/exe_unit.vwf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "G:/exp_cpu/memory_unit.vwf"
+set_location_assignment PIN_51 -to AR[0]
+set_location_assignment PIN_50 -to AR[1]
+set_location_assignment PIN_49 -to AR[2]
+set_location_assignment PIN_47 -to AR[3]
+set_location_assignment PIN_46 -to AR[4]
+set_location_assignment PIN_44 -to AR[5]
+set_location_assignment PIN_42 -to AR[6]
+set_location_assignment PIN_41 -to AR[7]
+set_location_assignment PIN_238 -to OB[0]
+set_location_assignment PIN_237 -to OB[1]
+set_location_assignment PIN_236 -to OB[2]
+set_location_assignment PIN_235 -to OB[3]
+set_location_assignment PIN_234 -to OB[4]
+set_location_assignment PIN_233 -to OB[5]
+set_location_assignment PIN_232 -to OB[6]
+set_location_assignment PIN_231 -to OB[7]
+set_location_assignment PIN_87 -to reg_content[0]
+set_location_assignment PIN_86 -to reg_content[1]
+set_location_assignment PIN_84 -to reg_content[2]
+set_location_assignment PIN_80 -to reg_content[3]
+set_location_assignment PIN_79 -to reg_content[4]
+set_location_assignment PIN_78 -to reg_content[5]
+set_location_assignment PIN_73 -to reg_content[6]
+set_location_assignment PIN_72 -to reg_content[7]
+set_location_assignment PIN_113 -to reg_sel[0]
+set_location_assignment PIN_114 -to reg_sel[1]
+set_location_assignment PIN_116 -to reg_sel[2]
+set_location_assignment PIN_117 -to reg_sel[3]
+set_location_assignment PIN_118 -to reg_sel[4]
+set_location_assignment PIN_119 -to reg_sel[5]
+set_location_assignment PIN_94 -to reset
+set_location_assignment PIN_95 -to clk
+set_location_assignment PIN_6 -to WE
+set_location_assignment PIN_131 -to c_flag
+set_location_assignment PIN_130 -to z_flag

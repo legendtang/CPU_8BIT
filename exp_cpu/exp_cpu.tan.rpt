@@ -1,0 +1,755 @@
+Timing Analyzer report for exp_cpu
+Tue Jan 01 01:24:17 2002
+Version 5.1 Build 176 10/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. tpd
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                              ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------------+------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                     ; To                                       ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------------+------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 3.720 ns                         ; OB[7]                                    ; memory_unit:G_MEMORY|data_read[7]        ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 24.275 ns                        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; AR[6]                                    ; clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 19.850 ns                        ; reg_sel[1]                               ; reg_content[2]                           ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 5.320 ns                         ; OB[2]                                    ; memory_unit:G_MEMORY|data_read[2]        ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 31.88 MHz ( period = 31.368 ns ) ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                          ;                                          ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+------------------------------------------+------------------------------------------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP2C20Q240C8       ;      ;    ;             ;
+; Timing Models                                         ; Preliminary        ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same As Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; reset           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                              ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                     ; To                                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 31.88 MHz ( period = 31.368 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 15.654 ns               ;
+; N/A                                     ; 32.87 MHz ( period = 30.426 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 15.199 ns               ;
+; N/A                                     ; 32.93 MHz ( period = 30.364 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 15.152 ns               ;
+; N/A                                     ; 33.08 MHz ( period = 30.232 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 15.086 ns               ;
+; N/A                                     ; 33.08 MHz ( period = 30.230 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 15.085 ns               ;
+; N/A                                     ; 33.68 MHz ( period = 29.688 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 14.821 ns               ;
+; N/A                                     ; 33.99 MHz ( period = 29.422 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 14.697 ns               ;
+; N/A                                     ; 34.14 MHz ( period = 29.290 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 14.631 ns               ;
+; N/A                                     ; 34.14 MHz ( period = 29.288 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 14.630 ns               ;
+; N/A                                     ; 34.29 MHz ( period = 29.160 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 14.550 ns               ;
+; N/A                                     ; 34.39 MHz ( period = 29.082 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg03|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 14.518 ns               ;
+; N/A                                     ; 34.79 MHz ( period = 28.746 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 14.366 ns               ;
+; N/A                                     ; 34.79 MHz ( period = 28.744 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 14.360 ns               ;
+; N/A                                     ; 35.06 MHz ( period = 28.524 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 14.232 ns               ;
+; N/A                                     ; 35.24 MHz ( period = 28.380 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 14.167 ns               ;
+; N/A                                     ; 35.30 MHz ( period = 28.332 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 14.152 ns               ;
+; N/A                                     ; 35.34 MHz ( period = 28.298 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg01|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 14.119 ns               ;
+; N/A                                     ; 35.52 MHz ( period = 28.156 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 14.048 ns               ;
+; N/A                                     ; 35.54 MHz ( period = 28.140 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg03|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 14.063 ns               ;
+; N/A                                     ; 35.68 MHz ( period = 28.024 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 13.982 ns               ;
+; N/A                                     ; 35.69 MHz ( period = 28.022 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 13.981 ns               ;
+; N/A                                     ; 35.97 MHz ( period = 27.802 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 13.905 ns               ;
+; N/A                                     ; 36.03 MHz ( period = 27.754 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|z_out                  ; clk        ; clk      ; None                        ; None                      ; 13.847 ns               ;
+; N/A                                     ; 36.26 MHz ( period = 27.582 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 13.777 ns               ;
+; N/A                                     ; 36.39 MHz ( period = 27.480 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 13.717 ns               ;
+; N/A                                     ; 36.45 MHz ( period = 27.438 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 13.712 ns               ;
+; N/A                                     ; 36.56 MHz ( period = 27.356 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg01|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 13.664 ns               ;
+; N/A                                     ; 36.59 MHz ( period = 27.328 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 13.650 ns               ;
+; N/A                                     ; 36.77 MHz ( period = 27.196 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 13.584 ns               ;
+; N/A                                     ; 36.77 MHz ( period = 27.194 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 13.583 ns               ;
+; N/A                                     ; 36.84 MHz ( period = 27.148 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg01|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 13.544 ns               ;
+; N/A                                     ; 37.11 MHz ( period = 26.946 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 13.443 ns               ;
+; N/A                                     ; 37.21 MHz ( period = 26.874 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg03|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 13.414 ns               ;
+; N/A                                     ; 37.30 MHz ( period = 26.812 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|z_out                  ; clk        ; clk      ; None                        ; None                      ; 13.392 ns               ;
+; N/A                                     ; 37.52 MHz ( period = 26.652 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 13.319 ns               ;
+; N/A                                     ; 37.68 MHz ( period = 26.536 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 13.256 ns               ;
+; N/A                                     ; 37.74 MHz ( period = 26.494 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg00|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 13.217 ns               ;
+; N/A                                     ; 37.75 MHz ( period = 26.492 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 13.216 ns               ;
+; N/A                                     ; 38.00 MHz ( period = 26.316 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 13.128 ns               ;
+; N/A                                     ; 38.21 MHz ( period = 26.172 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 13.063 ns               ;
+; N/A                                     ; 38.33 MHz ( period = 26.090 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg01|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 13.015 ns               ;
+; N/A                                     ; 38.39 MHz ( period = 26.046 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg03|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 13.016 ns               ;
+; N/A                                     ; 38.46 MHz ( period = 26.004 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg02|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 12.988 ns               ;
+; N/A                                     ; 38.50 MHz ( period = 25.976 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg01|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 12.974 ns               ;
+; N/A                                     ; 38.89 MHz ( period = 25.714 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg03|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 12.845 ns               ;
+; N/A                                     ; 38.90 MHz ( period = 25.708 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 12.858 ns               ;
+; N/A                                     ; 39.15 MHz ( period = 25.546 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|z_out                  ; clk        ; clk      ; None                        ; None                      ; 12.743 ns               ;
+; N/A                                     ; 39.21 MHz ( period = 25.502 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg00|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 12.721 ns               ;
+; N/A                                     ; 39.23 MHz ( period = 25.492 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg01|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 12.716 ns               ;
+; N/A                                     ; 39.23 MHz ( period = 25.488 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 12.730 ns               ;
+; N/A                                     ; 39.46 MHz ( period = 25.344 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 12.665 ns               ;
+; N/A                                     ; 39.49 MHz ( period = 25.322 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg00|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 12.647 ns               ;
+; N/A                                     ; 39.49 MHz ( period = 25.320 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg02|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 12.646 ns               ;
+; N/A                                     ; 39.59 MHz ( period = 25.262 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg01|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 12.617 ns               ;
+; N/A                                     ; 39.95 MHz ( period = 25.034 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 12.503 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.838 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg00|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 12.389 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.836 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg02|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 12.388 ns               ;
+; N/A                                     ; 40.26 MHz ( period = 24.836 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg01|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 12.388 ns               ;
+; N/A                                     ; 40.37 MHz ( period = 24.772 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg03|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 12.390 ns               ;
+; N/A                                     ; 40.42 MHz ( period = 24.738 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg02|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 12.339 ns               ;
+; N/A                                     ; 40.46 MHz ( period = 24.718 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|z_out                  ; clk        ; clk      ; None                        ; None                      ; 12.345 ns               ;
+; N/A                                     ; 40.54 MHz ( period = 24.664 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg01|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 12.318 ns               ;
+; N/A                                     ; 40.72 MHz ( period = 24.560 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg00|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 12.266 ns               ;
+; N/A                                     ; 40.75 MHz ( period = 24.540 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg00|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 12.256 ns               ;
+; N/A                                     ; 41.02 MHz ( period = 24.380 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg03|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 12.178 ns               ;
+; N/A                                     ; 41.51 MHz ( period = 24.092 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 12.048 ns               ;
+; N/A                                     ; 41.65 MHz ( period = 24.010 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg00|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 11.991 ns               ;
+; N/A                                     ; 41.65 MHz ( period = 24.008 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg02|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 11.990 ns               ;
+; N/A                                     ; 41.82 MHz ( period = 23.910 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg02|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 11.941 ns               ;
+; N/A                                     ; 41.85 MHz ( period = 23.894 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg01|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 11.933 ns               ;
+; N/A                                     ; 42.38 MHz ( period = 23.598 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg00|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 11.801 ns               ;
+; N/A                                     ; 42.54 MHz ( period = 23.508 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg03|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 11.742 ns               ;
+; N/A                                     ; 42.54 MHz ( period = 23.506 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg03|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 11.741 ns               ;
+; N/A                                     ; 42.67 MHz ( period = 23.438 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg03|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 11.723 ns               ;
+; N/A                                     ; 42.93 MHz ( period = 23.294 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg00|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 11.617 ns               ;
+; N/A                                     ; 43.18 MHz ( period = 23.158 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg03|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 11.557 ns               ;
+; N/A                                     ; 43.19 MHz ( period = 23.156 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg00|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 11.556 ns               ;
+; N/A                                     ; 43.81 MHz ( period = 22.826 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 11.399 ns               ;
+; N/A                                     ; 44.02 MHz ( period = 22.718 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 11.329 ns               ;
+; N/A                                     ; 44.10 MHz ( period = 22.678 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg03|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 11.343 ns               ;
+; N/A                                     ; 44.12 MHz ( period = 22.664 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 11.326 ns               ;
+; N/A                                     ; 44.13 MHz ( period = 22.662 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg01|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 11.325 ns               ;
+; N/A                                     ; 44.17 MHz ( period = 22.638 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 11.289 ns               ;
+; N/A                                     ; 44.19 MHz ( period = 22.628 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg01|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 11.284 ns               ;
+; N/A                                     ; 44.51 MHz ( period = 22.466 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg00|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 11.219 ns               ;
+; N/A                                     ; 44.77 MHz ( period = 22.336 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg03|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 11.172 ns               ;
+; N/A                                     ; 44.78 MHz ( period = 22.332 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg00|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 11.152 ns               ;
+; N/A                                     ; 44.88 MHz ( period = 22.282 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 11.119 ns               ;
+; N/A                                     ; 44.88 MHz ( period = 22.280 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg01|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 11.118 ns               ;
+; N/A                                     ; 45.10 MHz ( period = 22.172 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg03|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 11.074 ns               ;
+; N/A                                     ; 45.46 MHz ( period = 21.998 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 11.001 ns               ;
+; N/A                                     ; 45.76 MHz ( period = 21.852 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg03|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 10.914 ns               ;
+; N/A                                     ; 45.87 MHz ( period = 21.800 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg01|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 10.886 ns               ;
+; N/A                                     ; 45.87 MHz ( period = 21.800 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg00|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 10.902 ns               ;
+; N/A                                     ; 45.91 MHz ( period = 21.784 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg01|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.870 ns               ;
+; N/A                                     ; 45.92 MHz ( period = 21.776 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg02|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 10.874 ns               ;
+; N/A                                     ; 46.05 MHz ( period = 21.714 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 10.835 ns               ;
+; N/A                                     ; 46.06 MHz ( period = 21.712 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg01|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 10.834 ns               ;
+; N/A                                     ; 46.09 MHz ( period = 21.696 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg02|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 10.834 ns               ;
+; N/A                                     ; 46.29 MHz ( period = 21.604 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg03|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.796 ns               ;
+; N/A                                     ; 46.29 MHz ( period = 21.602 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg00|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.795 ns               ;
+; N/A                                     ; 46.50 MHz ( period = 21.504 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg00|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 10.754 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.502 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg03|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.729 ns               ;
+; N/A                                     ; 46.51 MHz ( period = 21.500 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg00|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.728 ns               ;
+; N/A                                     ; 46.62 MHz ( period = 21.448 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 10.702 ns               ;
+; N/A                                     ; 46.69 MHz ( period = 21.418 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg00|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 10.695 ns               ;
+; N/A                                     ; 46.85 MHz ( period = 21.344 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg03|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 10.676 ns               ;
+; N/A                                     ; 46.94 MHz ( period = 21.304 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 10.637 ns               ;
+; N/A                                     ; 47.56 MHz ( period = 21.024 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg03|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 10.516 ns               ;
+; N/A                                     ; 47.77 MHz ( period = 20.932 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg03|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.460 ns               ;
+; N/A                                     ; 47.78 MHz ( period = 20.930 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg00|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.459 ns               ;
+; N/A                                     ; 47.96 MHz ( period = 20.850 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg00|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 10.411 ns               ;
+; N/A                                     ; 48.24 MHz ( period = 20.730 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg01|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 10.335 ns               ;
+; N/A                                     ; 48.76 MHz ( period = 20.510 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg02|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 10.225 ns               ;
+; N/A                                     ; 48.95 MHz ( period = 20.430 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg02|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 10.185 ns               ;
+; N/A                                     ; 49.26 MHz ( period = 20.302 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg02|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.129 ns               ;
+; N/A                                     ; 49.37 MHz ( period = 20.254 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 10.105 ns               ;
+; N/A                                     ; 49.43 MHz ( period = 20.230 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg01|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.109 ns               ;
+; N/A                                     ; 49.68 MHz ( period = 20.128 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg01|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 10.042 ns               ;
+; N/A                                     ; 50.27 MHz ( period = 19.892 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 9.927 ns                ;
+; N/A                                     ; 50.48 MHz ( period = 19.808 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|c_out                  ; clk        ; clk      ; None                        ; None                      ; 9.868 ns                ;
+; N/A                                     ; 50.54 MHz ( period = 19.788 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg01|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 9.880 ns                ;
+; N/A                                     ; 50.64 MHz ( period = 19.748 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 9.862 ns                ;
+; N/A                                     ; 50.81 MHz ( period = 19.682 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg02|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 9.827 ns                ;
+; N/A                                     ; 51.02 MHz ( period = 19.602 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg02|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 9.787 ns                ;
+; N/A                                     ; 51.13 MHz ( period = 19.558 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg01|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 9.773 ns                ;
+; N/A                                     ; 51.35 MHz ( period = 19.476 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 9.732 ns                ;
+; N/A                                     ; 51.35 MHz ( period = 19.474 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg01|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 9.731 ns                ;
+; N/A                                     ; 51.63 MHz ( period = 19.370 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 9.663 ns                ;
+; N/A                                     ; 51.63 MHz ( period = 19.368 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 9.662 ns                ;
+; N/A                                     ; 51.95 MHz ( period = 19.250 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 9.603 ns                ;
+; N/A                                     ; 52.54 MHz ( period = 19.032 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg03|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 9.520 ns                ;
+; N/A                                     ; 52.65 MHz ( period = 18.992 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 9.474 ns                ;
+; N/A                                     ; 53.01 MHz ( period = 18.866 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|c_out                  ; clk        ; clk      ; None                        ; None                      ; 9.413 ns                ;
+; N/A                                     ; 53.06 MHz ( period = 18.848 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 9.409 ns                ;
+; N/A                                     ; 53.34 MHz ( period = 18.748 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg02|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 9.368 ns                ;
+; N/A                                     ; 53.48 MHz ( period = 18.698 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 9.330 ns                ;
+; N/A                                     ; 53.62 MHz ( period = 18.650 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg03|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 9.313 ns                ;
+; N/A                                     ; 53.63 MHz ( period = 18.646 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg02|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 9.301 ns                ;
+; N/A                                     ; 53.73 MHz ( period = 18.612 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg00|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 9.308 ns                ;
+; N/A                                     ; 53.84 MHz ( period = 18.574 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 9.272 ns                ;
+; N/A                                     ; 53.99 MHz ( period = 18.522 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|reg:Areg01|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 9.231 ns                ;
+; N/A                                     ; 55.30 MHz ( period = 18.082 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; regfile:G_REGFILE|reg:Areg03|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 9.029 ns                ;
+; N/A                                     ; 55.32 MHz ( period = 18.076 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg02|q_output[1] ; clk        ; clk      ; None                        ; None                      ; 9.032 ns                ;
+; N/A                                     ; 55.40 MHz ( period = 18.050 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg03|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 9.021 ns                ;
+; N/A                                     ; 55.60 MHz ( period = 17.986 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 8.971 ns                ;
+; N/A                                     ; 55.92 MHz ( period = 17.882 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 8.937 ns                ;
+; N/A                                     ; 56.05 MHz ( period = 17.842 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 8.906 ns                ;
+; N/A                                     ; 56.19 MHz ( period = 17.798 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 8.877 ns                ;
+; N/A                                     ; 56.31 MHz ( period = 17.760 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg01|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 8.858 ns                ;
+; N/A                                     ; 56.52 MHz ( period = 17.694 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 8.828 ns                ;
+; N/A                                     ; 56.52 MHz ( period = 17.694 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|reg:Areg01|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 8.833 ns                ;
+; N/A                                     ; 56.82 MHz ( period = 17.600 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; regfile:G_REGFILE|c_out                  ; clk        ; clk      ; None                        ; None                      ; 8.764 ns                ;
+; N/A                                     ; 56.97 MHz ( period = 17.554 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg01|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 8.755 ns                ;
+; N/A                                     ; 57.57 MHz ( period = 17.370 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 8.679 ns                ;
+; N/A                                     ; 57.84 MHz ( period = 17.290 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 8.626 ns                ;
+; N/A                                     ; 57.84 MHz ( period = 17.288 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 8.625 ns                ;
+; N/A                                     ; 58.28 MHz ( period = 17.160 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg03|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 8.565 ns                ;
+; N/A                                     ; 58.76 MHz ( period = 17.018 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 8.497 ns                ;
+; N/A                                     ; 59.17 MHz ( period = 16.900 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg00|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 8.428 ns                ;
+; N/A                                     ; 59.18 MHz ( period = 16.898 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg02|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 8.427 ns                ;
+; N/A                                     ; 59.55 MHz ( period = 16.794 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 8.375 ns                ;
+; N/A                                     ; 59.55 MHz ( period = 16.792 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 8.374 ns                ;
+; N/A                                     ; 59.62 MHz ( period = 16.772 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; regfile:G_REGFILE|c_out                  ; clk        ; clk      ; None                        ; None                      ; 8.366 ns                ;
+; N/A                                     ; 59.97 MHz ( period = 16.674 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 8.323 ns                ;
+; N/A                                     ; 59.98 MHz ( period = 16.672 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg01|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 8.322 ns                ;
+; N/A                                     ; 60.10 MHz ( period = 16.640 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|z_out                  ; clk        ; clk      ; None                        ; None                      ; 8.298 ns                ;
+; N/A                                     ; 60.63 MHz ( period = 16.494 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg03|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 8.246 ns                ;
+; N/A                                     ; 61.01 MHz ( period = 16.390 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 8.173 ns                ;
+; N/A                                     ; 61.02 MHz ( period = 16.388 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 8.172 ns                ;
+; N/A                                     ; 61.06 MHz ( period = 16.376 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg01|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 8.166 ns                ;
+; N/A                                     ; 61.36 MHz ( period = 16.298 ns )                    ; memory_unit:G_MEMORY|data_read[5]        ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; clk        ; clk      ; None                        ; None                      ; 1.094 ns                ;
+; N/A                                     ; 61.71 MHz ( period = 16.204 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg01|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 8.083 ns                ;
+; N/A                                     ; 62.04 MHz ( period = 16.118 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 8.044 ns                ;
+; N/A                                     ; 63.12 MHz ( period = 15.844 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; regfile:G_REGFILE|reg:Areg03|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 7.926 ns                ;
+; N/A                                     ; 63.20 MHz ( period = 15.822 ns )                    ; memory_unit:G_MEMORY|data_read[6]        ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; clk        ; clk      ; None                        ; None                      ; 0.868 ns                ;
+; N/A                                     ; 63.24 MHz ( period = 15.814 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 7.904 ns                ;
+; N/A                                     ; 63.25 MHz ( period = 15.810 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg00|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 7.899 ns                ;
+; N/A                                     ; 63.28 MHz ( period = 15.802 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 7.900 ns                ;
+; N/A                                     ; 63.34 MHz ( period = 15.788 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 7.872 ns                ;
+; N/A                                     ; 63.93 MHz ( period = 15.642 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg02|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 7.799 ns                ;
+; N/A                                     ; 64.09 MHz ( period = 15.604 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg03|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 7.790 ns                ;
+; N/A                                     ; 64.13 MHz ( period = 15.594 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg03|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 7.793 ns                ;
+; N/A                                     ; 64.47 MHz ( period = 15.510 ns )                    ; memory_unit:G_MEMORY|data_read[4]        ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; clk        ; clk      ; None                        ; None                      ; 0.698 ns                ;
+; N/A                                     ; 64.66 MHz ( period = 15.466 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; instru_fetch:G_INSTRU_FETCH|pc[7]        ; clk        ; clk      ; None                        ; None                      ; 7.724 ns                ;
+; N/A                                     ; 65.00 MHz ( period = 15.384 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 7.670 ns                ;
+; N/A                                     ; 65.01 MHz ( period = 15.382 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 7.669 ns                ;
+; N/A                                     ; 65.34 MHz ( period = 15.304 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg01|q_output[6] ; clk        ; clk      ; None                        ; None                      ; 7.630 ns                ;
+; N/A                                     ; 66.15 MHz ( period = 15.118 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 7.548 ns                ;
+; N/A                                     ; 66.16 MHz ( period = 15.116 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg01|q_output[0] ; clk        ; clk      ; None                        ; None                      ; 7.547 ns                ;
+; N/A                                     ; 66.17 MHz ( period = 15.112 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 7.541 ns                ;
+; N/A                                     ; 66.30 MHz ( period = 15.084 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|z_out                  ; clk        ; clk      ; None                        ; None                      ; 7.523 ns                ;
+; N/A                                     ; 66.56 MHz ( period = 15.024 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg02|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 7.490 ns                ;
+; N/A                                     ; 66.78 MHz ( period = 14.974 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; regfile:G_REGFILE|reg:Areg02|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 7.465 ns                ;
+; N/A                                     ; 66.93 MHz ( period = 14.940 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg01|q_output[2] ; clk        ; clk      ; None                        ; None                      ; 7.451 ns                ;
+; N/A                                     ; 67.05 MHz ( period = 14.914 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; clk        ; clk      ; None                        ; None                      ; 7.451 ns                ;
+; N/A                                     ; 67.11 MHz ( period = 14.902 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; clk        ; clk      ; None                        ; None                      ; 7.447 ns                ;
+; N/A                                     ; 67.48 MHz ( period = 14.820 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; regfile:G_REGFILE|reg:Areg01|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 7.391 ns                ;
+; N/A                                     ; 67.83 MHz ( period = 14.742 ns )                    ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; clk        ; clk      ; None                        ; None                      ; 14.470 ns               ;
+; N/A                                     ; 68.01 MHz ( period = 14.704 ns )                    ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; regfile:G_REGFILE|reg:Areg03|q_output[5] ; clk        ; clk      ; None                        ; None                      ; 7.337 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                          ;                                          ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------------+------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; tsu                                                                                      ;
++-------+--------------+------------+-------+-----------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                                ; To Clock ;
++-------+--------------+------------+-------+-----------------------------------+----------+
+; N/A   ; None         ; 3.720 ns   ; OB[7] ; memory_unit:G_MEMORY|data_read[7] ; clk      ;
+; N/A   ; None         ; 3.502 ns   ; OB[7] ; memory_unit:G_MEMORY|data_read[7] ; reset    ;
+; N/A   ; None         ; 3.357 ns   ; OB[5] ; memory_unit:G_MEMORY|data_read[5] ; clk      ;
+; N/A   ; None         ; 3.214 ns   ; OB[4] ; memory_unit:G_MEMORY|data_read[4] ; clk      ;
+; N/A   ; None         ; 3.183 ns   ; OB[1] ; memory_unit:G_MEMORY|data_read[1] ; clk      ;
+; N/A   ; None         ; 3.139 ns   ; OB[5] ; memory_unit:G_MEMORY|data_read[5] ; reset    ;
+; N/A   ; None         ; 3.076 ns   ; OB[0] ; memory_unit:G_MEMORY|data_read[0] ; clk      ;
+; N/A   ; None         ; 3.053 ns   ; OB[3] ; memory_unit:G_MEMORY|data_read[3] ; clk      ;
+; N/A   ; None         ; 2.996 ns   ; OB[4] ; memory_unit:G_MEMORY|data_read[4] ; reset    ;
+; N/A   ; None         ; 2.965 ns   ; OB[1] ; memory_unit:G_MEMORY|data_read[1] ; reset    ;
+; N/A   ; None         ; 2.858 ns   ; OB[0] ; memory_unit:G_MEMORY|data_read[0] ; reset    ;
+; N/A   ; None         ; 2.835 ns   ; OB[3] ; memory_unit:G_MEMORY|data_read[3] ; reset    ;
+; N/A   ; None         ; 2.713 ns   ; OB[6] ; memory_unit:G_MEMORY|data_read[6] ; clk      ;
+; N/A   ; None         ; 2.674 ns   ; OB[2] ; memory_unit:G_MEMORY|data_read[2] ; clk      ;
+; N/A   ; None         ; 2.495 ns   ; OB[6] ; memory_unit:G_MEMORY|data_read[6] ; reset    ;
+; N/A   ; None         ; 2.456 ns   ; OB[2] ; memory_unit:G_MEMORY|data_read[2] ; reset    ;
++-------+--------------+------------+-------+-----------------------------------+----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                                                                 ;
++-----------------------------------------+-----------------------------------------------------+------------+------------------------------------------+----------------+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From                                     ; To             ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+------------------------------------------+----------------+------------+
+; N/A                                     ; None                                                ; 24.275 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 23.811 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[6] ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 23.193 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 23.108 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 23.022 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 22.745 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 22.367 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[4] ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 22.268 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 22.255 ns  ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 22.160 ns  ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 22.150 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[7] ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 22.132 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 22.094 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[0] ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 22.092 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 22.084 ns  ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 21.884 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 21.876 ns  ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 21.753 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 21.734 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; OB[2]          ; clk        ;
+; N/A                                     ; None                                                ; 21.703 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 21.636 ns  ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 21.620 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 21.567 ns  ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 21.561 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 21.501 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[0] ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 21.429 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 21.373 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 21.366 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 21.338 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[6] ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 21.325 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[2] ; reg_content[2] ; clk        ;
+; N/A                                     ; None                                                ; 21.289 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 21.277 ns  ; instru_fetch:G_INSTRU_FETCH|pc[2]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 21.238 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 21.226 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[2] ; reg_content[2] ; clk        ;
+; N/A                                     ; None                                                ; 21.158 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 21.151 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 21.122 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 21.108 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 21.006 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 20.987 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[1] ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 20.979 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 20.923 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[0] ; reg_content[0] ; clk        ;
+; N/A                                     ; None                                                ; 20.882 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 20.872 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 20.865 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 20.778 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 20.777 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 20.740 ns  ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 20.739 ns  ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 20.703 ns  ; instru_fetch:G_INSTRU_FETCH|pc[1]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 20.699 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 20.638 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[4] ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 20.566 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; OB[7]          ; clk        ;
+; N/A                                     ; None                                                ; 20.544 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 20.498 ns  ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 20.477 ns  ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 20.476 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 20.423 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 20.397 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[0] ; reg_content[0] ; clk        ;
+; N/A                                     ; None                                                ; 20.392 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[7] ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 20.359 ns  ; instru_fetch:G_INSTRU_FETCH|pc[3]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 20.339 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[0] ; reg_content[0] ; clk        ;
+; N/A                                     ; None                                                ; 20.320 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[2] ; reg_content[2] ; clk        ;
+; N/A                                     ; None                                                ; 20.317 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[2] ; reg_content[2] ; clk        ;
+; N/A                                     ; None                                                ; 20.295 ns  ; instru_fetch:G_INSTRU_FETCH|pc[4]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 20.244 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 20.217 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 20.205 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 20.120 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 20.110 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 20.108 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 20.103 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 20.073 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 20.063 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 20.057 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[1] ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 20.015 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 19.949 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 19.929 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[6] ; reg_content[6] ; clk        ;
+; N/A                                     ; None                                                ; 19.905 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[7] ; reg_content[7] ; clk        ;
+; N/A                                     ; None                                                ; 19.872 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[0] ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 19.816 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[1] ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 19.812 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; OB[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.792 ns  ; instru_fetch:G_INSTRU_FETCH|pc[5]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.769 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[0] ; reg_content[0] ; clk        ;
+; N/A                                     ; None                                                ; 19.756 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; OB[1]          ; clk        ;
+; N/A                                     ; None                                                ; 19.756 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; OB[0]          ; clk        ;
+; N/A                                     ; None                                                ; 19.733 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[5] ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 19.732 ns  ; instru_fetch:G_INSTRU_FETCH|pc[2]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 19.711 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[1] ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 19.654 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[1] ; reg_content[1] ; clk        ;
+; N/A                                     ; None                                                ; 19.653 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[3] ; reg_content[3] ; clk        ;
+; N/A                                     ; None                                                ; 19.650 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[5] ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 19.640 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 19.621 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[7] ; OB[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.590 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[6] ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 19.578 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[2] ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 19.577 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 19.538 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 19.515 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 19.497 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; OB[1]          ; clk        ;
+; N/A                                     ; None                                                ; 19.497 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; OB[0]          ; clk        ;
+; N/A                                     ; None                                                ; 19.497 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 19.486 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[2] ; OB[2]          ; clk        ;
+; N/A                                     ; None                                                ; 19.484 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; OB[4]          ; clk        ;
+; N/A                                     ; None                                                ; 19.467 ns  ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.462 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; OB[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.429 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 19.429 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; OB[2]          ; clk        ;
+; N/A                                     ; None                                                ; 19.424 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; OB[5]          ; clk        ;
+; N/A                                     ; None                                                ; 19.403 ns  ; instru_fetch:G_INSTRU_FETCH|pc[6]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.390 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; OB[6]          ; clk        ;
+; N/A                                     ; None                                                ; 19.385 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 19.378 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 19.347 ns  ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 19.331 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; OB[1]          ; clk        ;
+; N/A                                     ; None                                                ; 19.331 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; OB[0]          ; clk        ;
+; N/A                                     ; None                                                ; 19.250 ns  ; instru_fetch:G_INSTRU_FETCH|pc[1]        ; AR[1]          ; clk        ;
+; N/A                                     ; None                                                ; 19.225 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; OB[4]          ; clk        ;
+; N/A                                     ; None                                                ; 19.203 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; OB[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.197 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[4] ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 19.174 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; OB[4]          ; clk        ;
+; N/A                                     ; None                                                ; 19.170 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 19.170 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; OB[2]          ; clk        ;
+; N/A                                     ; None                                                ; 19.165 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; OB[5]          ; clk        ;
+; N/A                                     ; None                                                ; 19.158 ns  ; instru_fetch:G_INSTRU_FETCH|pc[1]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 19.146 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; OB[6]          ; clk        ;
+; N/A                                     ; None                                                ; 19.118 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[2] ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 19.089 ns  ; instru_fetch:G_INSTRU_FETCH|pc[2]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 19.080 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; OB[2]          ; clk        ;
+; N/A                                     ; None                                                ; 19.066 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; OB[5]          ; clk        ;
+; N/A                                     ; None                                                ; 19.059 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; OB[4]          ; clk        ;
+; N/A                                     ; None                                                ; 19.045 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 19.037 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; OB[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.031 ns  ; instru_fetch:G_INSTRU_FETCH|IR[7]        ; WE             ; clk        ;
+; N/A                                     ; None                                                ; 19.024 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[7] ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 19.004 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 19.004 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; OB[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.999 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; OB[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.943 ns  ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 18.934 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.912 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[2] ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.890 ns  ; instru_fetch:G_INSTRU_FETCH|pc[2]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 18.887 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; OB[6]          ; clk        ;
+; N/A                                     ; None                                                ; 18.874 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; AR[0]          ; clk        ;
+; N/A                                     ; None                                                ; 18.830 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; OB[1]          ; clk        ;
+; N/A                                     ; None                                                ; 18.830 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; OB[0]          ; clk        ;
+; N/A                                     ; None                                                ; 18.814 ns  ; instru_fetch:G_INSTRU_FETCH|pc[3]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 18.778 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[1] ; reg_content[1] ; clk        ;
+; N/A                                     ; None                                                ; 18.772 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; WE             ; clk        ;
+; N/A                                     ; None                                                ; 18.735 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 18.734 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[6] ; reg_content[6] ; clk        ;
+; N/A                                     ; None                                                ; 18.721 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; OB[6]          ; clk        ;
+; N/A                                     ; None                                                ; 18.712 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.701 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[1] ; reg_content[1] ; clk        ;
+; N/A                                     ; None                                                ; 18.678 ns  ; instru_fetch:G_INSTRU_FETCH|pc[2]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.648 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[7] ; reg_content[7] ; clk        ;
+; N/A                                     ; None                                                ; 18.623 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.616 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.606 ns  ; instru_fetch:G_INSTRU_FETCH|IR[4]        ; WE             ; clk        ;
+; N/A                                     ; None                                                ; 18.602 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[4] ; reg_content[4] ; clk        ;
+; N/A                                     ; None                                                ; 18.597 ns  ; regfile:G_REGFILE|reg:Areg01|q_output[2] ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.574 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; OB[1]          ; clk        ;
+; N/A                                     ; None                                                ; 18.563 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[4] ; reg_content[4] ; clk        ;
+; N/A                                     ; None                                                ; 18.558 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; OB[4]          ; clk        ;
+; N/A                                     ; None                                                ; 18.536 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; OB[7]          ; clk        ;
+; N/A                                     ; None                                                ; 18.523 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.515 ns  ; instru_fetch:G_INSTRU_FETCH|pc[1]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.504 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[1] ; reg_content[1] ; clk        ;
+; N/A                                     ; None                                                ; 18.503 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.503 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; OB[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.498 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; OB[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.497 ns  ; instru_fetch:G_INSTRU_FETCH|pc[7]        ; AR[7]          ; clk        ;
+; N/A                                     ; None                                                ; 18.496 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; OB[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.479 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.475 ns  ; instru_fetch:G_INSTRU_FETCH|IR[5]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.436 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; OB[0]          ; clk        ;
+; N/A                                     ; None                                                ; 18.433 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[4] ; OB[4]          ; clk        ;
+; N/A                                     ; None                                                ; 18.430 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.372 ns  ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.358 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[5] ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.357 ns  ; instru_fetch:G_INSTRU_FETCH|pc[4]        ; AR[4]          ; clk        ;
+; N/A                                     ; None                                                ; 18.354 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[3] ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.347 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[3] ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.344 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[7] ; reg_content[7] ; clk        ;
+; N/A                                     ; None                                                ; 18.316 ns  ; instru_fetch:G_INSTRU_FETCH|pc[1]        ; AR[6]          ; clk        ;
+; N/A                                     ; None                                                ; 18.280 ns  ; instru_fetch:G_INSTRU_FETCH|IR[3]        ; reg_content[3] ; clk        ;
+; N/A                                     ; None                                                ; 18.275 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[3] ; reg_content[3] ; clk        ;
+; N/A                                     ; None                                                ; 18.222 ns  ; regfile:G_REGFILE|reg:Areg03|q_output[3] ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.220 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; OB[6]          ; clk        ;
+; N/A                                     ; None                                                ; 18.186 ns  ; regfile:G_REGFILE|reg:Areg02|q_output[2] ; OB[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.186 ns  ; instru_fetch:G_INSTRU_FETCH|pc[2]        ; AR[2]          ; clk        ;
+; N/A                                     ; None                                                ; 18.178 ns  ; instru_fetch:G_INSTRU_FETCH|IR[0]        ; AR[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.176 ns  ; regfile:G_REGFILE|reg:Areg00|q_output[5] ; reg_content[5] ; clk        ;
+; N/A                                     ; None                                                ; 18.131 ns  ; instru_fetch:G_INSTRU_FETCH|pc[0]        ; reg_content[0] ; clk        ;
+; N/A                                     ; None                                                ; 18.117 ns  ; instru_fetch:G_INSTRU_FETCH|IR[1]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.109 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; OB[3]          ; clk        ;
+; N/A                                     ; None                                                ; 18.105 ns  ; instru_fetch:G_INSTRU_FETCH|IR[6]        ; WE             ; clk        ;
+; N/A                                     ; None                                                ; 18.104 ns  ; instru_fetch:G_INSTRU_FETCH|pc[1]        ; AR[5]          ; clk        ;
+; N/A                                     ; None                                                ; 18.102 ns  ; instru_fetch:G_INSTRU_FETCH|IR[2]        ; OB[1]          ; clk        ;
+; N/A                                     ; None                                                ; 18.011 ns  ; instru_fetch:G_INSTRU_FETCH|pc[1]        ; AR[2]          ; clk        ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                                          ;                ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+------------------------------------------+----------------+------------+
+
+
++---------------------------------------------------------------------------+
+; tpd                                                                       ;
++-------+-------------------+-----------------+------------+----------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From       ; To             ;
++-------+-------------------+-----------------+------------+----------------+
+; N/A   ; None              ; 19.850 ns       ; reg_sel[1] ; reg_content[2] ;
+; N/A   ; None              ; 19.565 ns       ; reg_sel[0] ; reg_content[2] ;
+; N/A   ; None              ; 19.242 ns       ; reg_sel[0] ; reg_content[0] ;
+; N/A   ; None              ; 19.155 ns       ; reg_sel[1] ; reg_content[3] ;
+; N/A   ; None              ; 19.035 ns       ; reg_sel[1] ; reg_content[0] ;
+; N/A   ; None              ; 18.886 ns       ; reg_sel[2] ; reg_content[7] ;
+; N/A   ; None              ; 18.767 ns       ; reg_sel[1] ; reg_content[7] ;
+; N/A   ; None              ; 18.674 ns       ; reg_sel[1] ; reg_content[1] ;
+; N/A   ; None              ; 18.671 ns       ; reg_sel[3] ; reg_content[7] ;
+; N/A   ; None              ; 18.658 ns       ; reg_sel[0] ; reg_content[1] ;
+; N/A   ; None              ; 18.641 ns       ; reg_sel[2] ; reg_content[3] ;
+; N/A   ; None              ; 18.503 ns       ; reg_sel[0] ; reg_content[3] ;
+; N/A   ; None              ; 18.438 ns       ; reg_sel[2] ; reg_content[2] ;
+; N/A   ; None              ; 18.426 ns       ; reg_sel[3] ; reg_content[3] ;
+; N/A   ; None              ; 18.000 ns       ; reg_sel[2] ; reg_content[5] ;
+; N/A   ; None              ; 17.973 ns       ; reg_sel[2] ; reg_content[0] ;
+; N/A   ; None              ; 17.958 ns       ; reg_sel[3] ; reg_content[2] ;
+; N/A   ; None              ; 17.917 ns       ; reg_sel[2] ; reg_content[1] ;
+; N/A   ; None              ; 17.785 ns       ; reg_sel[3] ; reg_content[5] ;
+; N/A   ; None              ; 17.758 ns       ; reg_sel[0] ; reg_content[7] ;
+; N/A   ; None              ; 17.684 ns       ; reg_sel[2] ; reg_content[4] ;
+; N/A   ; None              ; 17.614 ns       ; reg_sel[1] ; reg_content[5] ;
+; N/A   ; None              ; 17.493 ns       ; reg_sel[3] ; reg_content[0] ;
+; N/A   ; None              ; 17.483 ns       ; reg_sel[1] ; reg_content[4] ;
+; N/A   ; None              ; 17.469 ns       ; reg_sel[3] ; reg_content[4] ;
+; N/A   ; None              ; 17.437 ns       ; reg_sel[3] ; reg_content[1] ;
+; N/A   ; None              ; 17.427 ns       ; reg_sel[2] ; reg_content[6] ;
+; N/A   ; None              ; 17.277 ns       ; reg_sel[1] ; reg_content[6] ;
+; N/A   ; None              ; 17.212 ns       ; reg_sel[3] ; reg_content[6] ;
+; N/A   ; None              ; 17.176 ns       ; reg_sel[0] ; reg_content[4] ;
+; N/A   ; None              ; 17.017 ns       ; reg_sel[5] ; reg_content[7] ;
+; N/A   ; None              ; 16.987 ns       ; reg_sel[0] ; reg_content[5] ;
+; N/A   ; None              ; 16.986 ns       ; reg_sel[5] ; reg_content[6] ;
+; N/A   ; None              ; 16.975 ns       ; reg_sel[0] ; reg_content[6] ;
+; N/A   ; None              ; 16.878 ns       ; reg_sel[5] ; reg_content[5] ;
+; N/A   ; None              ; 16.814 ns       ; reg_sel[5] ; reg_content[4] ;
+; N/A   ; None              ; 16.467 ns       ; reg_sel[4] ; reg_content[7] ;
+; N/A   ; None              ; 16.436 ns       ; reg_sel[4] ; reg_content[6] ;
+; N/A   ; None              ; 16.328 ns       ; reg_sel[4] ; reg_content[5] ;
+; N/A   ; None              ; 16.264 ns       ; reg_sel[4] ; reg_content[4] ;
+; N/A   ; None              ; 15.940 ns       ; reg_sel[5] ; reg_content[3] ;
+; N/A   ; None              ; 15.390 ns       ; reg_sel[4] ; reg_content[3] ;
+; N/A   ; None              ; 14.103 ns       ; reg_sel[5] ; reg_content[2] ;
+; N/A   ; None              ; 13.823 ns       ; reg_sel[4] ; reg_content[2] ;
+; N/A   ; None              ; 13.776 ns       ; reg_sel[5] ; reg_content[0] ;
+; N/A   ; None              ; 13.704 ns       ; reg_sel[5] ; reg_content[1] ;
+; N/A   ; None              ; 13.533 ns       ; reg_sel[4] ; reg_content[0] ;
+; N/A   ; None              ; 13.459 ns       ; reg_sel[4] ; reg_content[1] ;
+; N/A   ; None              ; 12.846 ns       ; reset      ; OB[1]          ;
+; N/A   ; None              ; 12.846 ns       ; reset      ; OB[0]          ;
+; N/A   ; None              ; 12.574 ns       ; reset      ; OB[4]          ;
+; N/A   ; None              ; 12.552 ns       ; reset      ; OB[7]          ;
+; N/A   ; None              ; 12.519 ns       ; reset      ; OB[3]          ;
+; N/A   ; None              ; 12.519 ns       ; reset      ; OB[2]          ;
+; N/A   ; None              ; 12.514 ns       ; reset      ; OB[5]          ;
+; N/A   ; None              ; 12.236 ns       ; reset      ; OB[6]          ;
+; N/A   ; None              ; 12.121 ns       ; reset      ; WE             ;
+; N/A   ; None              ; 9.696 ns        ; clk        ; WE             ;
++-------+-------------------+-----------------+------------+----------------+
+
+
++------------------------------------------------------------------------------------------------+
+; th                                                                                             ;
++---------------+-------------+-----------+-------+-----------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                                ; To Clock ;
++---------------+-------------+-----------+-------+-----------------------------------+----------+
+; N/A           ; None        ; 5.320 ns  ; OB[2] ; memory_unit:G_MEMORY|data_read[2] ; clk      ;
+; N/A           ; None        ; 5.052 ns  ; OB[6] ; memory_unit:G_MEMORY|data_read[6] ; clk      ;
+; N/A           ; None        ; 4.807 ns  ; OB[4] ; memory_unit:G_MEMORY|data_read[4] ; clk      ;
+; N/A           ; None        ; 4.693 ns  ; OB[3] ; memory_unit:G_MEMORY|data_read[3] ; clk      ;
+; N/A           ; None        ; 4.681 ns  ; OB[0] ; memory_unit:G_MEMORY|data_read[0] ; clk      ;
+; N/A           ; None        ; 4.634 ns  ; OB[5] ; memory_unit:G_MEMORY|data_read[5] ; clk      ;
+; N/A           ; None        ; 4.605 ns  ; OB[7] ; memory_unit:G_MEMORY|data_read[7] ; clk      ;
+; N/A           ; None        ; 4.562 ns  ; OB[1] ; memory_unit:G_MEMORY|data_read[1] ; clk      ;
+; N/A           ; None        ; -1.262 ns ; OB[2] ; memory_unit:G_MEMORY|data_read[2] ; reset    ;
+; N/A           ; None        ; -1.530 ns ; OB[6] ; memory_unit:G_MEMORY|data_read[6] ; reset    ;
+; N/A           ; None        ; -1.775 ns ; OB[4] ; memory_unit:G_MEMORY|data_read[4] ; reset    ;
+; N/A           ; None        ; -1.889 ns ; OB[3] ; memory_unit:G_MEMORY|data_read[3] ; reset    ;
+; N/A           ; None        ; -1.901 ns ; OB[0] ; memory_unit:G_MEMORY|data_read[0] ; reset    ;
+; N/A           ; None        ; -1.948 ns ; OB[5] ; memory_unit:G_MEMORY|data_read[5] ; reset    ;
+; N/A           ; None        ; -1.977 ns ; OB[7] ; memory_unit:G_MEMORY|data_read[7] ; reset    ;
+; N/A           ; None        ; -2.020 ns ; OB[1] ; memory_unit:G_MEMORY|data_read[1] ; reset    ;
++---------------+-------------+-----------+-------+-----------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 5.1 Build 176 10/26/2005 SJ Full Version
+    Info: Processing started: Tue Jan 01 01:24:16 2002
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off exp_cpu -c exp_cpu --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "memory_unit:G_MEMORY|data_read[0]" is a latch
+    Warning: Node "memory_unit:G_MEMORY|data_read[2]" is a latch
+    Warning: Node "memory_unit:G_MEMORY|data_read[6]" is a latch
+    Warning: Node "memory_unit:G_MEMORY|data_read[7]" is a latch
+    Warning: Node "memory_unit:G_MEMORY|data_read[3]" is a latch
+    Warning: Node "memory_unit:G_MEMORY|data_read[5]" is a latch
+    Warning: Node "memory_unit:G_MEMORY|data_read[4]" is a latch
+    Warning: Node "memory_unit:G_MEMORY|data_read[1]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+    Info: Assuming node "reset" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+Warning: Found 8 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "instru_fetch:G_INSTRU_FETCH|IR[4]" as buffer
+    Info: Detected ripple clock "instru_fetch:G_INSTRU_FETCH|IR[5]" as buffer
+    Info: Detected ripple clock "instru_fetch:G_INSTRU_FETCH|IR[7]" as buffer
+    Info: Detected gated clock "exe_unit:G_EXE|c_z_j_flag~35" as buffer
+    Info: Detected ripple clock "instru_fetch:G_INSTRU_FETCH|state.s3" as buffer
+    Info: Detected ripple clock "instru_fetch:G_INSTRU_FETCH|IR[6]" as buffer
+    Info: Detected gated clock "memory_unit:G_MEMORY|R_W_Memory_proc~10" as buffer
+    Info: Detected ripple clock "instru_fetch:G_INSTRU_FETCH|state.s2" as buffer
+Info: Clock "clk" has Internal fmax of 31.88 MHz between source register "instru_fetch:G_INSTRU_FETCH|IR[0]" and destination register "regfile:G_REGFILE|reg:Areg02|q_output[4]" (period= 31.368 ns)
+    Info: + Longest register to register delay is 15.654 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X36_Y6_N21; Fanout = 19; REG Node = 'instru_fetch:G_INSTRU_FETCH|IR[0]'
+        Info: 2: + IC(2.736 ns) + CELL(0.615 ns) = 3.351 ns; Loc. = LCCOMB_X36_Y8_N22; Fanout = 1; COMB Node = 'regfile:G_REGFILE|mux_4_to_1:muxB|output[2]~116'
+        Info: 3: + IC(1.135 ns) + CELL(0.651 ns) = 5.137 ns; Loc. = LCCOMB_X36_Y6_N28; Fanout = 4; COMB Node = 'regfile:G_REGFILE|mux_4_to_1:muxB|output[2]~117'
+        Info: 4: + IC(1.771 ns) + CELL(0.596 ns) = 7.504 ns; Loc. = LCCOMB_X35_Y8_N4; Fanout = 2; COMB Node = 'exe_unit:G_EXE|add~270'
+        Info: 5: + IC(0.000 ns) + CELL(0.086 ns) = 7.590 ns; Loc. = LCCOMB_X35_Y8_N6; Fanout = 2; COMB Node = 'exe_unit:G_EXE|add~274'
+        Info: 6: + IC(0.000 ns) + CELL(0.506 ns) = 8.096 ns; Loc. = LCCOMB_X35_Y8_N8; Fanout = 1; COMB Node = 'exe_unit:G_EXE|add~277'
+        Info: 7: + IC(1.412 ns) + CELL(0.206 ns) = 9.714 ns; Loc. = LCCOMB_X36_Y7_N30; Fanout = 1; COMB Node = 'exe_unit:G_EXE|result[4]~1579'
+        Info: 8: + IC(0.372 ns) + CELL(0.624 ns) = 10.710 ns; Loc. = LCCOMB_X36_Y7_N16; Fanout = 2; COMB Node = 'exe_unit:G_EXE|result[4]~1580'
+        Info: 9: + IC(1.068 ns) + CELL(0.370 ns) = 12.148 ns; Loc. = LCCOMB_X36_Y6_N12; Fanout = 4; COMB Node = 'memory_unit:G_MEMORY|DR_data_out[4]~884'
+        Info: 10: + IC(3.046 ns) + CELL(0.460 ns) = 15.654 ns; Loc. = LCFF_X36_Y8_N17; Fanout = 3; REG Node = 'regfile:G_REGFILE|reg:Areg02|q_output[4]'
+        Info: Total cell delay = 4.114 ns ( 26.28 % )
+        Info: Total interconnect delay = 11.540 ns ( 73.72 % )
+    Info: - Smallest clock skew is 0.234 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 7.464 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.020 ns) = 1.020 ns; Loc. = PIN_95; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.139 ns) + CELL(0.000 ns) = 1.159 ns; Loc. = CLKCTRL_G14; Fanout = 4; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.050 ns) + CELL(0.970 ns) = 3.179 ns; Loc. = LCFF_X38_Y8_N23; Fanout = 5; REG Node = 'instru_fetch:G_INSTRU_FETCH|state.s3'
+            Info: 4: + IC(2.571 ns) + CELL(0.000 ns) = 5.750 ns; Loc. = CLKCTRL_G15; Fanout = 42; COMB Node = 'instru_fetch:G_INSTRU_FETCH|state.s3~clkctrl'
+            Info: 5: + IC(1.048 ns) + CELL(0.666 ns) = 7.464 ns; Loc. = LCFF_X36_Y8_N17; Fanout = 3; REG Node = 'regfile:G_REGFILE|reg:Areg02|q_output[4]'
+            Info: Total cell delay = 2.656 ns ( 35.58 % )
+            Info: Total interconnect delay = 4.808 ns ( 64.42 % )
+        Info: - Longest clock path from clock "clk" to source register is 7.230 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.020 ns) = 1.020 ns; Loc. = PIN_95; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(0.139 ns) + CELL(0.000 ns) = 1.159 ns; Loc. = CLKCTRL_G14; Fanout = 4; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.050 ns) + CELL(0.970 ns) = 3.179 ns; Loc. = LCFF_X38_Y8_N15; Fanout = 3; REG Node = 'instru_fetch:G_INSTRU_FETCH|state.s2'
+            Info: 4: + IC(2.321 ns) + CELL(0.000 ns) = 5.500 ns; Loc. = CLKCTRL_G12; Fanout = 8; COMB Node = 'instru_fetch:G_INSTRU_FETCH|state.s2~clkctrl'
+            Info: 5: + IC(1.064 ns) + CELL(0.666 ns) = 7.230 ns; Loc. = LCFF_X36_Y6_N21; Fanout = 19; REG Node = 'instru_fetch:G_INSTRU_FETCH|IR[0]'
+            Info: Total cell delay = 2.656 ns ( 36.74 % )
+            Info: Total interconnect delay = 4.574 ns ( 63.26 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50, fmax is divided by two
+Info: tsu for register "memory_unit:G_MEMORY|data_read[7]" (data pin = "OB[7]", clock pin = "clk") is 3.720 ns
+    Info: + Longest pin to register delay is 9.714 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_231; Fanout = 1; PIN Node = 'OB[7]'
+        Info: 2: + IC(0.000 ns) + CELL(0.914 ns) = 0.914 ns; Loc. = IOC_X7_Y27_N2; Fanout = 1; COMB Node = 'OB[7]~0'
+        Info: 3: + IC(8.150 ns) + CELL(0.650 ns) = 9.714 ns; Loc. = LCCOMB_X37_Y7_N24; Fanout = 3; REG Node = 'memory_unit:G_MEMORY|data_read[7]'
+        Info: Total cell delay = 1.564 ns ( 16.10 % )
+        Info: Total interconnect delay = 8.150 ns ( 83.90 % )
+    Info: + Micro setup delay of destination is 1.525 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 7.519 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.020 ns) = 1.020 ns; Loc. = PIN_95; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.139 ns) + CELL(0.000 ns) = 1.159 ns; Loc. = CLKCTRL_G14; Fanout = 4; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.050 ns) + CELL(0.970 ns) = 3.179 ns; Loc. = LCFF_X38_Y8_N23; Fanout = 5; REG Node = 'instru_fetch:G_INSTRU_FETCH|state.s3'
+        Info: 4: + IC(0.000 ns) + CELL(0.393 ns) = 3.572 ns; Loc. = LCCOMB_X38_Y8_N22; Fanout = 1; COMB Node = 'memory_unit:G_MEMORY|R_W_Memory_proc~10'
+        Info: 5: + IC(2.162 ns) + CELL(0.000 ns) = 5.734 ns; Loc. = CLKCTRL_G4; Fanout = 8; COMB Node = 'memory_unit:G_MEMORY|R_W_Memory_proc~10clkctrl'
+        Info: 6: + IC(1.579 ns) + CELL(0.206 ns) = 7.519 ns; Loc. = LCCOMB_X37_Y7_N24; Fanout = 3; REG Node = 'memory_unit:G_MEMORY|data_read[7]'
+        Info: Total cell delay = 2.589 ns ( 34.43 % )
+        Info: Total interconnect delay = 4.930 ns ( 65.57 % )
+Info: tco from clock "clk" to destination pin "AR[6]" through register "regfile:G_REGFILE|reg:Areg00|q_output[6]" is 24.275 ns
+    Info: + Longest clock path from clock "clk" to source register is 7.464 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.020 ns) = 1.020 ns; Loc. = PIN_95; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.139 ns) + CELL(0.000 ns) = 1.159 ns; Loc. = CLKCTRL_G14; Fanout = 4; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.050 ns) + CELL(0.970 ns) = 3.179 ns; Loc. = LCFF_X38_Y8_N23; Fanout = 5; REG Node = 'instru_fetch:G_INSTRU_FETCH|state.s3'
+        Info: 4: + IC(2.571 ns) + CELL(0.000 ns) = 5.750 ns; Loc. = CLKCTRL_G15; Fanout = 42; COMB Node = 'instru_fetch:G_INSTRU_FETCH|state.s3~clkctrl'
+        Info: 5: + IC(1.048 ns) + CELL(0.666 ns) = 7.464 ns; Loc. = LCFF_X36_Y8_N13; Fanout = 3; REG Node = 'regfile:G_REGFILE|reg:Areg00|q_output[6]'
+        Info: Total cell delay = 2.656 ns ( 35.58 % )
+        Info: Total interconnect delay = 4.808 ns ( 64.42 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 16.507 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X36_Y8_N13; Fanout = 3; REG Node = 'regfile:G_REGFILE|reg:Areg00|q_output[6]'
+        Info: 2: + IC(2.772 ns) + CELL(0.651 ns) = 3.423 ns; Loc. = LCCOMB_X36_Y6_N14; Fanout = 1; COMB Node = 'regfile:G_REGFILE|mux_4_to_1:muxB|output[6]~124'
+        Info: 3: + IC(1.456 ns) + CELL(0.206 ns) = 5.085 ns; Loc. = LCCOMB_X35_Y7_N6; Fanout = 4; COMB Node = 'regfile:G_REGFILE|mux_4_to_1:muxB|output[6]~125'
+        Info: 4: + IC(2.547 ns) + CELL(0.651 ns) = 8.283 ns; Loc. = LCCOMB_X37_Y9_N6; Fanout = 1; COMB Node = 'exe_unit:G_EXE|Mem_Addr[6]~128'
+        Info: 5: + IC(0.383 ns) + CELL(0.650 ns) = 9.316 ns; Loc. = LCCOMB_X37_Y9_N0; Fanout = 1; COMB Node = 'exe_unit:G_EXE|Mem_Addr[6]~129'
+        Info: 6: + IC(4.165 ns) + CELL(3.026 ns) = 16.507 ns; Loc. = PIN_42; Fanout = 0; PIN Node = 'AR[6]'
+        Info: Total cell delay = 5.184 ns ( 31.40 % )
+        Info: Total interconnect delay = 11.323 ns ( 68.60 % )
+Info: Longest tpd from source pin "reg_sel[1]" to destination pin "reg_content[2]" is 19.850 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = PIN_114; Fanout = 20; PIN Node = 'reg_sel[1]'
+    Info: 2: + IC(7.505 ns) + CELL(0.206 ns) = 8.565 ns; Loc. = LCCOMB_X37_Y6_N6; Fanout = 1; COMB Node = 'Mux~1893'
+    Info: 3: + IC(0.352 ns) + CELL(0.206 ns) = 9.123 ns; Loc. = LCCOMB_X37_Y6_N2; Fanout = 1; COMB Node = 'Mux~1894'
+    Info: 4: + IC(1.090 ns) + CELL(0.651 ns) = 10.864 ns; Loc. = LCCOMB_X38_Y7_N14; Fanout = 1; COMB Node = 'Mux~1895'
+    Info: 5: + IC(0.371 ns) + CELL(0.366 ns) = 11.601 ns; Loc. = LCCOMB_X38_Y7_N24; Fanout = 1; COMB Node = 'Mux~1896'
+    Info: 6: + IC(1.841 ns) + CELL(0.615 ns) = 14.057 ns; Loc. = LCCOMB_X35_Y2_N24; Fanout = 1; COMB Node = 'Mux~1897'
+    Info: 7: + IC(2.647 ns) + CELL(3.146 ns) = 19.850 ns; Loc. = PIN_84; Fanout = 0; PIN Node = 'reg_content[2]'
+    Info: Total cell delay = 6.044 ns ( 30.45 % )
+    Info: Total interconnect delay = 13.806 ns ( 69.55 % )
+Info: th for register "memory_unit:G_MEMORY|data_read[2]" (data pin = "OB[2]", clock pin = "clk") is 5.320 ns
+    Info: + Longest clock path from clock "clk" to destination register is 14.320 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.020 ns) = 1.020 ns; Loc. = PIN_95; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(0.139 ns) + CELL(0.000 ns) = 1.159 ns; Loc. = CLKCTRL_G14; Fanout = 4; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.050 ns) + CELL(0.970 ns) = 3.179 ns; Loc. = LCFF_X38_Y8_N15; Fanout = 3; REG Node = 'instru_fetch:G_INSTRU_FETCH|state.s2'
+        Info: 4: + IC(2.321 ns) + CELL(0.000 ns) = 5.500 ns; Loc. = CLKCTRL_G12; Fanout = 8; COMB Node = 'instru_fetch:G_INSTRU_FETCH|state.s2~clkctrl'
+        Info: 5: + IC(1.056 ns) + CELL(0.970 ns) = 7.526 ns; Loc. = LCFF_X37_Y7_N25; Fanout = 20; REG Node = 'instru_fetch:G_INSTRU_FETCH|IR[7]'
+        Info: 6: + IC(0.486 ns) + CELL(0.606 ns) = 8.618 ns; Loc. = LCCOMB_X37_Y7_N16; Fanout = 5; COMB Node = 'exe_unit:G_EXE|c_z_j_flag~35'
+        Info: 7: + IC(1.108 ns) + CELL(0.646 ns) = 10.372 ns; Loc. = LCCOMB_X38_Y8_N22; Fanout = 1; COMB Node = 'memory_unit:G_MEMORY|R_W_Memory_proc~10'
+        Info: 8: + IC(2.162 ns) + CELL(0.000 ns) = 12.534 ns; Loc. = CLKCTRL_G4; Fanout = 8; COMB Node = 'memory_unit:G_MEMORY|R_W_Memory_proc~10clkctrl'
+        Info: 9: + IC(1.580 ns) + CELL(0.206 ns) = 14.320 ns; Loc. = LCCOMB_X37_Y8_N18; Fanout = 3; REG Node = 'memory_unit:G_MEMORY|data_read[2]'
+        Info: Total cell delay = 4.418 ns ( 30.85 % )
+        Info: Total interconnect delay = 9.902 ns ( 69.15 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 9.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = PIN_236; Fanout = 1; PIN Node = 'OB[2]'
+        Info: 2: + IC(0.000 ns) + CELL(0.854 ns) = 0.854 ns; Loc. = IOC_X1_Y27_N1; Fanout = 1; COMB Node = 'OB[2]~5'
+        Info: 3: + IC(7.780 ns) + CELL(0.366 ns) = 9.000 ns; Loc. = LCCOMB_X37_Y8_N18; Fanout = 3; REG Node = 'memory_unit:G_MEMORY|data_read[2]'
+        Info: Total cell delay = 1.220 ns ( 13.56 % )
+        Info: Total interconnect delay = 7.780 ns ( 86.44 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 11 warnings
+    Info: Processing ended: Tue Jan 01 01:24:17 2002
+    Info: Elapsed time: 00:00:02
+
+

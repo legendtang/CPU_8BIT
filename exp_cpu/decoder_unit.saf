@@ -1,0 +1,86 @@
+# Copyright (C) 1991-2005 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Signal Activity File Name: "D:/xiongjuju/exp_cpu/decoder_unit.saf"
+# Created On: "01/01/2002 03:36:53"
+# Created By: "Version 5.1 Build 176 10/26/2005 SJ Full Version"
+# This file was created by the Quartus(R) II Simulator with glitch filtering enabled.
+
+FORMAT_VERSION 1;
+
+DEFINE_FLAG TOGGLE_RATE_FROM_SIMULATION 0x1;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_SIMULATION 0x2;
+DEFINE_FLAG TOGGLE_RATE_FROM_USER 0x4;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_USER 0x8;
+DEFINE_FLAG TOGGLE_RATE_FROM_USER_DEFAULT 0x10;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_USER_DEFAULT 0x20;
+DEFINE_FLAG TOGGLE_RATE_FROM_VECTORLESS_ESTIMATION 0x40;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_VECTORLESS_ESTIMATION 0x80;
+DEFINE_FLAG TOGGLE_RATE_ASSUMED_ZERO 0x100;
+DEFINE_FLAG TOGGLE_RATE_CLIPPED_TO_MAX 0x200;
+
+BEGIN_OUTPUT_SIGNAL_INFO;
+
+# Output Signal Information Line Format Description:
+
+# <one or more spaces><partial output signal name><spaces>[<flags mask><spaces><toggle rate><spaces><static probability>]<;>
+
+ change_c 0x3 0 0;
+ change_z 0x3 0 0;
+ cj_instruct 0x3 0 0;
+ DR[0] 0x3 0 0;
+ DR[1] 0x3 0 0.989685;
+ DRWr 0x3 0 0.989313;
+ DRWr~2 0x3 0 0.992916;
+ dw_instruct 0x3 0 0;
+ IR[0] 0x3 0 1;
+ IR[1] 0x3 0 0;
+ IR[2] 0x3 0 0;
+ IR[3] 0x3 0 1;
+ IR[4] 0x3 0 1;
+ IR[5] 0x3 0 0;
+ IR[6] 0x3 0 1;
+ IR[7] 0x3 0 1;
+ lj_instruct 0x3 0 0;
+ mem_write 0x3 0 0;
+ Mux~54 0x3 0 0;
+ Mux~55 0x3 0 0;
+ Mux~56 0x3 0 0;
+ Mux~57 0x3 0 0;
+ op_code[0] 0x3 0 0.988646;
+ op_code[1] 0x3 0 0.988709;
+ op_code[2] 0x3 0 0.988773;
+ op_code~12 0x3 0 0.992749;
+ op_code~13 0x3 0 0.99274;
+ op_code~14 0x3 0 0.992966;
+ r_sjmp_addr[0] 0x3 0 0.994203;
+ r_sjmp_addr[1] 0x3 0 0;
+ r_sjmp_addr[2] 0x3 0 0;
+ r_sjmp_addr[3] 0x3 0 0.989695;
+ r_sjmp_addr[4] 0x3 0 0.989681;
+ r_sjmp_addr[5] 0x3 0 0.989681;
+ r_sjmp_addr[6] 0x3 0 0.989624;
+ r_sjmp_addr[7] 0x3 0 0.989684;
+ sel_memdata 0x3 0 0.988233;
+ sel_memdata~1 0x3 0 0.992739;
+ SR[0] 0x3 0 0.994223;
+ SR[1] 0x3 0 0;
+ zj_instruct 0x3 0 0;
+
+END_OUTPUT_SIGNAL_INFO;
+
+TOGGLE_PERCENTAGE 0;
+
+PERCENTAGE_OF_TIME_SIGNALS_IN_UNKNOWN_STATE 0;
+

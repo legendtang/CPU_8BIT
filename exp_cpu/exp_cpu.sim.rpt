@@ -1,0 +1,1606 @@
+Simulator report for exp_cpu
+Tue Jan 01 07:58:57 2002
+Version 5.1 Build 176 10/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Simulation Signal Activity
+  6. Coverage Summary
+  7. Complete 1/0-Value Coverage
+  8. Missing 1-Value Coverage
+  9. Missing 0-Value Coverage
+ 10. Simulator INI Usage
+ 11. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 10.0 us      ;
+; Simulation Netlist Size     ; 134 nodes    ;
+; Simulation Coverage         ;      12.75 % ;
+; Total Number of Transitions ; 43944        ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C20Q240C8 ;
++-----------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                        ;
++-----------------------------------------------------------------+-------------------------+---------------+
+; Option                                                          ; Setting                 ; Default Value ;
++-----------------------------------------------------------------+-------------------------+---------------+
+; Simulation mode                                                 ; Timing                  ; Timing        ;
+; Start time                                                      ; 0 ns                    ; 0 ns          ;
+; Vector input source                                             ; G:\exp_cpu\exe_unit.vwf ;               ;
+; Add pins automatically to simulation output waveforms           ; On                      ; On            ;
+; Check outputs                                                   ; Off                     ; Off           ;
+; Report simulation coverage                                      ; On                      ; On            ;
+; Detect setup and hold time violations                           ; Off                     ; Off           ;
+; Detect glitches                                                 ; On                      ; Off           ;
+; Glitch interval                                                 ; 2 ns                    ; 1 ns          ;
+; Automatically save/load simulation netlist                      ; Off                     ; Off           ;
+; Disable timing delays in Timing Simulation                      ; Off                     ; Off           ;
+; Generate Signal Activity File                                   ; On                      ; Off           ;
+; Signal Activity File output destination                         ; exe_unit.saf            ;               ;
+; Glitch Filtering                                                ; On                      ; On            ;
+; Group bus channels in simulation results                        ; Off                     ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements ; On                      ; On            ;
+; Overwrite Waveform Inputs With Simulation Outputs               ; On                      ;               ;
++-----------------------------------------------------------------+-------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
+Start time : 0 ps
+End time : 10.0 us
+Time duration : 10.0 us
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Signal Activity                                                                                                              ;
++--------------------------+--------------------------+------------------+--------------+--------------------+----------------------------+
+; Node Name                ; Output Port Name         ; Output Port Type ; Toggle Count ; VCC Value Duration ; X (Unknown) Value Duration ;
++--------------------------+--------------------------+------------------+--------------+--------------------+----------------------------+
+; |exe_unit|add~87         ; |exe_unit|add~87         ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~87         ; |exe_unit|add~88         ; cout             ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~89         ; |exe_unit|add~89         ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~89         ; |exe_unit|add~90         ; cout             ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~91         ; |exe_unit|add~91         ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|add~91         ; |exe_unit|add~92         ; cout             ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~93         ; |exe_unit|add~93         ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~93         ; |exe_unit|add~94         ; cout             ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|add~95         ; |exe_unit|add~95         ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~95         ; |exe_unit|add~96         ; cout             ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|add~97         ; |exe_unit|add~97         ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|add~97         ; |exe_unit|add~98         ; cout             ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|add~99         ; |exe_unit|add~99         ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~99         ; |exe_unit|add~100        ; cout             ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|add~101        ; |exe_unit|add~101        ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~101        ; |exe_unit|add~102        ; cout             ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~103        ; |exe_unit|add~103        ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mux~1753       ; |exe_unit|Mux~1753       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1754       ; |exe_unit|Mux~1754       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mux~1755       ; |exe_unit|Mux~1755       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1756       ; |exe_unit|Mux~1756       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mux~1757       ; |exe_unit|Mux~1757       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|z_tmp~74       ; |exe_unit|z_tmp~74       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mux~1758       ; |exe_unit|Mux~1758       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1759       ; |exe_unit|Mux~1759       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1760       ; |exe_unit|Mux~1760       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1761       ; |exe_unit|Mux~1761       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1762       ; |exe_unit|Mux~1762       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1763       ; |exe_unit|Mux~1763       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1764       ; |exe_unit|Mux~1764       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mux~1765       ; |exe_unit|Mux~1765       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mux~1766       ; |exe_unit|Mux~1766       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mux~1767       ; |exe_unit|Mux~1767       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mux~1768       ; |exe_unit|Mux~1768       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1769       ; |exe_unit|Mux~1769       ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|z_tmp~75       ; |exe_unit|z_tmp~75       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|z_tmp~6        ; |exe_unit|z_tmp~6        ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|c_z_j_flag~2   ; |exe_unit|c_z_j_flag~2   ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~105        ; |exe_unit|add~105        ; combout          ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~105        ; |exe_unit|add~106        ; cout             ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|add~107        ; |exe_unit|add~107        ; combout          ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~107        ; |exe_unit|add~108        ; cout             ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~109        ; |exe_unit|add~109        ; combout          ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~109        ; |exe_unit|add~110        ; cout             ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~111        ; |exe_unit|add~111        ; combout          ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~111        ; |exe_unit|add~112        ; cout             ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~113        ; |exe_unit|add~113        ; combout          ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~113        ; |exe_unit|add~114        ; cout             ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~115        ; |exe_unit|add~115        ; combout          ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~115        ; |exe_unit|add~116        ; cout             ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~117        ; |exe_unit|add~117        ; combout          ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~117        ; |exe_unit|add~118        ; cout             ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|add~119        ; |exe_unit|add~119        ; combout          ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|Mem_Addr~68    ; |exe_unit|Mem_Addr~68    ; combout          ;     1998.0   ; 5.0 us             ; 0 ps                       ;
+; |exe_unit|Mem_Addr~69    ; |exe_unit|Mem_Addr~69    ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~70    ; |exe_unit|Mem_Addr~70    ; combout          ;     1998.0   ; 5.0 us             ; 0 ps                       ;
+; |exe_unit|Mem_Addr~71    ; |exe_unit|Mem_Addr~71    ; combout          ;     1998.0   ; 147.85 ns          ; 147.85 ns                  ;
+; |exe_unit|Mem_Addr~72    ; |exe_unit|Mem_Addr~72    ; combout          ;     1997.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~73    ; |exe_unit|Mem_Addr~73    ; combout          ;     1997.0   ; 5.0 us             ; 0 ps                       ;
+; |exe_unit|Mem_Addr~74    ; |exe_unit|Mem_Addr~74    ; combout          ;     1998.0   ; 5.0 us             ; 0 ps                       ;
+; |exe_unit|Mem_Addr~75    ; |exe_unit|Mem_Addr~75    ; combout          ;     1998.0   ; 1.46 us            ; 1.46 us                    ;
+; |exe_unit|Mem_Addr~76    ; |exe_unit|Mem_Addr~76    ; combout          ;     1997.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~77    ; |exe_unit|Mem_Addr~77    ; combout          ;     1997.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~78    ; |exe_unit|Mem_Addr~78    ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~79    ; |exe_unit|Mem_Addr~79    ; combout          ;     1996.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~80    ; |exe_unit|Mem_Addr~80    ; combout          ;     1997.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~81    ; |exe_unit|Mem_Addr~81    ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mem_Addr~82    ; |exe_unit|Mem_Addr~82    ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~83    ; |exe_unit|Mem_Addr~83    ; combout          ;     1996.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~84    ; |exe_unit|Mem_Addr~84    ; combout          ;     1997.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr~85    ; |exe_unit|Mem_Addr~85    ; combout          ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mux~1770       ; |exe_unit|Mux~1770       ; combout          ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|DR_data[7]     ; |exe_unit|DR_data[7]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|SR_data[7]     ; |exe_unit|SR_data[7]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|DR_data[6]     ; |exe_unit|DR_data[6]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|SR_data[6]     ; |exe_unit|SR_data[6]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|DR_data[5]     ; |exe_unit|DR_data[5]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|SR_data[5]     ; |exe_unit|SR_data[5]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|DR_data[4]     ; |exe_unit|DR_data[4]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|SR_data[4]     ; |exe_unit|SR_data[4]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|DR_data[3]     ; |exe_unit|DR_data[3]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|SR_data[3]     ; |exe_unit|SR_data[3]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|DR_data[2]     ; |exe_unit|DR_data[2]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|SR_data[2]     ; |exe_unit|SR_data[2]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|DR_data[1]     ; |exe_unit|DR_data[1]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|SR_data[1]     ; |exe_unit|SR_data[1]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|DR_data[0]     ; |exe_unit|DR_data[0]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|SR_data[0]     ; |exe_unit|SR_data[0]     ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|op_code[0]     ; |exe_unit|op_code[0]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|op_code[1]     ; |exe_unit|op_code[1]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|op_code[2]     ; |exe_unit|op_code[2]     ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|cj_instruct    ; |exe_unit|cj_instruct    ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|zj_instruct    ; |exe_unit|zj_instruct    ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|c_in           ; |exe_unit|c_in           ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|z_in           ; |exe_unit|z_in           ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|r_sjmp_addr[0] ; |exe_unit|r_sjmp_addr[0] ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc_inc[0]      ; |exe_unit|pc_inc[0]      ; input_pad_output ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|r_sjmp_addr[1] ; |exe_unit|r_sjmp_addr[1] ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|pc_inc[1]      ; |exe_unit|pc_inc[1]      ; input_pad_output ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|r_sjmp_addr[2] ; |exe_unit|r_sjmp_addr[2] ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc_inc[2]      ; |exe_unit|pc_inc[2]      ; input_pad_output ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|r_sjmp_addr[3] ; |exe_unit|r_sjmp_addr[3] ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|pc_inc[3]      ; |exe_unit|pc_inc[3]      ; input_pad_output ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|r_sjmp_addr[4] ; |exe_unit|r_sjmp_addr[4] ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc_inc[4]      ; |exe_unit|pc_inc[4]      ; input_pad_output ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|r_sjmp_addr[5] ; |exe_unit|r_sjmp_addr[5] ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc_inc[5]      ; |exe_unit|pc_inc[5]      ; input_pad_output ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|r_sjmp_addr[6] ; |exe_unit|r_sjmp_addr[6] ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|pc_inc[6]      ; |exe_unit|pc_inc[6]      ; input_pad_output ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|r_sjmp_addr[7] ; |exe_unit|r_sjmp_addr[7] ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc_inc[7]      ; |exe_unit|pc_inc[7]      ; input_pad_output ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|t1             ; |exe_unit|t1             ; input_pad_output ;     1999.0   ; 5.0 us             ; 0 ps                       ;
+; |exe_unit|DW_instruct    ; |exe_unit|DW_instruct    ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mem_Write      ; |exe_unit|Mem_Write      ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|pc[0]          ; |exe_unit|pc[0]          ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc[1]          ; |exe_unit|pc[1]          ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc[2]          ; |exe_unit|pc[2]          ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc[3]          ; |exe_unit|pc[3]          ; input_pad_output ;        0.0   ; 10.0 us            ; 0 ps                       ;
+; |exe_unit|pc[4]          ; |exe_unit|pc[4]          ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc[5]          ; |exe_unit|pc[5]          ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc[6]          ; |exe_unit|pc[6]          ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|pc[7]          ; |exe_unit|pc[7]          ; input_pad_output ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|c_tmp          ; |exe_unit|c_tmp          ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|z_tmp          ; |exe_unit|z_tmp          ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|c_z_j_flag     ; |exe_unit|c_z_j_flag     ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|sjmp_addr[0]   ; |exe_unit|sjmp_addr[0]   ; padio            ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|sjmp_addr[1]   ; |exe_unit|sjmp_addr[1]   ; padio            ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|sjmp_addr[2]   ; |exe_unit|sjmp_addr[2]   ; padio            ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|sjmp_addr[3]   ; |exe_unit|sjmp_addr[3]   ; padio            ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|sjmp_addr[4]   ; |exe_unit|sjmp_addr[4]   ; padio            ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|sjmp_addr[5]   ; |exe_unit|sjmp_addr[5]   ; padio            ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|sjmp_addr[6]   ; |exe_unit|sjmp_addr[6]   ; padio            ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|sjmp_addr[7]   ; |exe_unit|sjmp_addr[7]   ; padio            ;        0.0   ; 0 ps               ; 10.0 us                    ;
+; |exe_unit|Mem_Addr[0]    ; |exe_unit|Mem_Addr[0]    ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mem_Addr[1]    ; |exe_unit|Mem_Addr[1]    ; padio            ;     1996.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr[2]    ; |exe_unit|Mem_Addr[2]    ; padio            ;     1996.0   ; 1.46 us            ; 1.46 us                    ;
+; |exe_unit|Mem_Addr[3]    ; |exe_unit|Mem_Addr[3]    ; padio            ;     1996.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr[4]    ; |exe_unit|Mem_Addr[4]    ; padio            ;     1995.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr[5]    ; |exe_unit|Mem_Addr[5]    ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|Mem_Addr[6]    ; |exe_unit|Mem_Addr[6]    ; padio            ;     1995.0   ; 4.99 us            ; 0 ps                       ;
+; |exe_unit|Mem_Addr[7]    ; |exe_unit|Mem_Addr[7]    ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|result[0]      ; |exe_unit|result[0]      ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|result[1]      ; |exe_unit|result[1]      ; padio            ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|result[2]      ; |exe_unit|result[2]      ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|result[3]      ; |exe_unit|result[3]      ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|result[4]      ; |exe_unit|result[4]      ; padio            ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|result[5]      ; |exe_unit|result[5]      ; padio            ;        0.0   ; 0 ps               ; 0 ps                       ;
+; |exe_unit|result[6]      ; |exe_unit|result[6]      ; padio            ;        0.0   ; 9.99 us            ; 0 ps                       ;
+; |exe_unit|result[7]      ; |exe_unit|result[7]      ; padio            ;        0.0   ; 9.99 us            ; 0 ps                       ;
++--------------------------+--------------------------+------------------+--------------+--------------------+----------------------------+
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      12.75 % ;
+; Total nodes checked                                 ; 134          ;
+; Total output ports checked                          ; 149          ;
+; Total output ports with complete 1/0-value coverage ; 19           ;
+; Total output ports with no 1/0-value coverage       ; 130          ;
+; Total output ports with no 1-value coverage         ; 130          ;
+; Total output ports with no 0-value coverage         ; 130          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                      ;
++-----------------------+-----------------------+------------------+
+; Node Name             ; Output Port Name      ; Output Port Type ;
++-----------------------+-----------------------+------------------+
+; |exe_unit|Mem_Addr~68 ; |exe_unit|Mem_Addr~68 ; combout          ;
+; |exe_unit|Mem_Addr~70 ; |exe_unit|Mem_Addr~70 ; combout          ;
+; |exe_unit|Mem_Addr~71 ; |exe_unit|Mem_Addr~71 ; combout          ;
+; |exe_unit|Mem_Addr~72 ; |exe_unit|Mem_Addr~72 ; combout          ;
+; |exe_unit|Mem_Addr~73 ; |exe_unit|Mem_Addr~73 ; combout          ;
+; |exe_unit|Mem_Addr~74 ; |exe_unit|Mem_Addr~74 ; combout          ;
+; |exe_unit|Mem_Addr~75 ; |exe_unit|Mem_Addr~75 ; combout          ;
+; |exe_unit|Mem_Addr~76 ; |exe_unit|Mem_Addr~76 ; combout          ;
+; |exe_unit|Mem_Addr~77 ; |exe_unit|Mem_Addr~77 ; combout          ;
+; |exe_unit|Mem_Addr~79 ; |exe_unit|Mem_Addr~79 ; combout          ;
+; |exe_unit|Mem_Addr~80 ; |exe_unit|Mem_Addr~80 ; combout          ;
+; |exe_unit|Mem_Addr~83 ; |exe_unit|Mem_Addr~83 ; combout          ;
+; |exe_unit|Mem_Addr~84 ; |exe_unit|Mem_Addr~84 ; combout          ;
+; |exe_unit|t1          ; |exe_unit|t1          ; combout          ;
+; |exe_unit|Mem_Addr[1] ; |exe_unit|Mem_Addr[1] ; padio            ;
+; |exe_unit|Mem_Addr[2] ; |exe_unit|Mem_Addr[2] ; padio            ;
+; |exe_unit|Mem_Addr[3] ; |exe_unit|Mem_Addr[3] ; padio            ;
+; |exe_unit|Mem_Addr[4] ; |exe_unit|Mem_Addr[4] ; padio            ;
+; |exe_unit|Mem_Addr[6] ; |exe_unit|Mem_Addr[6] ; padio            ;
++-----------------------+-----------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                               ;
++--------------------------+--------------------------+------------------+
+; Node Name                ; Output Port Name         ; Output Port Type ;
++--------------------------+--------------------------+------------------+
+; |exe_unit|add~87         ; |exe_unit|add~87         ; combout          ;
+; |exe_unit|add~87         ; |exe_unit|add~88         ; cout             ;
+; |exe_unit|add~89         ; |exe_unit|add~89         ; combout          ;
+; |exe_unit|add~89         ; |exe_unit|add~90         ; cout             ;
+; |exe_unit|add~91         ; |exe_unit|add~91         ; combout          ;
+; |exe_unit|add~91         ; |exe_unit|add~92         ; cout             ;
+; |exe_unit|add~93         ; |exe_unit|add~93         ; combout          ;
+; |exe_unit|add~93         ; |exe_unit|add~94         ; cout             ;
+; |exe_unit|add~95         ; |exe_unit|add~95         ; combout          ;
+; |exe_unit|add~95         ; |exe_unit|add~96         ; cout             ;
+; |exe_unit|add~97         ; |exe_unit|add~97         ; combout          ;
+; |exe_unit|add~97         ; |exe_unit|add~98         ; cout             ;
+; |exe_unit|add~99         ; |exe_unit|add~99         ; combout          ;
+; |exe_unit|add~99         ; |exe_unit|add~100        ; cout             ;
+; |exe_unit|add~101        ; |exe_unit|add~101        ; combout          ;
+; |exe_unit|add~101        ; |exe_unit|add~102        ; cout             ;
+; |exe_unit|add~103        ; |exe_unit|add~103        ; combout          ;
+; |exe_unit|Mux~1753       ; |exe_unit|Mux~1753       ; combout          ;
+; |exe_unit|Mux~1754       ; |exe_unit|Mux~1754       ; combout          ;
+; |exe_unit|Mux~1755       ; |exe_unit|Mux~1755       ; combout          ;
+; |exe_unit|Mux~1756       ; |exe_unit|Mux~1756       ; combout          ;
+; |exe_unit|Mux~1757       ; |exe_unit|Mux~1757       ; combout          ;
+; |exe_unit|z_tmp~74       ; |exe_unit|z_tmp~74       ; combout          ;
+; |exe_unit|Mux~1758       ; |exe_unit|Mux~1758       ; combout          ;
+; |exe_unit|Mux~1759       ; |exe_unit|Mux~1759       ; combout          ;
+; |exe_unit|Mux~1760       ; |exe_unit|Mux~1760       ; combout          ;
+; |exe_unit|Mux~1761       ; |exe_unit|Mux~1761       ; combout          ;
+; |exe_unit|Mux~1762       ; |exe_unit|Mux~1762       ; combout          ;
+; |exe_unit|Mux~1763       ; |exe_unit|Mux~1763       ; combout          ;
+; |exe_unit|Mux~1764       ; |exe_unit|Mux~1764       ; combout          ;
+; |exe_unit|Mux~1765       ; |exe_unit|Mux~1765       ; combout          ;
+; |exe_unit|Mux~1766       ; |exe_unit|Mux~1766       ; combout          ;
+; |exe_unit|Mux~1767       ; |exe_unit|Mux~1767       ; combout          ;
+; |exe_unit|Mux~1768       ; |exe_unit|Mux~1768       ; combout          ;
+; |exe_unit|Mux~1769       ; |exe_unit|Mux~1769       ; combout          ;
+; |exe_unit|z_tmp~75       ; |exe_unit|z_tmp~75       ; combout          ;
+; |exe_unit|z_tmp~6        ; |exe_unit|z_tmp~6        ; combout          ;
+; |exe_unit|c_z_j_flag~2   ; |exe_unit|c_z_j_flag~2   ; combout          ;
+; |exe_unit|add~105        ; |exe_unit|add~105        ; combout          ;
+; |exe_unit|add~105        ; |exe_unit|add~106        ; cout             ;
+; |exe_unit|add~107        ; |exe_unit|add~107        ; combout          ;
+; |exe_unit|add~107        ; |exe_unit|add~108        ; cout             ;
+; |exe_unit|add~109        ; |exe_unit|add~109        ; combout          ;
+; |exe_unit|add~109        ; |exe_unit|add~110        ; cout             ;
+; |exe_unit|add~111        ; |exe_unit|add~111        ; combout          ;
+; |exe_unit|add~111        ; |exe_unit|add~112        ; cout             ;
+; |exe_unit|add~113        ; |exe_unit|add~113        ; combout          ;
+; |exe_unit|add~113        ; |exe_unit|add~114        ; cout             ;
+; |exe_unit|add~115        ; |exe_unit|add~115        ; combout          ;
+; |exe_unit|add~115        ; |exe_unit|add~116        ; cout             ;
+; |exe_unit|add~117        ; |exe_unit|add~117        ; combout          ;
+; |exe_unit|add~117        ; |exe_unit|add~118        ; cout             ;
+; |exe_unit|add~119        ; |exe_unit|add~119        ; combout          ;
+; |exe_unit|Mem_Addr~69    ; |exe_unit|Mem_Addr~69    ; combout          ;
+; |exe_unit|Mem_Addr~78    ; |exe_unit|Mem_Addr~78    ; combout          ;
+; |exe_unit|Mem_Addr~81    ; |exe_unit|Mem_Addr~81    ; combout          ;
+; |exe_unit|Mem_Addr~82    ; |exe_unit|Mem_Addr~82    ; combout          ;
+; |exe_unit|Mem_Addr~85    ; |exe_unit|Mem_Addr~85    ; combout          ;
+; |exe_unit|Mux~1770       ; |exe_unit|Mux~1770       ; combout          ;
+; |exe_unit|DR_data[7]     ; |exe_unit|DR_data[7]     ; combout          ;
+; |exe_unit|SR_data[7]     ; |exe_unit|SR_data[7]     ; combout          ;
+; |exe_unit|DR_data[6]     ; |exe_unit|DR_data[6]     ; combout          ;
+; |exe_unit|SR_data[6]     ; |exe_unit|SR_data[6]     ; combout          ;
+; |exe_unit|DR_data[5]     ; |exe_unit|DR_data[5]     ; combout          ;
+; |exe_unit|SR_data[5]     ; |exe_unit|SR_data[5]     ; combout          ;
+; |exe_unit|DR_data[4]     ; |exe_unit|DR_data[4]     ; combout          ;
+; |exe_unit|SR_data[4]     ; |exe_unit|SR_data[4]     ; combout          ;
+; |exe_unit|DR_data[3]     ; |exe_unit|DR_data[3]     ; combout          ;
+; |exe_unit|SR_data[3]     ; |exe_unit|SR_data[3]     ; combout          ;
+; |exe_unit|DR_data[2]     ; |exe_unit|DR_data[2]     ; combout          ;
+; |exe_unit|SR_data[2]     ; |exe_unit|SR_data[2]     ; combout          ;
+; |exe_unit|DR_data[1]     ; |exe_unit|DR_data[1]     ; combout          ;
+; |exe_unit|SR_data[1]     ; |exe_unit|SR_data[1]     ; combout          ;
+; |exe_unit|DR_data[0]     ; |exe_unit|DR_data[0]     ; combout          ;
+; |exe_unit|SR_data[0]     ; |exe_unit|SR_data[0]     ; combout          ;
+; |exe_unit|op_code[0]     ; |exe_unit|op_code[0]     ; combout          ;
+; |exe_unit|op_code[1]     ; |exe_unit|op_code[1]     ; combout          ;
+; |exe_unit|op_code[2]     ; |exe_unit|op_code[2]     ; combout          ;
+; |exe_unit|cj_instruct    ; |exe_unit|cj_instruct    ; combout          ;
+; |exe_unit|zj_instruct    ; |exe_unit|zj_instruct    ; combout          ;
+; |exe_unit|c_in           ; |exe_unit|c_in           ; combout          ;
+; |exe_unit|z_in           ; |exe_unit|z_in           ; combout          ;
+; |exe_unit|r_sjmp_addr[0] ; |exe_unit|r_sjmp_addr[0] ; combout          ;
+; |exe_unit|pc_inc[0]      ; |exe_unit|pc_inc[0]      ; combout          ;
+; |exe_unit|r_sjmp_addr[1] ; |exe_unit|r_sjmp_addr[1] ; combout          ;
+; |exe_unit|pc_inc[1]      ; |exe_unit|pc_inc[1]      ; combout          ;
+; |exe_unit|r_sjmp_addr[2] ; |exe_unit|r_sjmp_addr[2] ; combout          ;
+; |exe_unit|pc_inc[2]      ; |exe_unit|pc_inc[2]      ; combout          ;
+; |exe_unit|r_sjmp_addr[3] ; |exe_unit|r_sjmp_addr[3] ; combout          ;
+; |exe_unit|pc_inc[3]      ; |exe_unit|pc_inc[3]      ; combout          ;
+; |exe_unit|r_sjmp_addr[4] ; |exe_unit|r_sjmp_addr[4] ; combout          ;
+; |exe_unit|pc_inc[4]      ; |exe_unit|pc_inc[4]      ; combout          ;
+; |exe_unit|r_sjmp_addr[5] ; |exe_unit|r_sjmp_addr[5] ; combout          ;
+; |exe_unit|pc_inc[5]      ; |exe_unit|pc_inc[5]      ; combout          ;
+; |exe_unit|r_sjmp_addr[6] ; |exe_unit|r_sjmp_addr[6] ; combout          ;
+; |exe_unit|pc_inc[6]      ; |exe_unit|pc_inc[6]      ; combout          ;
+; |exe_unit|r_sjmp_addr[7] ; |exe_unit|r_sjmp_addr[7] ; combout          ;
+; |exe_unit|pc_inc[7]      ; |exe_unit|pc_inc[7]      ; combout          ;
+; |exe_unit|DW_instruct    ; |exe_unit|DW_instruct    ; combout          ;
+; |exe_unit|Mem_Write      ; |exe_unit|Mem_Write      ; combout          ;
+; |exe_unit|pc[0]          ; |exe_unit|pc[0]          ; combout          ;
+; |exe_unit|pc[1]          ; |exe_unit|pc[1]          ; combout          ;
+; |exe_unit|pc[2]          ; |exe_unit|pc[2]          ; combout          ;
+; |exe_unit|pc[3]          ; |exe_unit|pc[3]          ; combout          ;
+; |exe_unit|pc[4]          ; |exe_unit|pc[4]          ; combout          ;
+; |exe_unit|pc[5]          ; |exe_unit|pc[5]          ; combout          ;
+; |exe_unit|pc[6]          ; |exe_unit|pc[6]          ; combout          ;
+; |exe_unit|pc[7]          ; |exe_unit|pc[7]          ; combout          ;
+; |exe_unit|c_tmp          ; |exe_unit|c_tmp          ; padio            ;
+; |exe_unit|z_tmp          ; |exe_unit|z_tmp          ; padio            ;
+; |exe_unit|c_z_j_flag     ; |exe_unit|c_z_j_flag     ; padio            ;
+; |exe_unit|sjmp_addr[0]   ; |exe_unit|sjmp_addr[0]   ; padio            ;
+; |exe_unit|sjmp_addr[1]   ; |exe_unit|sjmp_addr[1]   ; padio            ;
+; |exe_unit|sjmp_addr[2]   ; |exe_unit|sjmp_addr[2]   ; padio            ;
+; |exe_unit|sjmp_addr[3]   ; |exe_unit|sjmp_addr[3]   ; padio            ;
+; |exe_unit|sjmp_addr[4]   ; |exe_unit|sjmp_addr[4]   ; padio            ;
+; |exe_unit|sjmp_addr[5]   ; |exe_unit|sjmp_addr[5]   ; padio            ;
+; |exe_unit|sjmp_addr[6]   ; |exe_unit|sjmp_addr[6]   ; padio            ;
+; |exe_unit|sjmp_addr[7]   ; |exe_unit|sjmp_addr[7]   ; padio            ;
+; |exe_unit|Mem_Addr[0]    ; |exe_unit|Mem_Addr[0]    ; padio            ;
+; |exe_unit|Mem_Addr[5]    ; |exe_unit|Mem_Addr[5]    ; padio            ;
+; |exe_unit|Mem_Addr[7]    ; |exe_unit|Mem_Addr[7]    ; padio            ;
+; |exe_unit|result[0]      ; |exe_unit|result[0]      ; padio            ;
+; |exe_unit|result[1]      ; |exe_unit|result[1]      ; padio            ;
+; |exe_unit|result[2]      ; |exe_unit|result[2]      ; padio            ;
+; |exe_unit|result[3]      ; |exe_unit|result[3]      ; padio            ;
+; |exe_unit|result[4]      ; |exe_unit|result[4]      ; padio            ;
+; |exe_unit|result[5]      ; |exe_unit|result[5]      ; padio            ;
+; |exe_unit|result[6]      ; |exe_unit|result[6]      ; padio            ;
+; |exe_unit|result[7]      ; |exe_unit|result[7]      ; padio            ;
++--------------------------+--------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                               ;
++--------------------------+--------------------------+------------------+
+; Node Name                ; Output Port Name         ; Output Port Type ;
++--------------------------+--------------------------+------------------+
+; |exe_unit|add~87         ; |exe_unit|add~87         ; combout          ;
+; |exe_unit|add~87         ; |exe_unit|add~88         ; cout             ;
+; |exe_unit|add~89         ; |exe_unit|add~89         ; combout          ;
+; |exe_unit|add~89         ; |exe_unit|add~90         ; cout             ;
+; |exe_unit|add~91         ; |exe_unit|add~91         ; combout          ;
+; |exe_unit|add~91         ; |exe_unit|add~92         ; cout             ;
+; |exe_unit|add~93         ; |exe_unit|add~93         ; combout          ;
+; |exe_unit|add~93         ; |exe_unit|add~94         ; cout             ;
+; |exe_unit|add~95         ; |exe_unit|add~95         ; combout          ;
+; |exe_unit|add~95         ; |exe_unit|add~96         ; cout             ;
+; |exe_unit|add~97         ; |exe_unit|add~97         ; combout          ;
+; |exe_unit|add~97         ; |exe_unit|add~98         ; cout             ;
+; |exe_unit|add~99         ; |exe_unit|add~99         ; combout          ;
+; |exe_unit|add~99         ; |exe_unit|add~100        ; cout             ;
+; |exe_unit|add~101        ; |exe_unit|add~101        ; combout          ;
+; |exe_unit|add~101        ; |exe_unit|add~102        ; cout             ;
+; |exe_unit|add~103        ; |exe_unit|add~103        ; combout          ;
+; |exe_unit|Mux~1753       ; |exe_unit|Mux~1753       ; combout          ;
+; |exe_unit|Mux~1754       ; |exe_unit|Mux~1754       ; combout          ;
+; |exe_unit|Mux~1755       ; |exe_unit|Mux~1755       ; combout          ;
+; |exe_unit|Mux~1756       ; |exe_unit|Mux~1756       ; combout          ;
+; |exe_unit|Mux~1757       ; |exe_unit|Mux~1757       ; combout          ;
+; |exe_unit|z_tmp~74       ; |exe_unit|z_tmp~74       ; combout          ;
+; |exe_unit|Mux~1758       ; |exe_unit|Mux~1758       ; combout          ;
+; |exe_unit|Mux~1759       ; |exe_unit|Mux~1759       ; combout          ;
+; |exe_unit|Mux~1760       ; |exe_unit|Mux~1760       ; combout          ;
+; |exe_unit|Mux~1761       ; |exe_unit|Mux~1761       ; combout          ;
+; |exe_unit|Mux~1762       ; |exe_unit|Mux~1762       ; combout          ;
+; |exe_unit|Mux~1763       ; |exe_unit|Mux~1763       ; combout          ;
+; |exe_unit|Mux~1764       ; |exe_unit|Mux~1764       ; combout          ;
+; |exe_unit|Mux~1765       ; |exe_unit|Mux~1765       ; combout          ;
+; |exe_unit|Mux~1766       ; |exe_unit|Mux~1766       ; combout          ;
+; |exe_unit|Mux~1767       ; |exe_unit|Mux~1767       ; combout          ;
+; |exe_unit|Mux~1768       ; |exe_unit|Mux~1768       ; combout          ;
+; |exe_unit|Mux~1769       ; |exe_unit|Mux~1769       ; combout          ;
+; |exe_unit|z_tmp~75       ; |exe_unit|z_tmp~75       ; combout          ;
+; |exe_unit|z_tmp~6        ; |exe_unit|z_tmp~6        ; combout          ;
+; |exe_unit|c_z_j_flag~2   ; |exe_unit|c_z_j_flag~2   ; combout          ;
+; |exe_unit|add~105        ; |exe_unit|add~105        ; combout          ;
+; |exe_unit|add~105        ; |exe_unit|add~106        ; cout             ;
+; |exe_unit|add~107        ; |exe_unit|add~107        ; combout          ;
+; |exe_unit|add~107        ; |exe_unit|add~108        ; cout             ;
+; |exe_unit|add~109        ; |exe_unit|add~109        ; combout          ;
+; |exe_unit|add~109        ; |exe_unit|add~110        ; cout             ;
+; |exe_unit|add~111        ; |exe_unit|add~111        ; combout          ;
+; |exe_unit|add~111        ; |exe_unit|add~112        ; cout             ;
+; |exe_unit|add~113        ; |exe_unit|add~113        ; combout          ;
+; |exe_unit|add~113        ; |exe_unit|add~114        ; cout             ;
+; |exe_unit|add~115        ; |exe_unit|add~115        ; combout          ;
+; |exe_unit|add~115        ; |exe_unit|add~116        ; cout             ;
+; |exe_unit|add~117        ; |exe_unit|add~117        ; combout          ;
+; |exe_unit|add~117        ; |exe_unit|add~118        ; cout             ;
+; |exe_unit|add~119        ; |exe_unit|add~119        ; combout          ;
+; |exe_unit|Mem_Addr~69    ; |exe_unit|Mem_Addr~69    ; combout          ;
+; |exe_unit|Mem_Addr~78    ; |exe_unit|Mem_Addr~78    ; combout          ;
+; |exe_unit|Mem_Addr~81    ; |exe_unit|Mem_Addr~81    ; combout          ;
+; |exe_unit|Mem_Addr~82    ; |exe_unit|Mem_Addr~82    ; combout          ;
+; |exe_unit|Mem_Addr~85    ; |exe_unit|Mem_Addr~85    ; combout          ;
+; |exe_unit|Mux~1770       ; |exe_unit|Mux~1770       ; combout          ;
+; |exe_unit|DR_data[7]     ; |exe_unit|DR_data[7]     ; combout          ;
+; |exe_unit|SR_data[7]     ; |exe_unit|SR_data[7]     ; combout          ;
+; |exe_unit|DR_data[6]     ; |exe_unit|DR_data[6]     ; combout          ;
+; |exe_unit|SR_data[6]     ; |exe_unit|SR_data[6]     ; combout          ;
+; |exe_unit|DR_data[5]     ; |exe_unit|DR_data[5]     ; combout          ;
+; |exe_unit|SR_data[5]     ; |exe_unit|SR_data[5]     ; combout          ;
+; |exe_unit|DR_data[4]     ; |exe_unit|DR_data[4]     ; combout          ;
+; |exe_unit|SR_data[4]     ; |exe_unit|SR_data[4]     ; combout          ;
+; |exe_unit|DR_data[3]     ; |exe_unit|DR_data[3]     ; combout          ;
+; |exe_unit|SR_data[3]     ; |exe_unit|SR_data[3]     ; combout          ;
+; |exe_unit|DR_data[2]     ; |exe_unit|DR_data[2]     ; combout          ;
+; |exe_unit|SR_data[2]     ; |exe_unit|SR_data[2]     ; combout          ;
+; |exe_unit|DR_data[1]     ; |exe_unit|DR_data[1]     ; combout          ;
+; |exe_unit|SR_data[1]     ; |exe_unit|SR_data[1]     ; combout          ;
+; |exe_unit|DR_data[0]     ; |exe_unit|DR_data[0]     ; combout          ;
+; |exe_unit|SR_data[0]     ; |exe_unit|SR_data[0]     ; combout          ;
+; |exe_unit|op_code[0]     ; |exe_unit|op_code[0]     ; combout          ;
+; |exe_unit|op_code[1]     ; |exe_unit|op_code[1]     ; combout          ;
+; |exe_unit|op_code[2]     ; |exe_unit|op_code[2]     ; combout          ;
+; |exe_unit|cj_instruct    ; |exe_unit|cj_instruct    ; combout          ;
+; |exe_unit|zj_instruct    ; |exe_unit|zj_instruct    ; combout          ;
+; |exe_unit|c_in           ; |exe_unit|c_in           ; combout          ;
+; |exe_unit|z_in           ; |exe_unit|z_in           ; combout          ;
+; |exe_unit|r_sjmp_addr[0] ; |exe_unit|r_sjmp_addr[0] ; combout          ;
+; |exe_unit|pc_inc[0]      ; |exe_unit|pc_inc[0]      ; combout          ;
+; |exe_unit|r_sjmp_addr[1] ; |exe_unit|r_sjmp_addr[1] ; combout          ;
+; |exe_unit|pc_inc[1]      ; |exe_unit|pc_inc[1]      ; combout          ;
+; |exe_unit|r_sjmp_addr[2] ; |exe_unit|r_sjmp_addr[2] ; combout          ;
+; |exe_unit|pc_inc[2]      ; |exe_unit|pc_inc[2]      ; combout          ;
+; |exe_unit|r_sjmp_addr[3] ; |exe_unit|r_sjmp_addr[3] ; combout          ;
+; |exe_unit|pc_inc[3]      ; |exe_unit|pc_inc[3]      ; combout          ;
+; |exe_unit|r_sjmp_addr[4] ; |exe_unit|r_sjmp_addr[4] ; combout          ;
+; |exe_unit|pc_inc[4]      ; |exe_unit|pc_inc[4]      ; combout          ;
+; |exe_unit|r_sjmp_addr[5] ; |exe_unit|r_sjmp_addr[5] ; combout          ;
+; |exe_unit|pc_inc[5]      ; |exe_unit|pc_inc[5]      ; combout          ;
+; |exe_unit|r_sjmp_addr[6] ; |exe_unit|r_sjmp_addr[6] ; combout          ;
+; |exe_unit|pc_inc[6]      ; |exe_unit|pc_inc[6]      ; combout          ;
+; |exe_unit|r_sjmp_addr[7] ; |exe_unit|r_sjmp_addr[7] ; combout          ;
+; |exe_unit|pc_inc[7]      ; |exe_unit|pc_inc[7]      ; combout          ;
+; |exe_unit|DW_instruct    ; |exe_unit|DW_instruct    ; combout          ;
+; |exe_unit|Mem_Write      ; |exe_unit|Mem_Write      ; combout          ;
+; |exe_unit|pc[0]          ; |exe_unit|pc[0]          ; combout          ;
+; |exe_unit|pc[1]          ; |exe_unit|pc[1]          ; combout          ;
+; |exe_unit|pc[2]          ; |exe_unit|pc[2]          ; combout          ;
+; |exe_unit|pc[3]          ; |exe_unit|pc[3]          ; combout          ;
+; |exe_unit|pc[4]          ; |exe_unit|pc[4]          ; combout          ;
+; |exe_unit|pc[5]          ; |exe_unit|pc[5]          ; combout          ;
+; |exe_unit|pc[6]          ; |exe_unit|pc[6]          ; combout          ;
+; |exe_unit|pc[7]          ; |exe_unit|pc[7]          ; combout          ;
+; |exe_unit|c_tmp          ; |exe_unit|c_tmp          ; padio            ;
+; |exe_unit|z_tmp          ; |exe_unit|z_tmp          ; padio            ;
+; |exe_unit|c_z_j_flag     ; |exe_unit|c_z_j_flag     ; padio            ;
+; |exe_unit|sjmp_addr[0]   ; |exe_unit|sjmp_addr[0]   ; padio            ;
+; |exe_unit|sjmp_addr[1]   ; |exe_unit|sjmp_addr[1]   ; padio            ;
+; |exe_unit|sjmp_addr[2]   ; |exe_unit|sjmp_addr[2]   ; padio            ;
+; |exe_unit|sjmp_addr[3]   ; |exe_unit|sjmp_addr[3]   ; padio            ;
+; |exe_unit|sjmp_addr[4]   ; |exe_unit|sjmp_addr[4]   ; padio            ;
+; |exe_unit|sjmp_addr[5]   ; |exe_unit|sjmp_addr[5]   ; padio            ;
+; |exe_unit|sjmp_addr[6]   ; |exe_unit|sjmp_addr[6]   ; padio            ;
+; |exe_unit|sjmp_addr[7]   ; |exe_unit|sjmp_addr[7]   ; padio            ;
+; |exe_unit|Mem_Addr[0]    ; |exe_unit|Mem_Addr[0]    ; padio            ;
+; |exe_unit|Mem_Addr[5]    ; |exe_unit|Mem_Addr[5]    ; padio            ;
+; |exe_unit|Mem_Addr[7]    ; |exe_unit|Mem_Addr[7]    ; padio            ;
+; |exe_unit|result[0]      ; |exe_unit|result[0]      ; padio            ;
+; |exe_unit|result[1]      ; |exe_unit|result[1]      ; padio            ;
+; |exe_unit|result[2]      ; |exe_unit|result[2]      ; padio            ;
+; |exe_unit|result[3]      ; |exe_unit|result[3]      ; padio            ;
+; |exe_unit|result[4]      ; |exe_unit|result[4]      ; padio            ;
+; |exe_unit|result[5]      ; |exe_unit|result[5]      ; padio            ;
+; |exe_unit|result[6]      ; |exe_unit|result[6]      ; padio            ;
+; |exe_unit|result[7]      ; |exe_unit|result[7]      ; padio            ;
++--------------------------+--------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.1 Build 176 10/26/2005 SJ Full Version
+    Info: Processing started: Tue Jan 01 07:58:55 2002
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off exp_cpu -c exp_cpu
+Info: Overwriting simulation input file with simulation results
+Warning: Can't find signal in vector source file for input pin "|exe_unit|pc_inc[0]"
+Warning: Can't find signal in vector source file for input pin "|exe_unit|pc_inc[1]"
+Warning: Can't find signal in vector source file for input pin "|exe_unit|pc_inc[2]"
+Warning: Can't find signal in vector source file for input pin "|exe_unit|pc_inc[3]"
+Warning: Can't find signal in vector source file for input pin "|exe_unit|pc_inc[4]"
+Warning: Can't find signal in vector source file for input pin "|exe_unit|pc_inc[5]"
+Warning: Can't find signal in vector source file for input pin "|exe_unit|pc_inc[6]"
+Warning: Can't find signal in vector source file for input pin "|exe_unit|pc_inc[7]"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|DR_data[6]"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|DR_data[1]"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|SR_data[1]"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|DR_data[0]"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|op_code[2]"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|z_in"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|r_sjmp_addr[0]"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|r_sjmp_addr[2]"
+Warning: Found glitch at time 0.85 ns of duration 0.85 ns on node "|exe_unit|r_sjmp_addr[6]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|SR_data[5]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|DR_data[2]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|SR_data[0]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|op_code[1]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|cj_instruct"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|r_sjmp_addr[1]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|r_sjmp_addr[3]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|r_sjmp_addr[5]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|DW_instruct"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|Mem_Write"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|pc[0]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|pc[2]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|pc[3]"
+Warning: Found glitch at time 0.86 ns of duration 0.86 ns on node "|exe_unit|pc[7]"
+Warning: Found glitch at time 0.89 ns of duration 0.89 ns on node "|exe_unit|op_code[0]"
+Warning: Found glitch at time 0.91 ns of duration 0.91 ns on node "|exe_unit|t1"
+Warning: Found glitch at time 0.91 ns of duration 0.91 ns on node "|exe_unit|pc[5]"
+Warning: Found glitch at time 0.91 ns of duration 0.91 ns on node "|exe_unit|SR_data[6]"
+Warning: Found glitch at time 0.91 ns of duration 0.91 ns on node "|exe_unit|SR_data[3]"
+Warning: Found glitch at time 0.91 ns of duration 0.91 ns on node "|exe_unit|r_sjmp_addr[4]"
+Warning: Found glitch at time 0.91 ns of duration 0.91 ns on node "|exe_unit|r_sjmp_addr[7]"
+Warning: Found glitch at time 0.92 ns of duration 0.92 ns on node "|exe_unit|SR_data[2]"
+Warning: Found glitch at time 0.92 ns of duration 0.92 ns on node "|exe_unit|pc[1]"
+Warning: Found glitch at time 0.92 ns of duration 0.92 ns on node "|exe_unit|DR_data[5]"
+Warning: Found glitch at time 0.92 ns of duration 0.92 ns on node "|exe_unit|pc[4]"
+Warning: Found glitch at time 0.93 ns of duration 0.93 ns on node "|exe_unit|DR_data[4]"
+Warning: Found glitch at time 0.93 ns of duration 0.93 ns on node "|exe_unit|SR_data[4]"
+Warning: Found glitch at time 0.93 ns of duration 0.93 ns on node "|exe_unit|DR_data[3]"
+Warning: Found glitch at time 0.93 ns of duration 0.93 ns on node "|exe_unit|pc[6]"
+Warning: Found glitch at time 1.02 ns of duration 1.02 ns on node "|exe_unit|DR_data[7]"
+Warning: Found glitch at time 1.02 ns of duration 1.02 ns on node "|exe_unit|zj_instruct"
+Warning: Found glitch at time 1.02 ns of duration 1.02 ns on node "|exe_unit|c_in"
+Warning: Found glitch at time 1.09 ns of duration 1.09 ns on node "|exe_unit|SR_data[7]"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found glitch at time 13.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 14.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 18.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 19.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 19.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 23.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 24.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 24.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 28.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 29.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 29.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 33.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 34.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 34.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 38.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 39.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 39.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 43.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 44.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 44.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 48.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 49.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 49.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 53.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 54.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 54.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 58.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 59.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 59.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 63.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 64.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 64.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 68.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 69.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 69.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 73.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 74.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 74.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 78.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 79.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 79.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 83.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 84.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 84.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 88.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 89.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 89.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 93.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 94.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 94.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 98.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 99.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 99.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 103.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 104.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 104.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 108.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 109.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 109.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 113.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 114.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 114.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 118.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 119.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 119.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 123.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 124.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 124.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 128.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 129.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 129.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 133.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 134.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 134.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 138.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 139.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 139.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 143.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 144.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 144.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 148.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 149.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 149.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 153.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 154.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 154.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 158.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 159.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 159.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 163.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 164.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 164.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 168.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 169.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 169.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 173.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 174.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 174.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 178.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 179.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 179.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 183.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 184.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 184.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 188.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 189.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 189.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 193.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 194.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 194.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 198.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 199.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 199.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 203.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 204.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 204.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 208.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 209.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 209.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 213.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 214.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 214.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 218.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 219.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 219.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 223.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 224.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 224.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 228.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 229.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 229.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 233.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 234.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 234.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 238.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 239.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 239.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 243.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 244.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 244.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 248.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 249.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 249.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 253.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 254.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 254.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 258.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 259.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 259.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 263.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 264.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 264.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 268.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 269.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 269.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 273.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 274.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 274.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 278.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 279.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 279.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 283.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 284.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 284.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 288.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 289.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 289.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 293.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 294.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 294.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 298.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 299.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 299.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 303.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 304.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 304.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 308.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 309.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 309.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 313.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 314.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 314.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 318.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 319.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 319.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 323.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 324.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 324.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 328.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 329.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 329.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 333.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 334.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 334.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 338.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 339.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 339.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 343.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 344.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 344.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 348.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 349.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 349.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 353.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 354.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 354.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 358.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 359.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 359.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 363.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 364.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 364.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 368.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 369.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 369.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 373.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 374.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 374.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 378.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 379.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 379.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 383.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 384.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 384.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 388.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 389.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 389.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 393.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 394.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 394.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 398.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 399.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 399.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 403.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 404.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 404.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 408.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 409.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 409.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 413.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 414.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 414.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 418.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 419.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 419.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 423.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 424.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 424.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 428.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 429.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 429.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 433.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 434.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 434.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 438.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 439.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 439.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 443.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 444.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 444.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 448.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 449.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 449.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 453.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 454.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 454.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 458.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 459.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 459.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 463.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 464.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 464.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 468.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 469.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 469.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 473.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 474.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 474.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 478.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 479.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 479.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 483.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 484.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 484.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 488.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 489.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 489.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 493.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 494.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 494.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 498.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 499.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 499.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 503.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 504.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 504.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 508.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 509.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 509.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 513.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 514.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 514.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 518.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 519.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 519.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 523.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 524.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 524.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 528.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 529.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 529.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 533.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 534.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 534.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 538.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 539.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 539.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 543.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 544.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 544.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 548.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 549.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 549.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 553.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 554.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 554.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 558.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 559.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 559.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 563.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 564.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 564.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 568.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 569.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 569.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 573.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 574.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 574.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 578.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 579.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 579.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 583.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 584.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 584.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 588.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 589.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 589.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 593.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 594.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 594.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 598.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 599.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 599.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 603.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 604.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 604.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 608.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 609.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 609.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 613.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 614.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 614.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 618.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 619.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 619.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 623.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 624.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 624.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 628.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 629.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 629.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 633.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 634.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 634.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 638.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 639.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 639.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 643.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 644.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 644.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 648.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 649.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 649.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 653.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 654.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 654.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 658.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 659.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 659.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 663.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 664.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 664.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 668.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 669.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 669.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 673.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 674.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 674.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 678.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 679.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 679.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 683.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 684.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 684.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 688.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 689.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 689.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 693.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 694.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 694.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 698.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 699.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 699.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 703.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 704.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 704.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 708.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 709.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 709.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 713.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 714.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 714.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 718.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 719.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 719.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 723.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 724.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 724.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 728.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 729.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 729.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 733.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 734.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 734.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 738.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 739.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 739.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 743.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 744.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 744.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 748.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 749.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 749.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 753.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 754.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 754.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 758.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 759.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 759.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 763.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 764.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 764.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 768.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 769.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 769.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 773.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 774.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 774.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 778.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 779.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 779.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 783.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 784.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 784.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 788.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 789.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 789.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 793.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 794.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 794.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 798.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 799.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 799.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 803.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 804.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 804.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 808.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 809.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 809.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 813.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 814.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 814.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 818.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 819.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 819.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 823.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 824.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 824.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 828.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 829.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 829.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 833.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 834.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 834.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 838.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 839.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 839.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 843.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 844.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 844.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 848.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 849.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 849.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 853.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 854.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 854.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 858.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 859.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 859.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 863.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 864.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 864.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 868.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 869.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 869.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 873.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 874.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 874.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 878.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 879.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 879.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 883.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 884.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 884.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 888.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 889.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 889.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 893.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 894.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 894.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 898.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 899.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 899.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 903.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 904.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 904.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 908.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 909.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 909.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 913.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 914.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 914.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 918.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 919.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 919.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 923.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 924.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 924.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 928.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 929.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 929.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 933.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 934.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 934.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 938.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 939.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 939.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 943.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 944.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 944.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 948.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 949.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 949.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 953.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 954.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 954.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 958.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 959.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 959.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 963.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 964.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 964.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 968.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 969.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 969.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 973.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 974.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 974.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 978.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 979.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 979.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 983.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 984.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 984.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 988.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 989.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 989.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 993.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 994.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 994.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 998.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 999.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 999.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1003.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1004.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1004.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1008.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1009.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1009.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1013.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1014.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1014.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1018.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1019.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1019.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1023.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1024.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1024.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1028.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1029.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1029.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1033.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1034.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1034.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1038.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1039.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1039.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1043.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1044.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1044.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1048.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1049.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1049.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1053.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1054.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1054.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1058.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1059.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1059.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1063.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1064.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1064.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1068.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1069.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1069.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1073.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1074.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1074.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1078.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1079.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1079.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1083.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1084.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1084.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1088.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1089.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1089.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1093.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1094.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1094.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1098.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1099.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1099.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1103.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1104.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1104.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1108.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1109.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1109.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1113.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1114.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1114.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1118.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1119.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1119.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1123.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1124.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1124.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1128.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1129.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1129.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1133.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1134.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1134.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1138.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1139.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1139.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1143.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1144.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1144.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1148.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1149.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1149.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1153.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1154.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1154.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1158.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1159.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1159.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1163.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1164.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1164.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1168.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1169.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1169.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1173.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1174.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1174.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1178.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1179.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1179.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1183.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1184.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1184.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1188.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1189.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1189.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1193.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1194.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1194.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1198.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1199.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1199.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1203.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1204.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1204.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1208.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1209.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1209.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1213.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1214.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1214.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1218.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1219.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1219.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1223.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1224.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1224.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1228.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1229.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1229.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1233.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1234.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1234.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1238.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1239.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1239.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1243.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1244.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1244.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1248.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1249.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1249.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1253.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1254.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1254.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1258.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1259.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1259.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1263.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1264.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1264.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1268.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1269.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1269.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1273.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1274.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1274.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1278.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1279.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1279.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1283.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1284.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1284.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1288.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1289.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1289.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1293.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1294.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1294.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1298.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1299.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1299.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1303.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1304.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1304.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1308.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1309.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1309.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1313.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1314.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1314.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1318.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1319.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1319.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1323.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1324.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1324.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1328.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1329.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1329.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1333.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1334.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1334.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1338.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1339.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1339.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1343.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1344.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1344.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1348.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1349.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1349.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1353.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1354.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1354.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1358.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1359.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1359.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1363.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1364.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1364.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1368.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1369.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1369.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1373.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1374.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1374.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1378.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1379.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1379.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1383.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1384.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1384.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1388.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1389.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1389.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1393.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1394.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1394.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1398.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1399.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1399.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1403.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1404.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1404.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1408.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1409.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1409.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1413.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1414.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1414.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1418.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1419.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1419.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1423.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1424.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1424.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1428.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1429.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1429.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1433.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1434.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1434.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1438.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1439.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1439.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1443.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1444.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1444.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1448.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1449.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1449.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1453.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1454.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1454.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1458.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1459.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1459.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1463.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1464.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1464.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1468.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1469.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1469.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1473.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1474.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1474.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1478.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1479.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1479.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1483.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1484.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1484.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1488.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1489.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1489.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1493.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1494.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1494.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1498.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1499.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1499.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1503.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1504.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1504.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1508.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1509.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1509.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1513.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1514.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1514.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1518.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1519.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1519.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1523.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1524.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1524.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1528.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1529.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1529.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1533.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1534.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1534.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1538.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1539.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1539.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1543.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1544.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1544.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1548.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1549.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1549.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1553.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1554.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1554.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1558.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1559.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1559.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1563.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1564.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1564.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1568.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1569.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1569.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1573.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1574.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1574.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1578.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1579.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1579.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1583.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1584.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1584.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1588.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1589.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1589.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1593.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1594.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1594.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1598.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1599.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1599.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1603.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1604.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Warning: Found glitch at time 1604.65 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr[2]"
+Warning: Found glitch at time 1608.65 ns of duration 0.15 ns on node "|exe_unit|Mem_Addr~71"
+Warning: Found glitch at time 1609.54 ns of duration 1.46 ns on node "|exe_unit|Mem_Addr~75"
+Info: Detected more than 1000 glitches -- stopped glitch detection
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      12.75 %
+Info: Number of transitions in simulation is 43944
+Info: Created Signal Activity File D:/xiongjuju/exp_cpu/exe_unit.saf
+Info: Quartus II Simulator was successful. 0 errors, 1008 warnings
+    Info: Processing ended: Tue Jan 01 07:58:57 2002
+    Info: Elapsed time: 00:00:03
+
+

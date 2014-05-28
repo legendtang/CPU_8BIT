@@ -1,0 +1,151 @@
+# Copyright (C) 1991-2005 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Signal Activity File Name: "D:/xiongjuju/exp_cpu/memory_unit.saf"
+# Created On: "01/01/2002 07:37:43"
+# Created By: "Version 5.1 Build 176 10/26/2005 SJ Full Version"
+# This file was created by the Quartus(R) II Simulator with glitch filtering enabled.
+
+FORMAT_VERSION 1;
+
+DEFINE_FLAG TOGGLE_RATE_FROM_SIMULATION 0x1;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_SIMULATION 0x2;
+DEFINE_FLAG TOGGLE_RATE_FROM_USER 0x4;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_USER 0x8;
+DEFINE_FLAG TOGGLE_RATE_FROM_USER_DEFAULT 0x10;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_USER_DEFAULT 0x20;
+DEFINE_FLAG TOGGLE_RATE_FROM_VECTORLESS_ESTIMATION 0x40;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_VECTORLESS_ESTIMATION 0x80;
+DEFINE_FLAG TOGGLE_RATE_ASSUMED_ZERO 0x100;
+DEFINE_FLAG TOGGLE_RATE_CLIPPED_TO_MAX 0x200;
+
+BEGIN_OUTPUT_SIGNAL_INFO;
+
+# Output Signal Information Line Format Description:
+
+# <one or more spaces><partial output signal name><spaces>[<flags mask><spaces><toggle rate><spaces><static probability>]<;>
+
+ ar[0] 0x3 0 0;
+ ar[1] 0x3 0 0.989845;
+ ar[2] 0x3 0 0;
+ ar[3] 0x3 0 0;
+ ar[4] 0x3 0 0.989982;
+ ar[5] 0x3 0 0.989969;
+ ar[6] 0x3 0 0;
+ ar[7] 0x3 0 0.98992;
+ clk 0x3 1.99e+008 0.5;
+ data_read[0] 0x3 0 0;
+ data_read[0]$latch 0x3 0 0;
+ data_read[1] 0x3 0 0;
+ data_read[1]$latch 0x3 0 0;
+ data_read[2] 0x3 0 0;
+ data_read[2]$latch 0x3 0 0;
+ data_read[3] 0x3 0 0;
+ data_read[3]$latch 0x3 0 0;
+ data_read[4] 0x3 0 1;
+ data_read[4]$latch 0x3 0 1;
+ data_read[5] 0x3 0 0;
+ data_read[5]$latch 0x3 0 0;
+ data_read[6] 0x3 0 1;
+ data_read[6]$latch 0x3 0 1;
+ data_read[7] 0x3 0 0;
+ data_read[7]$latch 0x3 0 0;
+ DR_data_out[0] 0x3 0 0.986975;
+ DR_data_out[1] 0x3 0 0;
+ DR_data_out[2] 0x3 0 0.98726;
+ DR_data_out[3] 0x3 0 0.98713;
+ DR_data_out[4] 0x3 0 0;
+ DR_data_out[5] 0x3 0 0.987116;
+ DR_data_out[6] 0x3 0 0;
+ DR_data_out[7] 0x3 0 0;
+ DR_data_out~80 0x3 0 0.991447;
+ DR_data_out~81 0x3 0 0;
+ DR_data_out~82 0x3 0 0.991348;
+ DR_data_out~83 0x3 0 0.99141;
+ DR_data_out~84 0x3 0 0;
+ DR_data_out~85 0x3 0 0.991402;
+ DR_data_out~86 0x3 0 0;
+ DR_data_out~87 0x3 0 0;
+ Mem_addr[0] 0x3 0 0;
+ Mem_addr[1] 0x3 0 1;
+ Mem_addr[2] 0x3 0 0;
+ Mem_addr[3] 0x3 0 0;
+ Mem_addr[4] 0x3 0 1;
+ Mem_addr[5] 0x3 0 1;
+ Mem_addr[6] 0x3 0 0;
+ Mem_addr[7] 0x3 0 1;
+ Mem_Write 0x3 0 1;
+ ob[0] 0x3 0 0.5;
+ ob[0]~7 0x3 0 0;
+ ob[0]~output 0x3 9.85e+007 0.22323;
+ ob[0]~result 0x3 9.85e+007 0.22323;
+ ob[1] 0x3 0 0.5;
+ ob[1]~6 0x3 0 0;
+ ob[1]~output 0x3 9.9e+007 0.224023;
+ ob[1]~result 0x3 9.9e+007 0.224023;
+ ob[2] 0x3 0 0.5;
+ ob[2]~5 0x3 0 0;
+ ob[2]~output 0x3 9.9e+007 0.224476;
+ ob[2]~result 0x3 9.9e+007 0.224476;
+ ob[3] 0x3 0 0.5;
+ ob[3]~4 0x3 0 0;
+ ob[3]~output 0x3 9.85e+007 0.22422;
+ ob[3]~result 0x3 9.85e+007 0.22422;
+ ob[4] 0x3 0 0.5;
+ ob[4]~3 0x3 0 0.979253;
+ ob[4]~output 0x3 9.9e+007 0.764898;
+ ob[4]~result 0x3 9.9e+007 0.764898;
+ ob[5] 0x3 0 0.5;
+ ob[5]~2 0x3 0 0;
+ ob[5]~output 0x3 9.85e+007 0.22323;
+ ob[5]~result 0x3 9.85e+007 0.22323;
+ ob[6] 0x3 0 0.5;
+ ob[6]~1 0x3 0 0.971666;
+ ob[6]~output 0x3 9.85e+007 0.761905;
+ ob[6]~result 0x3 9.85e+007 0.761905;
+ ob[7] 0x3 0 0.5;
+ ob[7]~0 0x3 0 0;
+ ob[7]~output 0x3 9.9e+007 0.224476;
+ ob[7]~result 0x3 9.9e+007 0.224476;
+ R_W_Memory_proc~33 0x3 2e+008 0.497719;
+ R_W_Memory_proc~33clkctrl 0x3 1.99e+008 0.497146;
+ reset 0x3 0 1;
+ result[0] 0x3 0 1;
+ result[1] 0x3 0 0;
+ result[2] 0x3 0 1;
+ result[3] 0x3 0 1;
+ result[4] 0x3 0 0;
+ result[5] 0x3 0 1;
+ result[6] 0x3 0 0;
+ result[7] 0x3 0 0;
+ rw 0x3 1.98e+008 0.854594;
+ rw~26 0x3 1.98e+008 0.8582;
+ rw~27 0x3 1.99e+008 0.496432;
+ sel_memdata 0x3 0 0;
+ SR_data[0] 0x3 0 0;
+ SR_data[1] 0x3 0 0;
+ SR_data[2] 0x3 0 0;
+ SR_data[3] 0x3 0 0;
+ SR_data[4] 0x3 0 1;
+ SR_data[5] 0x3 0 0;
+ SR_data[6] 0x3 0 1;
+ SR_data[7] 0x3 0 0;
+ t3 0x3 2e+008 0.5;
+
+END_OUTPUT_SIGNAL_INFO;
+
+TOGGLE_PERCENTAGE 21.6981;
+
+PERCENTAGE_OF_TIME_SIGNALS_IN_UNKNOWN_STATE 10.4175;
+

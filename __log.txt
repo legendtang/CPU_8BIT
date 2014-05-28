@@ -1,0 +1,3 @@
+Rule file parse success, total 7 rules.
+Code file parse success, total 8 lines code.
+Assembly compile completed, total 11 words binary generated.

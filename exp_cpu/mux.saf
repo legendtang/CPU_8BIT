@@ -1,0 +1,103 @@
+# Copyright (C) 1991-2005 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Signal Activity File Name: "D:/xiongjuju/exp_cpu/mux.saf"
+# Created On: "01/01/2002 02:36:19"
+# Created By: "Version 5.1 Build 176 10/26/2005 SJ Full Version"
+# This file was created by the Quartus(R) II Simulator with glitch filtering enabled.
+
+FORMAT_VERSION 1;
+
+DEFINE_FLAG TOGGLE_RATE_FROM_SIMULATION 0x1;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_SIMULATION 0x2;
+DEFINE_FLAG TOGGLE_RATE_FROM_USER 0x4;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_USER 0x8;
+DEFINE_FLAG TOGGLE_RATE_FROM_USER_DEFAULT 0x10;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_USER_DEFAULT 0x20;
+DEFINE_FLAG TOGGLE_RATE_FROM_VECTORLESS_ESTIMATION 0x40;
+DEFINE_FLAG STATIC_PROBABILITY_FROM_VECTORLESS_ESTIMATION 0x80;
+DEFINE_FLAG TOGGLE_RATE_ASSUMED_ZERO 0x100;
+DEFINE_FLAG TOGGLE_RATE_CLIPPED_TO_MAX 0x200;
+
+BEGIN_OUTPUT_SIGNAL_INFO;
+
+# Output Signal Information Line Format Description:
+
+# <one or more spaces><partial output signal name><spaces>[<flags mask><spaces><toggle rate><spaces><static probability>]<;>
+
+ input0[0] 0x3 0 1;
+ input0[1] 0x3 0 0;
+ input0[2] 0x3 0 0;
+ input0[3] 0x3 0 0;
+ input0[4] 0x3 0 0;
+ input0[5] 0x3 0 0;
+ input0[6] 0x3 0 0;
+ input0[7] 0x3 0 0;
+ input1[0] 0x3 0 0;
+ input1[1] 0x3 0 0;
+ input1[2] 0x3 0 0;
+ input1[3] 0x3 0 0;
+ input1[4] 0x3 0 0;
+ input1[5] 0x3 0 0;
+ input1[6] 0x3 0 0;
+ input1[7] 0x3 0 0;
+ input2[0] 0x3 0 1;
+ input2[1] 0x3 0 0;
+ input2[2] 0x3 0 0;
+ input2[3] 0x3 0 1;
+ input2[4] 0x3 0 0;
+ input2[5] 0x3 0 1;
+ input2[6] 0x3 0 0;
+ input2[7] 0x3 0 1;
+ input3[0] 0x3 0 0;
+ input3[1] 0x3 0 0;
+ input3[2] 0x3 0 0;
+ input3[3] 0x3 0 0;
+ input3[4] 0x3 0 0;
+ input3[5] 0x3 0 0;
+ input3[6] 0x3 0 0;
+ input3[7] 0x3 0 0;
+ Mux~40 0x3 0 0.996656;
+ Mux~41 0x3 0 0.991514;
+ Mux~42 0x3 0 0;
+ Mux~43 0x3 0 0;
+ Mux~44 0x3 0 0;
+ Mux~45 0x3 0 0;
+ Mux~46 0x3 0 0;
+ Mux~47 0x3 0 0.991203;
+ Mux~48 0x3 0 0;
+ Mux~49 0x3 0 0;
+ Mux~50 0x3 0 0;
+ Mux~51 0x3 0 0.99078;
+ Mux~52 0x3 0 0;
+ Mux~53 0x3 0 0;
+ Mux~54 0x3 0 0;
+ Mux~55 0x3 0 0.992668;
+ output[0] 0x3 0 0.987139;
+ output[1] 0x3 0 0;
+ output[2] 0x3 0 0;
+ output[3] 0x3 0 0.986504;
+ output[4] 0x3 0 0;
+ output[5] 0x3 0 0.986747;
+ output[6] 0x3 0 0;
+ output[7] 0x3 0 0.988821;
+ sel[0] 0x3 0 0;
+ sel[1] 0x3 0 1;
+
+END_OUTPUT_SIGNAL_INFO;
+
+TOGGLE_PERCENTAGE 0;
+
+PERCENTAGE_OF_TIME_SIGNALS_IN_UNKNOWN_STATE 0;
+

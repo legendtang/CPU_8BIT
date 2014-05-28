@@ -1,0 +1,347 @@
+Analysis & Synthesis report for exp_cpu
+Tue Jan 01 01:23:53 2002
+Version 5.1 Build 176 10/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |exp_cpu|instru_fetch:G_INSTRU_FETCH|state
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Equations
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++------------------------------------+------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jan 01 01:23:53 2002    ;
+; Quartus II Version                 ; 5.1 Build 176 10/26/2005 SJ Full Version ;
+; Revision Name                      ; exp_cpu                                  ;
+; Top-level Entity Name              ; exp_cpu                                  ;
+; Family                             ; Cyclone II                               ;
+; Total combinational functions      ; 199                                      ;
+; Total registers                    ; 54                                       ;
+; Total pins                         ; 35                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP2C20Q240C8       ;                    ;
+; Top-level entity name                                              ; exp_cpu            ; exp_cpu            ;
+; Family name                                                        ; Cyclone II         ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; -1                 ; -1                 ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M4K Memory Blocks                                ; -1                 ; -1                 ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                             ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+
+; decoder_2_to_4.vhd               ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/decoder_2_to_4.vhd     ;
+; decoder_unit.vhd                 ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/decoder_unit.vhd       ;
+; exe_unit.vhd                     ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/exe_unit.vhd           ;
+; exp_cpu.vhd                      ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/exp_cpu.vhd            ;
+; exp_cpu_components.vhd           ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/exp_cpu_components.vhd ;
+; instru_fetch.vhd                 ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/instru_fetch.vhd       ;
+; memory_unit.vhd                  ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/memory_unit.vhd        ;
+; mux_4_to_1.vhd                   ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/mux_4_to_1.vhd         ;
+; reg.vhd                          ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/reg.vhd                ;
+; regfile.vhd                      ; yes             ; User VHDL File  ; D:/xiongjuju/exp_cpu/regfile.vhd            ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total combinational functions               ; 199   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 134   ;
+;     -- 3 input functions                    ; 37    ;
+;     -- <=2 input functions                  ; 28    ;
+;         -- Combinational cells for routing  ; 0     ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 171   ;
+;     -- arithmetic mode                      ; 28    ;
+; Total registers                             ; 54    ;
+; I/O pins                                    ; 35    ;
+; Maximum fan-out node                        ; reset ;
+; Maximum fan-out                             ; 56    ;
+; Total fan-out                               ; 926   ;
+; Average fan-out                             ; 3.22  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                    ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+
+; |exp_cpu                           ; 199 (46)          ; 54 (0)       ; 0           ; 0            ; 0       ; 0         ; 35   ; 0            ; |exp_cpu                                              ;
+;    |decoder_unit:G_DECODER|        ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|decoder_unit:G_DECODER                       ;
+;    |exe_unit:G_EXE|                ; 57 (57)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|exe_unit:G_EXE                               ;
+;    |instru_fetch:G_INSTRU_FETCH|   ; 37 (37)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|instru_fetch:G_INSTRU_FETCH                  ;
+;    |memory_unit:G_MEMORY|          ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|memory_unit:G_MEMORY                         ;
+;    |regfile:G_REGFILE|             ; 36 (0)            ; 34 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|regfile:G_REGFILE                            ;
+;       |decoder_2_to_4:des_decoder| ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|regfile:G_REGFILE|decoder_2_to_4:des_decoder ;
+;       |mux_4_to_1:muxA|            ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|regfile:G_REGFILE|mux_4_to_1:muxA            ;
+;       |mux_4_to_1:muxB|            ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|regfile:G_REGFILE|mux_4_to_1:muxB            ;
+;       |reg:Areg00|                 ; 1 (1)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|regfile:G_REGFILE|reg:Areg00                 ;
+;       |reg:Areg01|                 ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|regfile:G_REGFILE|reg:Areg01                 ;
+;       |reg:Areg02|                 ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|regfile:G_REGFILE|reg:Areg02                 ;
+;       |reg:Areg03|                 ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |exp_cpu|regfile:G_REGFILE|reg:Areg03                 ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------+
+; State Machine - |exp_cpu|instru_fetch:G_INSTRU_FETCH|state ;
++----------+----------+----------+----------+----------------+
+; Name     ; state.s3 ; state.s2 ; state.s1 ; state.s0       ;
++----------+----------+----------+----------+----------------+
+; state.s0 ; 0        ; 0        ; 0        ; 0              ;
+; state.s1 ; 0        ; 0        ; 1        ; 1              ;
+; state.s2 ; 0        ; 1        ; 0        ; 1              ;
+; state.s3 ; 1        ; 0        ; 0        ; 1              ;
++----------+----------+----------+----------+----------------+
+
+
++---------------------------------------------------+
+; User-Specified and Inferred Latches               ;
++-----------------------------------------------+---+
+; Latch Name                                    ;   ;
++-----------------------------------------------+---+
+; memory_unit:G_MEMORY|data_read[0]             ;   ;
+; memory_unit:G_MEMORY|data_read[1]             ;   ;
+; memory_unit:G_MEMORY|data_read[2]             ;   ;
+; memory_unit:G_MEMORY|data_read[3]             ;   ;
+; memory_unit:G_MEMORY|data_read[4]             ;   ;
+; memory_unit:G_MEMORY|data_read[5]             ;   ;
+; memory_unit:G_MEMORY|data_read[6]             ;   ;
+; memory_unit:G_MEMORY|data_read[7]             ;   ;
+; Number of user-specified and inferred latches ; 8 ;
++-----------------------------------------------+---+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 54    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 54    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 34    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; instru_fetch:G_INSTRU_FETCH|IR[4]      ; 7       ;
+; instru_fetch:G_INSTRU_FETCH|IR[5]      ; 7       ;
+; instru_fetch:G_INSTRU_FETCH|IR[6]      ; 10      ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |exp_cpu|instru_fetch:G_INSTRU_FETCH|pc[1]           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |exp_cpu|regfile:G_REGFILE|mux_4_to_1:muxB|output[0] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |exp_cpu|regfile:G_REGFILE|mux_4_to_1:muxA|output[5] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |exp_cpu|exe_unit:G_EXE|result[7]                    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |exp_cpu|exe_unit:G_EXE|Mem_Addr[7]                  ;
+; 64:1               ; 5 bits    ; 210 LEs       ; 30 LEs               ; 180 LEs                ; No         ; |exp_cpu|Mux~0                                       ;
+; 64:1               ; 3 bits    ; 126 LEs       ; 18 LEs               ; 108 LEs                ; No         ; |exp_cpu|Mux~5                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in D:/xiongjuju/exp_cpu/exp_cpu.map.eqn.
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.1 Build 176 10/26/2005 SJ Full Version
+    Info: Processing started: Tue Jan 01 01:23:47 2002
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off exp_cpu -c exp_cpu
+Info: Found 2 design units, including 1 entities, in source file decoder_2_to_4.vhd
+    Info: Found design unit 1: decoder_2_to_4-behavioral
+    Info: Found entity 1: decoder_2_to_4
+Info: Found 2 design units, including 1 entities, in source file decoder_unit.vhd
+    Info: Found design unit 1: decoder_unit-behav
+    Info: Found entity 1: decoder_unit
+Info: Found 2 design units, including 1 entities, in source file exe_unit.vhd
+    Info: Found design unit 1: exe_unit-behav
+    Info: Found entity 1: exe_unit
+Info: Found 2 design units, including 1 entities, in source file exp_cpu.vhd
+    Info: Found design unit 1: exp_cpu-behav
+    Info: Found entity 1: exp_cpu
+Info: Found 1 design units, including 0 entities, in source file exp_cpu_components.vhd
+    Info: Found design unit 1: exp_cpu_components
+Info: Found 2 design units, including 1 entities, in source file instru_fetch.vhd
+    Info: Found design unit 1: instru_fetch-behav
+    Info: Found entity 1: instru_fetch
+Info: Found 2 design units, including 1 entities, in source file memory_unit.vhd
+    Info: Found design unit 1: memory_unit-behav
+    Info: Found entity 1: memory_unit
+Info: Found 2 design units, including 1 entities, in source file mux_4_to_1.vhd
+    Info: Found design unit 1: mux_4_to_1-behavioral
+    Info: Found entity 1: mux_4_to_1
+Info: Found 2 design units, including 1 entities, in source file reg.vhd
+    Info: Found design unit 1: reg-a
+    Info: Found entity 1: reg
+Info: Found 2 design units, including 1 entities, in source file regfile.vhd
+    Info: Found design unit 1: regfile-struct
+    Info: Found entity 1: regfile
+Info: Elaborating entity "exp_cpu" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(47): signal "R0" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(49): signal "R1" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(51): signal "R2" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(53): signal "R3" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(55): signal "t3" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(55): signal "t2" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(55): signal "t1" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(57): signal "pc" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exp_cpu.vhd(59): signal "IR" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Info: Elaborating entity "instru_fetch" for hierarchy "instru_fetch:G_INSTRU_FETCH"
+Info: Elaborating entity "decoder_unit" for hierarchy "decoder_unit:G_DECODER"
+Info: Elaborating entity "exe_unit" for hierarchy "exe_unit:G_EXE"
+Warning (10492): VHDL Process Statement warning at exe_unit.vhd(51): signal "pc_inc" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exe_unit.vhd(52): signal "Mem_Write" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Warning (10492): VHDL Process Statement warning at exe_unit.vhd(53): signal "DR_data" is read inside the Process Statement but isn't in the Process Statement's sensivitity list
+Info: Elaborating entity "memory_unit" for hierarchy "memory_unit:G_MEMORY"
+Warning (10631): VHDL Process Statement warning at memory_unit.vhd(26): signal or variable "data_read" may not be assigned a new value in every possible path through the Process Statement. Signal or variable "data_read" holds its previous value in every path with no new value assignment, which may create a combinational loop in the current design.
+Info: Elaborating entity "regfile" for hierarchy "regfile:G_REGFILE"
+Warning (10034): Output port "c_flag" at regfile.vhd(21) has no driver
+Warning (10034): Output port "z_flag" at regfile.vhd(22) has no driver
+Info: Elaborating entity "reg" for hierarchy "regfile:G_REGFILE|reg:Areg00"
+Info: Elaborating entity "decoder_2_to_4" for hierarchy "regfile:G_REGFILE|decoder_2_to_4:des_decoder"
+Info: Elaborating entity "mux_4_to_1" for hierarchy "regfile:G_REGFILE|mux_4_to_1:muxB"
+Info: State machine "|exp_cpu|instru_fetch:G_INSTRU_FETCH|state" contains 4 states
+Info: Selected Auto state machine encoding method for state machine "|exp_cpu|instru_fetch:G_INSTRU_FETCH|state"
+Info: Encoding result for state machine "|exp_cpu|instru_fetch:G_INSTRU_FETCH|state"
+    Info: Completed encoding using 4 state bits
+        Info: Encoded state bit "instru_fetch:G_INSTRU_FETCH|state.s3"
+        Info: Encoded state bit "instru_fetch:G_INSTRU_FETCH|state.s2"
+        Info: Encoded state bit "instru_fetch:G_INSTRU_FETCH|state.s1"
+        Info: Encoded state bit "instru_fetch:G_INSTRU_FETCH|state.s0"
+    Info: State "|exp_cpu|instru_fetch:G_INSTRU_FETCH|state.s0" uses code string "0000"
+    Info: State "|exp_cpu|instru_fetch:G_INSTRU_FETCH|state.s1" uses code string "0011"
+    Info: State "|exp_cpu|instru_fetch:G_INSTRU_FETCH|state.s2" uses code string "0101"
+    Info: State "|exp_cpu|instru_fetch:G_INSTRU_FETCH|state.s3" uses code string "1001"
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info: Implemented 274 device resources after synthesis - the final resource count might be different
+    Info: Implemented 8 input pins
+    Info: Implemented 19 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 239 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Processing ended: Tue Jan 01 01:23:53 2002
+    Info: Elapsed time: 00:00:07
+
+

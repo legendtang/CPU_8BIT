@@ -1,0 +1,13 @@
+;
+ADD dr,sr "000000000000[u2][u2]",dr,sr
+MVRR dr,sr "000000000111[u2][u2]",dr,sr
+MVDR dr,data "000000001100[u2]0000000000[u8]",dr,data
+LOAD dr,sr "000000001101[u2][u2]",dr,sr
+STORE dr,sr "000000001110[u2][u2]",dr,sr
+JMP addr "000000001000000000000000[u8]",addr
+JNZ addr "000000001010[u4]",addr-@-1
+
+R0 = 0
+R1 = 1
+R2 = 2
+R3 = 3

@@ -1,0 +1,14 @@
+Fitter Status : Successful - Tue Jan 01 01:24:06 2002
+Quartus II Version : 5.1 Build 176 10/26/2005 SJ Full Version
+Revision Name : exp_cpu
+Top-level Entity Name : exp_cpu
+Family : Cyclone II
+Device : EP2C20Q240C8
+Timing Models : Preliminary
+Total logic elements : 200 / 18,752 ( 1 % )
+Total registers : 54
+Total pins : 35 / 142 ( 25 % )
+Total virtual pins : 0
+Total memory bits : 0 / 239,616 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

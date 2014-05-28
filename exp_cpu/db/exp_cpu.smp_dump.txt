@@ -1,0 +1,7 @@
+
+State Machine - |exp_cpu|instru_fetch:G_INSTRU_FETCH|state
+Name state.s3 state.s2 state.s1 state.s0 
+state.s0 0 0 0 0 
+state.s1 0 0 1 1 
+state.s2 0 1 0 1 
+state.s3 1 0 0 1 

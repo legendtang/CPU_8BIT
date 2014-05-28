@@ -1,0 +1,1394 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--D1_IR[0] is instru_fetch:G_INSTRU_FETCH|IR[0] at LCFF_X36_Y6_N21
+D1_IR[0] = DFFEAS(E1_data_read[0], GLOBAL(D1L74), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1_pc[0] is instru_fetch:G_INSTRU_FETCH|pc[0] at LCFF_X38_Y8_N11
+D1_pc[0] = DFFEAS(D1L55, !GLOBAL(D1L76), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L13 is Mux~1875 at LCCOMB_X38_Y7_N6
+A1L13 = D1_pc[0] & reg_sel[2] & reg_sel[1];
+
+
+--A1L14 is Mux~1876 at LCCOMB_X38_Y7_N30
+A1L14 = reg_sel[3] & (reg_sel[2] & reg_sel[1] # !reg_sel[0]);
+
+
+--D1_state.s1 is instru_fetch:G_INSTRU_FETCH|state.s1 at LCFF_X38_Y8_N5
+D1_state.s1 = DFFEAS(D1L77, GLOBAL(A1L12), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L15 is Mux~1877 at LCCOMB_X35_Y7_N20
+A1L15 = D1_state.s1 & !reg_sel[1] & !reg_sel[0];
+
+
+--G2_q_output[0] is regfile:G_REGFILE|reg:Areg01|q_output[0] at LCFF_X36_Y7_N5
+G2_q_output[0] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L1, E1L10,  ,  , VCC);
+
+
+--G3_q_output[0] is regfile:G_REGFILE|reg:Areg02|q_output[0] at LCFF_X36_Y7_N1
+G3_q_output[0] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L2, E1L10,  ,  , VCC);
+
+
+--G1_q_output[0] is regfile:G_REGFILE|reg:Areg00|q_output[0] at LCFF_X36_Y6_N7
+G1_q_output[0] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , G1L1, E1L10,  ,  , VCC);
+
+
+--A1L16 is Mux~1878 at LCCOMB_X38_Y8_N26
+A1L16 = reg_sel[1] & (G3_q_output[0] # reg_sel[0]) # !reg_sel[1] & G1_q_output[0] & (!reg_sel[0]);
+
+
+--G4_q_output[0] is regfile:G_REGFILE|reg:Areg03|q_output[0] at LCFF_X35_Y6_N27
+G4_q_output[0] = DFFEAS(E1L10, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L3,  ,  ,  ,  );
+
+
+--A1L17 is Mux~1879 at LCCOMB_X38_Y8_N12
+A1L17 = reg_sel[0] & (A1L16 & G4_q_output[0] # !A1L16 & (G2_q_output[0])) # !reg_sel[0] & A1L16;
+
+
+--A1L18 is Mux~1880 at LCCOMB_X38_Y7_N12
+A1L18 = reg_sel[3] & (reg_sel[0]) # !reg_sel[3] & reg_sel[2];
+
+
+--A1L19 is Mux~1881 at LCCOMB_X38_Y7_N2
+A1L19 = reg_sel[3] & (!A1L18) # !reg_sel[3] & (A1L18 & A1L15 # !A1L18 & (A1L17));
+
+
+--A1L20 is Mux~1882 at LCCOMB_X38_Y7_N10
+A1L20 = A1L19 & (A1L13 # !A1L14) # !A1L19 & (D1_IR[0] & A1L14);
+
+
+--A1L21 is Mux~1883 at LCCOMB_X35_Y2_N26
+A1L21 = !reg_sel[5] & !reg_sel[4] & A1L20;
+
+
+--D1_IR[1] is instru_fetch:G_INSTRU_FETCH|IR[1] at LCFF_X36_Y6_N5
+D1_IR[1] = DFFEAS(E1_data_read[1], GLOBAL(D1L74), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1_pc[1] is instru_fetch:G_INSTRU_FETCH|pc[1] at LCFF_X37_Y7_N9
+D1_pc[1] = DFFEAS(D1L57, !GLOBAL(D1L76), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L22 is Mux~1884 at LCCOMB_X38_Y7_N4
+A1L22 = reg_sel[1] & reg_sel[2] & D1_pc[1];
+
+
+--D1_state.s2 is instru_fetch:G_INSTRU_FETCH|state.s2 at LCFF_X38_Y8_N15
+D1_state.s2 = DFFEAS(UNCONNECTED_DATAIN, GLOBAL(A1L12), GLOBAL(A1L93),  ,  , D1_state.s1,  ,  , VCC);
+
+
+--A1L23 is Mux~1885 at LCCOMB_X38_Y8_N14
+A1L23 = !reg_sel[1] & D1_state.s2 & !reg_sel[0];
+
+
+--G3_q_output[1] is regfile:G_REGFILE|reg:Areg02|q_output[1] at LCFF_X36_Y7_N15
+G3_q_output[1] = DFFEAS(E1L11, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L2,  ,  ,  ,  );
+
+
+--G2_q_output[1] is regfile:G_REGFILE|reg:Areg01|q_output[1] at LCFF_X36_Y7_N23
+G2_q_output[1] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L1, E1L11,  ,  , VCC);
+
+
+--G1_q_output[1] is regfile:G_REGFILE|reg:Areg00|q_output[1] at LCFF_X38_Y7_N29
+G1_q_output[1] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , G1L1, E1L11,  ,  , VCC);
+
+
+--A1L24 is Mux~1886 at LCCOMB_X38_Y7_N18
+A1L24 = reg_sel[1] & (reg_sel[0]) # !reg_sel[1] & (reg_sel[0] & G2_q_output[1] # !reg_sel[0] & (G1_q_output[1]));
+
+
+--G4_q_output[1] is regfile:G_REGFILE|reg:Areg03|q_output[1] at LCFF_X38_Y7_N9
+G4_q_output[1] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L3, E1L11,  ,  , VCC);
+
+
+--A1L25 is Mux~1887 at LCCOMB_X38_Y7_N16
+A1L25 = reg_sel[1] & (A1L24 & G4_q_output[1] # !A1L24 & (G3_q_output[1])) # !reg_sel[1] & (A1L24);
+
+
+--A1L26 is Mux~1888 at LCCOMB_X38_Y7_N26
+A1L26 = reg_sel[3] & (!A1L18) # !reg_sel[3] & (A1L18 & (A1L23) # !A1L18 & A1L25);
+
+
+--A1L27 is Mux~1889 at LCCOMB_X38_Y7_N0
+A1L27 = A1L26 & (A1L22 # !A1L14) # !A1L26 & D1_IR[1] & (A1L14);
+
+
+--A1L28 is Mux~1890 at LCCOMB_X35_Y2_N16
+A1L28 = !reg_sel[5] & !reg_sel[4] & A1L27;
+
+
+--D1_IR[2] is instru_fetch:G_INSTRU_FETCH|IR[2] at LCFF_X37_Y8_N19
+D1_IR[2] = DFFEAS(E1_data_read[2], GLOBAL(D1L74), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1_pc[2] is instru_fetch:G_INSTRU_FETCH|pc[2] at LCFF_X37_Y7_N27
+D1_pc[2] = DFFEAS(D1L59, !GLOBAL(D1L76), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L29 is Mux~1891 at LCCOMB_X38_Y7_N22
+A1L29 = reg_sel[1] & reg_sel[2] & D1_pc[2];
+
+
+--D1_state.s3 is instru_fetch:G_INSTRU_FETCH|state.s3 at LCFF_X38_Y8_N23
+D1_state.s3 = DFFEAS(UNCONNECTED_DATAIN, GLOBAL(A1L12), GLOBAL(A1L93),  ,  , D1_state.s2,  ,  , VCC);
+
+
+--A1L30 is Mux~1892 at LCCOMB_X38_Y8_N16
+A1L30 = !reg_sel[0] & !reg_sel[1] & D1_state.s3;
+
+
+--G2_q_output[2] is regfile:G_REGFILE|reg:Areg01|q_output[2] at LCFF_X37_Y8_N23
+G2_q_output[2] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L1, E1L12,  ,  , VCC);
+
+
+--G3_q_output[2] is regfile:G_REGFILE|reg:Areg02|q_output[2] at LCFF_X36_Y8_N23
+G3_q_output[2] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L2, E1L12,  ,  , VCC);
+
+
+--G1_q_output[2] is regfile:G_REGFILE|reg:Areg00|q_output[2] at LCFF_X36_Y8_N27
+G1_q_output[2] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , G1L1, E1L12,  ,  , VCC);
+
+
+--A1L31 is Mux~1893 at LCCOMB_X37_Y6_N6
+A1L31 = reg_sel[0] & (reg_sel[1]) # !reg_sel[0] & (reg_sel[1] & G3_q_output[2] # !reg_sel[1] & (G1_q_output[2]));
+
+
+--G4_q_output[2] is regfile:G_REGFILE|reg:Areg03|q_output[2] at LCFF_X35_Y6_N7
+G4_q_output[2] = DFFEAS(E1L12, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L3,  ,  ,  ,  );
+
+
+--A1L32 is Mux~1894 at LCCOMB_X37_Y6_N2
+A1L32 = reg_sel[0] & (A1L31 & (G4_q_output[2]) # !A1L31 & G2_q_output[2]) # !reg_sel[0] & (A1L31);
+
+
+--A1L33 is Mux~1895 at LCCOMB_X38_Y7_N14
+A1L33 = reg_sel[3] & (!A1L18) # !reg_sel[3] & (A1L18 & (A1L30) # !A1L18 & A1L32);
+
+
+--A1L34 is Mux~1896 at LCCOMB_X38_Y7_N24
+A1L34 = A1L14 & (A1L33 & (A1L29) # !A1L33 & D1_IR[2]) # !A1L14 & (A1L33);
+
+
+--A1L35 is Mux~1897 at LCCOMB_X35_Y2_N24
+A1L35 = !reg_sel[5] & A1L34 & !reg_sel[4];
+
+
+--A1L36 is Mux~1898 at LCCOMB_X38_Y7_N20
+A1L36 = reg_sel[3] & reg_sel[2] & reg_sel[1];
+
+
+--D1_IR[3] is instru_fetch:G_INSTRU_FETCH|IR[3] at LCFF_X37_Y8_N25
+D1_IR[3] = DFFEAS(E1_data_read[3], GLOBAL(D1L74), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1_pc[3] is instru_fetch:G_INSTRU_FETCH|pc[3] at LCFF_X37_Y7_N5
+D1_pc[3] = DFFEAS(D1L61, !GLOBAL(D1L76), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L37 is Mux~1899 at LCCOMB_X35_Y6_N12
+A1L37 = A1L36 & (reg_sel[0] & D1_IR[3] # !reg_sel[0] & (D1_pc[3]));
+
+
+--G3_q_output[3] is regfile:G_REGFILE|reg:Areg02|q_output[3] at LCFF_X36_Y8_N3
+G3_q_output[3] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L2, E1L13,  ,  , VCC);
+
+
+--G2_q_output[3] is regfile:G_REGFILE|reg:Areg01|q_output[3] at LCFF_X35_Y6_N25
+G2_q_output[3] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L1, E1L13,  ,  , VCC);
+
+
+--G1_q_output[3] is regfile:G_REGFILE|reg:Areg00|q_output[3] at LCFF_X36_Y8_N25
+G1_q_output[3] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , G1L1, E1L13,  ,  , VCC);
+
+
+--A1L38 is Mux~1900 at LCCOMB_X36_Y8_N24
+A1L38 = reg_sel[0] & (reg_sel[1] # G2_q_output[3]) # !reg_sel[0] & !reg_sel[1] & G1_q_output[3];
+
+
+--G4_q_output[3] is regfile:G_REGFILE|reg:Areg03|q_output[3] at LCFF_X35_Y6_N5
+G4_q_output[3] = DFFEAS(E1L13, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L3,  ,  ,  ,  );
+
+
+--A1L39 is Mux~1901 at LCCOMB_X35_Y6_N2
+A1L39 = A1L38 & (G4_q_output[3] # !reg_sel[1]) # !A1L38 & G3_q_output[3] & (reg_sel[1]);
+
+
+--A1L40 is Mux~1902 at LCCOMB_X38_Y6_N0
+A1L40 = !reg_sel[2] & !reg_sel[3];
+
+
+--A1L41 is Mux~1903 at LCCOMB_X35_Y6_N30
+A1L41 = reg_sel[5] # reg_sel[4];
+
+
+--A1L42 is Mux~1904 at LCCOMB_X35_Y6_N22
+A1L42 = !A1L41 & (A1L37 # A1L39 & A1L40);
+
+
+--D1_pc[4] is instru_fetch:G_INSTRU_FETCH|pc[4] at LCFF_X37_Y7_N23
+D1_pc[4] = DFFEAS(D1L63, !GLOBAL(D1L76), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1_IR[4] is instru_fetch:G_INSTRU_FETCH|IR[4] at LCFF_X37_Y7_N3
+D1_IR[4] = DFFEAS(D1L37, GLOBAL(D1L74), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L43 is Mux~1905 at LCCOMB_X35_Y7_N14
+A1L43 = A1L36 & (reg_sel[0] & !D1_IR[4] # !reg_sel[0] & (D1_pc[4]));
+
+
+--G2_q_output[4] is regfile:G_REGFILE|reg:Areg01|q_output[4] at LCFF_X37_Y8_N27
+G2_q_output[4] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L1, E1L14,  ,  , VCC);
+
+
+--G3_q_output[4] is regfile:G_REGFILE|reg:Areg02|q_output[4] at LCFF_X36_Y8_N17
+G3_q_output[4] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L2, E1L14,  ,  , VCC);
+
+
+--G1_q_output[4] is regfile:G_REGFILE|reg:Areg00|q_output[4] at LCFF_X36_Y6_N13
+G1_q_output[4] = DFFEAS(E1L14, !GLOBAL(D1L76), GLOBAL(A1L93),  , G1L1,  ,  ,  ,  );
+
+
+--A1L44 is Mux~1906 at LCCOMB_X35_Y7_N0
+A1L44 = reg_sel[0] & (reg_sel[1]) # !reg_sel[0] & (reg_sel[1] & (G3_q_output[4]) # !reg_sel[1] & G1_q_output[4]);
+
+
+--G4_q_output[4] is regfile:G_REGFILE|reg:Areg03|q_output[4] at LCFF_X35_Y7_N25
+G4_q_output[4] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L3, E1L14,  ,  , VCC);
+
+
+--A1L45 is Mux~1907 at LCCOMB_X35_Y7_N30
+A1L45 = reg_sel[0] & (A1L44 & G4_q_output[4] # !A1L44 & (G2_q_output[4])) # !reg_sel[0] & A1L44;
+
+
+--A1L46 is Mux~1908 at LCCOMB_X35_Y7_N26
+A1L46 = !A1L41 & (A1L43 # A1L40 & A1L45);
+
+
+--D1_pc[5] is instru_fetch:G_INSTRU_FETCH|pc[5] at LCFF_X37_Y9_N5
+D1_pc[5] = DFFEAS(D1L65, !GLOBAL(D1L76), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1_IR[5] is instru_fetch:G_INSTRU_FETCH|IR[5] at LCFF_X37_Y7_N21
+D1_IR[5] = DFFEAS(D1L39, GLOBAL(D1L74), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L47 is Mux~1909 at LCCOMB_X35_Y7_N2
+A1L47 = A1L36 & (reg_sel[0] & !D1_IR[5] # !reg_sel[0] & (D1_pc[5]));
+
+
+--G3_q_output[5] is regfile:G_REGFILE|reg:Areg02|q_output[5] at LCFF_X36_Y8_N5
+G3_q_output[5] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L2, E1L15,  ,  , VCC);
+
+
+--G2_q_output[5] is regfile:G_REGFILE|reg:Areg01|q_output[5] at LCFF_X37_Y8_N31
+G2_q_output[5] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L1, E1L15,  ,  , VCC);
+
+
+--G1_q_output[5] is regfile:G_REGFILE|reg:Areg00|q_output[5] at LCFF_X36_Y8_N9
+G1_q_output[5] = DFFEAS(E1L15, !GLOBAL(D1L76), GLOBAL(A1L93),  , G1L1,  ,  ,  ,  );
+
+
+--A1L48 is Mux~1910 at LCCOMB_X35_Y7_N28
+A1L48 = reg_sel[0] & (reg_sel[1] # G2_q_output[5]) # !reg_sel[0] & !reg_sel[1] & G1_q_output[5];
+
+
+--G4_q_output[5] is regfile:G_REGFILE|reg:Areg03|q_output[5] at LCFF_X35_Y7_N23
+G4_q_output[5] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L3, E1L15,  ,  , VCC);
+
+
+--A1L49 is Mux~1911 at LCCOMB_X35_Y7_N4
+A1L49 = A1L48 & (G4_q_output[5] # !reg_sel[1]) # !A1L48 & G3_q_output[5] & reg_sel[1];
+
+
+--A1L50 is Mux~1912 at LCCOMB_X35_Y7_N8
+A1L50 = !A1L41 & (A1L47 # A1L40 & A1L49);
+
+
+--D1_pc[6] is instru_fetch:G_INSTRU_FETCH|pc[6] at LCFF_X37_Y9_N29
+D1_pc[6] = DFFEAS(D1L67, !GLOBAL(D1L76), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1_IR[6] is instru_fetch:G_INSTRU_FETCH|IR[6] at LCFF_X37_Y9_N3
+D1_IR[6] = DFFEAS(D1L41, GLOBAL(D1L74), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L51 is Mux~1913 at LCCOMB_X35_Y7_N16
+A1L51 = A1L36 & (reg_sel[0] & !D1_IR[6] # !reg_sel[0] & (D1_pc[6]));
+
+
+--G2_q_output[6] is regfile:G_REGFILE|reg:Areg01|q_output[6] at LCFF_X37_Y8_N29
+G2_q_output[6] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L1, E1L16,  ,  , VCC);
+
+
+--G3_q_output[6] is regfile:G_REGFILE|reg:Areg02|q_output[6] at LCFF_X36_Y8_N21
+G3_q_output[6] = DFFEAS(E1L16, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L2,  ,  ,  ,  );
+
+
+--G1_q_output[6] is regfile:G_REGFILE|reg:Areg00|q_output[6] at LCFF_X36_Y8_N13
+G1_q_output[6] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , G1L1, E1L16,  ,  , VCC);
+
+
+--A1L52 is Mux~1914 at LCCOMB_X35_Y7_N12
+A1L52 = reg_sel[0] & (reg_sel[1]) # !reg_sel[0] & (reg_sel[1] & (G3_q_output[6]) # !reg_sel[1] & G1_q_output[6]);
+
+
+--G4_q_output[6] is regfile:G_REGFILE|reg:Areg03|q_output[6] at LCFF_X35_Y7_N7
+G4_q_output[6] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L3, E1L16,  ,  , VCC);
+
+
+--A1L53 is Mux~1915 at LCCOMB_X35_Y7_N10
+A1L53 = reg_sel[0] & (A1L52 & G4_q_output[6] # !A1L52 & (G2_q_output[6])) # !reg_sel[0] & (A1L52);
+
+
+--A1L54 is Mux~1916 at LCCOMB_X35_Y7_N18
+A1L54 = !A1L41 & (A1L51 # A1L53 & A1L40);
+
+
+--D1_IR[7] is instru_fetch:G_INSTRU_FETCH|IR[7] at LCFF_X37_Y7_N25
+D1_IR[7] = DFFEAS(E1_data_read[7], GLOBAL(D1L74), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1_pc[7] is instru_fetch:G_INSTRU_FETCH|pc[7] at LCFF_X37_Y9_N31
+D1_pc[7] = DFFEAS(D1L69, !GLOBAL(D1L76), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--A1L55 is Mux~1917 at LCCOMB_X35_Y6_N28
+A1L55 = A1L36 & (reg_sel[0] & (D1_IR[7]) # !reg_sel[0] & D1_pc[7]);
+
+
+--G3_q_output[7] is regfile:G_REGFILE|reg:Areg02|q_output[7] at LCFF_X36_Y8_N7
+G3_q_output[7] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L2, E1L17,  ,  , VCC);
+
+
+--G2_q_output[7] is regfile:G_REGFILE|reg:Areg01|q_output[7] at LCFF_X35_Y8_N31
+G2_q_output[7] = DFFEAS(E1L17, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L1,  ,  ,  ,  );
+
+
+--G1_q_output[7] is regfile:G_REGFILE|reg:Areg00|q_output[7] at LCFF_X36_Y6_N9
+G1_q_output[7] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , G1L1, E1L17,  ,  , VCC);
+
+
+--A1L56 is Mux~1918 at LCCOMB_X35_Y6_N18
+A1L56 = reg_sel[0] & (reg_sel[1] # G2_q_output[7]) # !reg_sel[0] & !reg_sel[1] & G1_q_output[7];
+
+
+--G4_q_output[7] is regfile:G_REGFILE|reg:Areg03|q_output[7] at LCFF_X35_Y6_N11
+G4_q_output[7] = DFFEAS(UNCONNECTED_DATAIN, !GLOBAL(D1L76), GLOBAL(A1L93),  , H1L3, E1L17,  ,  , VCC);
+
+
+--A1L57 is Mux~1919 at LCCOMB_X35_Y6_N20
+A1L57 = A1L56 & (G4_q_output[7] # !reg_sel[1]) # !A1L56 & G3_q_output[7] & reg_sel[1];
+
+
+--A1L58 is Mux~1920 at LCCOMB_X35_Y6_N16
+A1L58 = !A1L41 & (A1L55 # A1L57 & A1L40);
+
+
+--F1_c_out is regfile:G_REGFILE|c_out at LCFF_X39_Y8_N11
+F1_c_out = DFFEAS(C1L35, !GLOBAL(D1L76), GLOBAL(A1L93),  , B1L4,  ,  ,  ,  );
+
+
+--F1_z_out is regfile:G_REGFILE|z_out at LCFF_X35_Y8_N21
+F1_z_out = DFFEAS(C1L74, !GLOBAL(D1L76), GLOBAL(A1L93),  , B1L4,  ,  ,  ,  );
+
+
+--C1L36 is exe_unit:G_EXE|c_z_j_flag~35 at LCCOMB_X37_Y7_N16
+C1L36 = D1_IR[7] & !D1_IR[5] & D1_IR[4];
+
+
+--E1L20 is memory_unit:G_MEMORY|rw~28 at LCCOMB_X38_Y8_N24
+E1L20 = !D1_IR[6] & D1_state.s3 & C1L36 & reset;
+
+
+--E1L21 is memory_unit:G_MEMORY|rw~29 at LCCOMB_X26_Y8_N0
+E1L21 = clk # !E1L20;
+
+
+--D1L1 is instru_fetch:G_INSTRU_FETCH|add~229 at LCCOMB_X37_Y9_N10
+D1L1 = D1_pc[0] $ VCC;
+
+--D1L2 is instru_fetch:G_INSTRU_FETCH|add~230 at LCCOMB_X37_Y9_N10
+D1L2 = CARRY(D1_pc[0]);
+
+
+--C1L51 is exe_unit:G_EXE|Mem_Addr[7]~114 at LCCOMB_X38_Y8_N8
+C1L51 = D1_state.s1 # D1_IR[7] & D1_IR[4] & D1_IR[5];
+
+
+--J1L1 is regfile:G_REGFILE|mux_4_to_1:muxB|output[0]~112 at LCCOMB_X36_Y6_N6
+J1L1 = D1_IR[1] & (G3_q_output[0] # D1_IR[0]) # !D1_IR[1] & (G1_q_output[0] & !D1_IR[0]);
+
+
+--J1L2 is regfile:G_REGFILE|mux_4_to_1:muxB|output[0]~113 at LCCOMB_X36_Y7_N28
+J1L2 = D1_IR[0] & (J1L1 & (G4_q_output[0]) # !J1L1 & G2_q_output[0]) # !D1_IR[0] & (J1L1);
+
+
+--C1L52 is exe_unit:G_EXE|Mem_Addr[7]~115 at LCCOMB_X38_Y8_N6
+C1L52 = D1_state.s1 # !D1_IR[6] & C1L36;
+
+
+--J2L1 is regfile:G_REGFILE|mux_4_to_1:muxA|output[0]~112 at LCCOMB_X36_Y7_N0
+J2L1 = D1_IR[2] & (D1_IR[3]) # !D1_IR[2] & (D1_IR[3] & (G3_q_output[0]) # !D1_IR[3] & G1_q_output[0]);
+
+
+--J2L2 is regfile:G_REGFILE|mux_4_to_1:muxA|output[0]~113 at LCCOMB_X36_Y7_N4
+J2L2 = D1_IR[2] & (J2L1 & G4_q_output[0] # !J2L1 & (G2_q_output[0])) # !D1_IR[2] & (J2L1);
+
+
+--C1L37 is exe_unit:G_EXE|Mem_Addr[0]~116 at LCCOMB_X38_Y8_N2
+C1L37 = C1L52 & (C1L51 # J1L2) # !C1L52 & J2L2 & !C1L51;
+
+
+--C1L38 is exe_unit:G_EXE|Mem_Addr[0]~117 at LCCOMB_X38_Y8_N20
+C1L38 = C1L37 & (D1_pc[0] # !C1L51) # !C1L37 & (C1L51 & D1L1);
+
+
+--J1L3 is regfile:G_REGFILE|mux_4_to_1:muxB|output[1]~114 at LCCOMB_X36_Y7_N22
+J1L3 = D1_IR[0] & (D1_IR[1] # G2_q_output[1]) # !D1_IR[0] & !D1_IR[1] & (G1_q_output[1]);
+
+
+--J1L4 is regfile:G_REGFILE|mux_4_to_1:muxB|output[1]~115 at LCCOMB_X36_Y7_N26
+J1L4 = D1_IR[1] & (J1L3 & G4_q_output[1] # !J1L3 & (G3_q_output[1])) # !D1_IR[1] & (J1L3);
+
+
+--D1L3 is instru_fetch:G_INSTRU_FETCH|add~231 at LCCOMB_X37_Y9_N12
+D1L3 = D1_pc[1] & !D1L2 # !D1_pc[1] & (D1L2 # GND);
+
+--D1L4 is instru_fetch:G_INSTRU_FETCH|add~232 at LCCOMB_X37_Y9_N12
+D1L4 = CARRY(!D1L2 # !D1_pc[1]);
+
+
+--J2L3 is regfile:G_REGFILE|mux_4_to_1:muxA|output[1]~114 at LCCOMB_X38_Y7_N28
+J2L3 = D1_IR[2] & D1_IR[3] # !D1_IR[2] & (D1_IR[3] & (G3_q_output[1]) # !D1_IR[3] & G1_q_output[1]);
+
+
+--J2L4 is regfile:G_REGFILE|mux_4_to_1:muxA|output[1]~115 at LCCOMB_X38_Y7_N8
+J2L4 = J2L3 & (G4_q_output[1] # !D1_IR[2]) # !J2L3 & G2_q_output[1] & (D1_IR[2]);
+
+
+--C1L39 is exe_unit:G_EXE|Mem_Addr[1]~118 at LCCOMB_X35_Y9_N14
+C1L39 = C1L51 & (C1L52 # D1L3) # !C1L51 & !C1L52 & J2L4;
+
+
+--C1L40 is exe_unit:G_EXE|Mem_Addr[1]~119 at LCCOMB_X36_Y9_N4
+C1L40 = C1L52 & (C1L39 & D1_pc[1] # !C1L39 & (J1L4)) # !C1L52 & (C1L39);
+
+
+--D1L5 is instru_fetch:G_INSTRU_FETCH|add~233 at LCCOMB_X37_Y9_N14
+D1L5 = D1_pc[2] & (D1L4 $ GND) # !D1_pc[2] & !D1L4 & VCC;
+
+--D1L6 is instru_fetch:G_INSTRU_FETCH|add~234 at LCCOMB_X37_Y9_N14
+D1L6 = CARRY(D1_pc[2] & !D1L4);
+
+
+--J1L5 is regfile:G_REGFILE|mux_4_to_1:muxB|output[2]~116 at LCCOMB_X36_Y8_N22
+J1L5 = D1_IR[0] & (D1_IR[1]) # !D1_IR[0] & (D1_IR[1] & (G3_q_output[2]) # !D1_IR[1] & G1_q_output[2]);
+
+
+--J1L6 is regfile:G_REGFILE|mux_4_to_1:muxB|output[2]~117 at LCCOMB_X36_Y6_N28
+J1L6 = J1L5 & (G4_q_output[2] # !D1_IR[0]) # !J1L5 & (G2_q_output[2] & D1_IR[0]);
+
+
+--J2L5 is regfile:G_REGFILE|mux_4_to_1:muxA|output[2]~116 at LCCOMB_X36_Y8_N26
+J2L5 = D1_IR[2] & D1_IR[3] # !D1_IR[2] & (D1_IR[3] & (G3_q_output[2]) # !D1_IR[3] & G1_q_output[2]);
+
+
+--J2L6 is regfile:G_REGFILE|mux_4_to_1:muxA|output[2]~117 at LCCOMB_X37_Y8_N22
+J2L6 = D1_IR[2] & (J2L5 & G4_q_output[2] # !J2L5 & (G2_q_output[2])) # !D1_IR[2] & (J2L5);
+
+
+--C1L41 is exe_unit:G_EXE|Mem_Addr[2]~120 at LCCOMB_X35_Y9_N0
+C1L41 = C1L51 & C1L52 # !C1L51 & (C1L52 & J1L6 # !C1L52 & (J2L6));
+
+
+--C1L42 is exe_unit:G_EXE|Mem_Addr[2]~121 at LCCOMB_X35_Y9_N8
+C1L42 = C1L51 & (C1L41 & (D1_pc[2]) # !C1L41 & D1L5) # !C1L51 & (C1L41);
+
+
+--J1L7 is regfile:G_REGFILE|mux_4_to_1:muxB|output[3]~118 at LCCOMB_X35_Y6_N24
+J1L7 = D1_IR[0] & (D1_IR[1] # G2_q_output[3]) # !D1_IR[0] & !D1_IR[1] & (G1_q_output[3]);
+
+
+--J1L8 is regfile:G_REGFILE|mux_4_to_1:muxB|output[3]~119 at LCCOMB_X36_Y6_N22
+J1L8 = D1_IR[1] & (J1L7 & G4_q_output[3] # !J1L7 & (G3_q_output[3])) # !D1_IR[1] & (J1L7);
+
+
+--D1L7 is instru_fetch:G_INSTRU_FETCH|add~235 at LCCOMB_X37_Y9_N16
+D1L7 = D1_pc[3] & !D1L6 # !D1_pc[3] & (D1L6 # GND);
+
+--D1L8 is instru_fetch:G_INSTRU_FETCH|add~236 at LCCOMB_X37_Y9_N16
+D1L8 = CARRY(!D1L6 # !D1_pc[3]);
+
+
+--J2L7 is regfile:G_REGFILE|mux_4_to_1:muxA|output[3]~118 at LCCOMB_X36_Y8_N2
+J2L7 = D1_IR[3] & (G3_q_output[3] # D1_IR[2]) # !D1_IR[3] & G1_q_output[3] & (!D1_IR[2]);
+
+
+--J2L8 is regfile:G_REGFILE|mux_4_to_1:muxA|output[3]~119 at LCCOMB_X36_Y8_N14
+J2L8 = D1_IR[2] & (J2L7 & (G4_q_output[3]) # !J2L7 & G2_q_output[3]) # !D1_IR[2] & (J2L7);
+
+
+--C1L43 is exe_unit:G_EXE|Mem_Addr[3]~122 at LCCOMB_X36_Y9_N6
+C1L43 = C1L51 & (D1L7 # C1L52) # !C1L51 & J2L8 & (!C1L52);
+
+
+--C1L44 is exe_unit:G_EXE|Mem_Addr[3]~123 at LCCOMB_X36_Y9_N24
+C1L44 = C1L43 & (D1_pc[3] # !C1L52) # !C1L43 & (J1L8 & C1L52);
+
+
+--D1L9 is instru_fetch:G_INSTRU_FETCH|add~237 at LCCOMB_X37_Y9_N18
+D1L9 = D1_pc[4] & (D1L8 $ GND) # !D1_pc[4] & !D1L8 & VCC;
+
+--D1L10 is instru_fetch:G_INSTRU_FETCH|add~238 at LCCOMB_X37_Y9_N18
+D1L10 = CARRY(D1_pc[4] & !D1L8);
+
+
+--J1L9 is regfile:G_REGFILE|mux_4_to_1:muxB|output[4]~120 at LCCOMB_X36_Y6_N18
+J1L9 = D1_IR[0] & (D1_IR[1]) # !D1_IR[0] & (D1_IR[1] & (G3_q_output[4]) # !D1_IR[1] & G1_q_output[4]);
+
+
+--J1L10 is regfile:G_REGFILE|mux_4_to_1:muxB|output[4]~121 at LCCOMB_X35_Y7_N24
+J1L10 = J1L9 & (G4_q_output[4] # !D1_IR[0]) # !J1L9 & D1_IR[0] & (G2_q_output[4]);
+
+
+--J2L9 is regfile:G_REGFILE|mux_4_to_1:muxA|output[4]~120 at LCCOMB_X36_Y8_N16
+J2L9 = D1_IR[2] & (D1_IR[3]) # !D1_IR[2] & (D1_IR[3] & (G3_q_output[4]) # !D1_IR[3] & G1_q_output[4]);
+
+
+--J2L10 is regfile:G_REGFILE|mux_4_to_1:muxA|output[4]~121 at LCCOMB_X37_Y8_N26
+J2L10 = D1_IR[2] & (J2L9 & G4_q_output[4] # !J2L9 & (G2_q_output[4])) # !D1_IR[2] & (J2L9);
+
+
+--C1L45 is exe_unit:G_EXE|Mem_Addr[4]~124 at LCCOMB_X36_Y9_N22
+C1L45 = C1L51 & C1L52 # !C1L51 & (C1L52 & (J1L10) # !C1L52 & J2L10);
+
+
+--C1L46 is exe_unit:G_EXE|Mem_Addr[4]~125 at LCCOMB_X36_Y9_N26
+C1L46 = C1L45 & (D1_pc[4] # !C1L51) # !C1L45 & (D1L9 & C1L51);
+
+
+--J1L11 is regfile:G_REGFILE|mux_4_to_1:muxB|output[5]~122 at LCCOMB_X36_Y6_N10
+J1L11 = D1_IR[0] & (G2_q_output[5] # D1_IR[1]) # !D1_IR[0] & (!D1_IR[1] & G1_q_output[5]);
+
+
+--J1L12 is regfile:G_REGFILE|mux_4_to_1:muxB|output[5]~123 at LCCOMB_X35_Y7_N22
+J1L12 = J1L11 & (G4_q_output[5] # !D1_IR[1]) # !J1L11 & G3_q_output[5] & (D1_IR[1]);
+
+
+--D1L11 is instru_fetch:G_INSTRU_FETCH|add~239 at LCCOMB_X37_Y9_N20
+D1L11 = D1_pc[5] & !D1L10 # !D1_pc[5] & (D1L10 # GND);
+
+--D1L12 is instru_fetch:G_INSTRU_FETCH|add~240 at LCCOMB_X37_Y9_N20
+D1L12 = CARRY(!D1L10 # !D1_pc[5]);
+
+
+--J2L11 is regfile:G_REGFILE|mux_4_to_1:muxA|output[5]~122 at LCCOMB_X37_Y8_N30
+J2L11 = D1_IR[2] & (G2_q_output[5] # D1_IR[3]) # !D1_IR[2] & G1_q_output[5] & (!D1_IR[3]);
+
+
+--J2L12 is regfile:G_REGFILE|mux_4_to_1:muxA|output[5]~123 at LCCOMB_X36_Y8_N4
+J2L12 = D1_IR[3] & (J2L11 & G4_q_output[5] # !J2L11 & (G3_q_output[5])) # !D1_IR[3] & (J2L11);
+
+
+--C1L47 is exe_unit:G_EXE|Mem_Addr[5]~126 at LCCOMB_X36_Y9_N2
+C1L47 = C1L51 & (D1L11 # C1L52) # !C1L51 & J2L12 & (!C1L52);
+
+
+--C1L48 is exe_unit:G_EXE|Mem_Addr[5]~127 at LCCOMB_X36_Y9_N0
+C1L48 = C1L52 & (C1L47 & (D1_pc[5]) # !C1L47 & J1L12) # !C1L52 & (C1L47);
+
+
+--D1L13 is instru_fetch:G_INSTRU_FETCH|add~241 at LCCOMB_X37_Y9_N22
+D1L13 = D1_pc[6] & (D1L12 $ GND) # !D1_pc[6] & !D1L12 & VCC;
+
+--D1L14 is instru_fetch:G_INSTRU_FETCH|add~242 at LCCOMB_X37_Y9_N22
+D1L14 = CARRY(D1_pc[6] & !D1L12);
+
+
+--J1L13 is regfile:G_REGFILE|mux_4_to_1:muxB|output[6]~124 at LCCOMB_X36_Y6_N14
+J1L13 = D1_IR[1] & (G3_q_output[6] # D1_IR[0]) # !D1_IR[1] & G1_q_output[6] & (!D1_IR[0]);
+
+
+--J1L14 is regfile:G_REGFILE|mux_4_to_1:muxB|output[6]~125 at LCCOMB_X35_Y7_N6
+J1L14 = D1_IR[0] & (J1L13 & (G4_q_output[6]) # !J1L13 & G2_q_output[6]) # !D1_IR[0] & (J1L13);
+
+
+--J2L13 is regfile:G_REGFILE|mux_4_to_1:muxA|output[6]~124 at LCCOMB_X36_Y8_N12
+J2L13 = D1_IR[2] & (D1_IR[3]) # !D1_IR[2] & (D1_IR[3] & G3_q_output[6] # !D1_IR[3] & (G1_q_output[6]));
+
+
+--J2L14 is regfile:G_REGFILE|mux_4_to_1:muxA|output[6]~125 at LCCOMB_X37_Y8_N28
+J2L14 = D1_IR[2] & (J2L13 & G4_q_output[6] # !J2L13 & (G2_q_output[6])) # !D1_IR[2] & (J2L13);
+
+
+--C1L49 is exe_unit:G_EXE|Mem_Addr[6]~128 at LCCOMB_X37_Y9_N6
+C1L49 = C1L52 & (J1L14 # C1L51) # !C1L52 & (J2L14 & !C1L51);
+
+
+--C1L50 is exe_unit:G_EXE|Mem_Addr[6]~129 at LCCOMB_X37_Y9_N0
+C1L50 = C1L49 & (D1_pc[6] # !C1L51) # !C1L49 & (C1L51 & D1L13);
+
+
+--J1L15 is regfile:G_REGFILE|mux_4_to_1:muxB|output[7]~126 at LCCOMB_X36_Y6_N8
+J1L15 = D1_IR[1] & (D1_IR[0]) # !D1_IR[1] & (D1_IR[0] & G2_q_output[7] # !D1_IR[0] & (G1_q_output[7]));
+
+
+--J1L16 is regfile:G_REGFILE|mux_4_to_1:muxB|output[7]~127 at LCCOMB_X35_Y6_N10
+J1L16 = J1L15 & (G4_q_output[7] # !D1_IR[1]) # !J1L15 & G3_q_output[7] & (D1_IR[1]);
+
+
+--D1L15 is instru_fetch:G_INSTRU_FETCH|add~243 at LCCOMB_X37_Y9_N24
+D1L15 = D1L14 $ D1_pc[7];
+
+
+--J2L15 is regfile:G_REGFILE|mux_4_to_1:muxA|output[7]~126 at LCCOMB_X36_Y8_N10
+J2L15 = D1_IR[2] & (G2_q_output[7] # D1_IR[3]) # !D1_IR[2] & (G1_q_output[7] & !D1_IR[3]);
+
+
+--J2L16 is regfile:G_REGFILE|mux_4_to_1:muxA|output[7]~127 at LCCOMB_X36_Y8_N6
+J2L16 = J2L15 & (G4_q_output[7] # !D1_IR[3]) # !J2L15 & (G3_q_output[7] & D1_IR[3]);
+
+
+--C1L53 is exe_unit:G_EXE|Mem_Addr[7]~130 at LCCOMB_X36_Y9_N28
+C1L53 = C1L51 & (D1L15 # C1L52) # !C1L51 & J2L16 & (!C1L52);
+
+
+--C1L54 is exe_unit:G_EXE|Mem_Addr[7]~131 at LCCOMB_X36_Y9_N30
+C1L54 = C1L53 & (D1_pc[7] # !C1L52) # !C1L53 & J1L16 & (C1L52);
+
+
+--C1L1 is exe_unit:G_EXE|add~259 at LCCOMB_X37_Y8_N0
+C1L1 = D1_IR[0] & (D1L1 $ VCC) # !D1_IR[0] & D1L1 & VCC;
+
+--C1L2 is exe_unit:G_EXE|add~260 at LCCOMB_X37_Y8_N0
+C1L2 = CARRY(D1_IR[0] & D1L1);
+
+
+--B1L2 is decoder_unit:G_DECODER|dw_instruct~19 at LCCOMB_X37_Y7_N14
+B1L2 = D1_IR[5] & D1_IR[4] & D1_IR[7];
+
+
+--D1L53 is instru_fetch:G_INSTRU_FETCH|pc~564 at LCCOMB_X38_Y8_N18
+D1L53 = D1_IR[6] & C1L36 & (!F1_z_out) # !D1_IR[6] & (D1_pc[0]);
+
+
+--D1L54 is instru_fetch:G_INSTRU_FETCH|pc~565 at LCCOMB_X38_Y8_N0
+D1L54 = D1_IR[6] & (B1L2 & E1_data_read[0] # !B1L2 & (D1L53)) # !D1_IR[6] & (B1L2 & D1L53);
+
+
+--D1L55 is instru_fetch:G_INSTRU_FETCH|pc~566 at LCCOMB_X38_Y8_N10
+D1L55 = B1L2 & (D1L54) # !B1L2 & (D1L54 & C1L1 # !D1L54 & (D1L1));
+
+
+--D1_state.s0 is instru_fetch:G_INSTRU_FETCH|state.s0 at LCFF_X38_Y8_N29
+D1_state.s0 = DFFEAS(D1L71, GLOBAL(A1L12), GLOBAL(A1L93),  ,  ,  ,  ,  ,  );
+
+
+--D1L77 is instru_fetch:G_INSTRU_FETCH|state~0 at LCCOMB_X38_Y8_N4
+D1L77 = D1_state.s3 # !D1_state.s0;
+
+
+--C1L69 is exe_unit:G_EXE|result[7]~1570 at LCCOMB_X36_Y7_N2
+C1L69 = !D1_IR[7] & (D1_IR[4] & (!D1_IR[5] # !D1_IR[6]) # !D1_IR[4] & (D1_IR[6] # D1_IR[5]));
+
+
+--C1L3 is exe_unit:G_EXE|add~261 at LCCOMB_X35_Y8_N0
+C1L3 = J1L2 & (J2L2 $ VCC) # !J1L2 & J2L2 & VCC;
+
+--C1L4 is exe_unit:G_EXE|add~262 at LCCOMB_X35_Y8_N0
+C1L4 = CARRY(J1L2 & J2L2);
+
+
+--B1L3 is decoder_unit:G_DECODER|op_code[0]~38 at LCCOMB_X36_Y7_N24
+B1L3 = D1_IR[7] # !D1_IR[4];
+
+
+--C1L55 is exe_unit:G_EXE|result[0]~1571 at LCCOMB_X36_Y7_N20
+C1L55 = C1L69 & (J1L2) # !C1L69 & !B1L3 & C1L3;
+
+
+--C1L56 is exe_unit:G_EXE|result[0]~1572 at LCCOMB_X36_Y7_N18
+C1L56 = C1L55 # B1L3 & !C1L69 & J2L2;
+
+
+--B1L1 is decoder_unit:G_DECODER|DRWr_proc~2 at LCCOMB_X36_Y8_N0
+B1L1 = !D1_IR[6] & D1_IR[5];
+
+
+--E1L10 is memory_unit:G_MEMORY|DR_data_out[0]~880 at LCCOMB_X35_Y6_N26
+E1L10 = D1_IR[7] & (B1L1 & E1_data_read[0] # !B1L1 & (C1L56)) # !D1_IR[7] & (C1L56);
+
+
+--H1L1 is regfile:G_REGFILE|decoder_2_to_4:des_decoder|sel02~86 at LCCOMB_X36_Y8_N28
+H1L1 = !D1_IR[1] & D1_IR[0] & (B1L1 # !D1_IR[7]);
+
+
+--H1L2 is regfile:G_REGFILE|decoder_2_to_4:des_decoder|sel02~87 at LCCOMB_X36_Y8_N18
+H1L2 = D1_IR[1] & !D1_IR[0] & (B1L1 # !D1_IR[7]);
+
+
+--G1L1 is regfile:G_REGFILE|reg:Areg00|process0~0 at LCCOMB_X36_Y6_N2
+G1L1 = !D1_IR[1] & !D1_IR[0] & (B1L1 # !D1_IR[7]);
+
+
+--H1L3 is regfile:G_REGFILE|decoder_2_to_4:des_decoder|sel02~88 at LCCOMB_X36_Y6_N26
+H1L3 = D1_IR[1] & D1_IR[0] & (B1L1 # !D1_IR[7]);
+
+
+--D1L17 is instru_fetch:G_INSTRU_FETCH|add~245 at LCCOMB_X36_Y9_N8
+D1L17 = D1_pc[1] $ VCC;
+
+--D1L18 is instru_fetch:G_INSTRU_FETCH|add~246 at LCCOMB_X36_Y9_N8
+D1L18 = CARRY(D1_pc[1]);
+
+
+--C1L5 is exe_unit:G_EXE|add~263 at LCCOMB_X37_Y8_N2
+C1L5 = D1_IR[1] & (D1L3 & C1L2 & VCC # !D1L3 & !C1L2) # !D1_IR[1] & (D1L3 & !C1L2 # !D1L3 & (C1L2 # GND));
+
+--C1L6 is exe_unit:G_EXE|add~264 at LCCOMB_X37_Y8_N2
+C1L6 = CARRY(D1_IR[1] & !D1L3 & !C1L2 # !D1_IR[1] & (!C1L2 # !D1L3));
+
+
+--D1L46 is instru_fetch:G_INSTRU_FETCH|pc[1]~567 at LCCOMB_X37_Y7_N12
+D1L46 = D1_IR[6] & (B1L2 $ (C1L36 & !F1_z_out));
+
+
+--D1L56 is instru_fetch:G_INSTRU_FETCH|pc~568 at LCCOMB_X37_Y7_N0
+D1L56 = D1L46 & (B1L2 # C1L5) # !D1L46 & !B1L2 & (D1L3);
+
+
+--D1L57 is instru_fetch:G_INSTRU_FETCH|pc~569 at LCCOMB_X37_Y7_N8
+D1L57 = B1L2 & (D1L56 & E1_data_read[1] # !D1L56 & (D1L17)) # !B1L2 & (D1L56);
+
+
+--C1L7 is exe_unit:G_EXE|add~265 at LCCOMB_X35_Y8_N2
+C1L7 = J1L4 & (J2L4 & C1L4 & VCC # !J2L4 & !C1L4) # !J1L4 & (J2L4 & !C1L4 # !J2L4 & (C1L4 # GND));
+
+--C1L8 is exe_unit:G_EXE|add~266 at LCCOMB_X35_Y8_N2
+C1L8 = CARRY(J1L4 & !J2L4 & !C1L4 # !J1L4 & (!C1L4 # !J2L4));
+
+
+--C1L57 is exe_unit:G_EXE|result[1]~1573 at LCCOMB_X36_Y7_N6
+C1L57 = C1L69 & (J1L4) # !C1L69 & !B1L3 & (C1L7);
+
+
+--C1L58 is exe_unit:G_EXE|result[1]~1574 at LCCOMB_X36_Y7_N8
+C1L58 = C1L57 # B1L3 & J2L4 & !C1L69;
+
+
+--E1L11 is memory_unit:G_MEMORY|DR_data_out[1]~881 at LCCOMB_X36_Y7_N14
+E1L11 = D1_IR[7] & (B1L1 & (E1_data_read[1]) # !B1L1 & C1L58) # !D1_IR[7] & C1L58;
+
+
+--C1L9 is exe_unit:G_EXE|add~267 at LCCOMB_X37_Y8_N4
+C1L9 = (D1_IR[2] $ D1L5 $ !C1L6) # GND;
+
+--C1L10 is exe_unit:G_EXE|add~268 at LCCOMB_X37_Y8_N4
+C1L10 = CARRY(D1_IR[2] & (D1L5 # !C1L6) # !D1_IR[2] & D1L5 & !C1L6);
+
+
+--D1L19 is instru_fetch:G_INSTRU_FETCH|add~247 at LCCOMB_X36_Y9_N10
+D1L19 = D1_pc[2] & !D1L18 # !D1_pc[2] & (D1L18 # GND);
+
+--D1L20 is instru_fetch:G_INSTRU_FETCH|add~248 at LCCOMB_X36_Y9_N10
+D1L20 = CARRY(!D1L18 # !D1_pc[2]);
+
+
+--D1L58 is instru_fetch:G_INSTRU_FETCH|pc~570 at LCCOMB_X37_Y7_N28
+D1L58 = D1L46 & (B1L2) # !D1L46 & (B1L2 & (D1L19) # !B1L2 & D1L5);
+
+
+--D1L59 is instru_fetch:G_INSTRU_FETCH|pc~571 at LCCOMB_X37_Y7_N26
+D1L59 = D1L58 & (E1_data_read[2] # !D1L46) # !D1L58 & (D1L46 & C1L9);
+
+
+--C1L11 is exe_unit:G_EXE|add~269 at LCCOMB_X35_Y8_N4
+C1L11 = (J2L6 $ J1L6 $ !C1L8) # GND;
+
+--C1L12 is exe_unit:G_EXE|add~270 at LCCOMB_X35_Y8_N4
+C1L12 = CARRY(J2L6 & (J1L6 # !C1L8) # !J2L6 & J1L6 & !C1L8);
+
+
+--C1L59 is exe_unit:G_EXE|result[2]~1575 at LCCOMB_X36_Y6_N16
+C1L59 = C1L69 & (J1L6) # !C1L69 & !B1L3 & C1L11;
+
+
+--C1L60 is exe_unit:G_EXE|result[2]~1576 at LCCOMB_X36_Y6_N30
+C1L60 = C1L59 # J2L6 & B1L3 & !C1L69;
+
+
+--E1L12 is memory_unit:G_MEMORY|DR_data_out[2]~882 at LCCOMB_X35_Y6_N6
+E1L12 = D1_IR[7] & (B1L1 & (E1_data_read[2]) # !B1L1 & C1L60) # !D1_IR[7] & C1L60;
+
+
+--D1L21 is instru_fetch:G_INSTRU_FETCH|add~249 at LCCOMB_X36_Y9_N12
+D1L21 = D1_pc[3] & (D1L20 $ GND) # !D1_pc[3] & !D1L20 & VCC;
+
+--D1L22 is instru_fetch:G_INSTRU_FETCH|add~250 at LCCOMB_X36_Y9_N12
+D1L22 = CARRY(D1_pc[3] & !D1L20);
+
+
+--C1L13 is exe_unit:G_EXE|add~271 at LCCOMB_X37_Y8_N6
+C1L13 = D1L7 & (D1_IR[3] & C1L10 & VCC # !D1_IR[3] & !C1L10) # !D1L7 & (D1_IR[3] & !C1L10 # !D1_IR[3] & (C1L10 # GND));
+
+--C1L14 is exe_unit:G_EXE|add~272 at LCCOMB_X37_Y8_N6
+C1L14 = CARRY(D1L7 & !D1_IR[3] & !C1L10 # !D1L7 & (!C1L10 # !D1_IR[3]));
+
+
+--D1L60 is instru_fetch:G_INSTRU_FETCH|pc~572 at LCCOMB_X37_Y7_N6
+D1L60 = D1L46 & (C1L13 # B1L2) # !D1L46 & (!B1L2 & D1L7);
+
+
+--D1L61 is instru_fetch:G_INSTRU_FETCH|pc~573 at LCCOMB_X37_Y7_N4
+D1L61 = D1L60 & (E1_data_read[3] # !B1L2) # !D1L60 & B1L2 & (D1L21);
+
+
+--C1L15 is exe_unit:G_EXE|add~273 at LCCOMB_X35_Y8_N6
+C1L15 = J1L8 & (J2L8 & C1L12 & VCC # !J2L8 & !C1L12) # !J1L8 & (J2L8 & !C1L12 # !J2L8 & (C1L12 # GND));
+
+--C1L16 is exe_unit:G_EXE|add~274 at LCCOMB_X35_Y8_N6
+C1L16 = CARRY(J1L8 & !J2L8 & !C1L12 # !J1L8 & (!C1L12 # !J2L8));
+
+
+--C1L61 is exe_unit:G_EXE|result[3]~1577 at LCCOMB_X36_Y6_N24
+C1L61 = C1L69 & (J1L8) # !C1L69 & C1L15 & (!B1L3);
+
+
+--C1L62 is exe_unit:G_EXE|result[3]~1578 at LCCOMB_X36_Y6_N0
+C1L62 = C1L61 # J2L8 & B1L3 & !C1L69;
+
+
+--E1L13 is memory_unit:G_MEMORY|DR_data_out[3]~883 at LCCOMB_X35_Y6_N4
+E1L13 = D1_IR[7] & (B1L1 & (E1_data_read[3]) # !B1L1 & C1L62) # !D1_IR[7] & C1L62;
+
+
+--C1L17 is exe_unit:G_EXE|add~275 at LCCOMB_X37_Y8_N8
+C1L17 = (D1L9 $ D1_IR[3] $ !C1L14) # GND;
+
+--C1L18 is exe_unit:G_EXE|add~276 at LCCOMB_X37_Y8_N8
+C1L18 = CARRY(D1L9 & (D1_IR[3] # !C1L14) # !D1L9 & D1_IR[3] & !C1L14);
+
+
+--D1L23 is instru_fetch:G_INSTRU_FETCH|add~251 at LCCOMB_X36_Y9_N14
+D1L23 = D1_pc[4] & !D1L22 # !D1_pc[4] & (D1L22 # GND);
+
+--D1L24 is instru_fetch:G_INSTRU_FETCH|add~252 at LCCOMB_X36_Y9_N14
+D1L24 = CARRY(!D1L22 # !D1_pc[4]);
+
+
+--D1L62 is instru_fetch:G_INSTRU_FETCH|pc~574 at LCCOMB_X37_Y7_N10
+D1L62 = D1L46 & B1L2 # !D1L46 & (B1L2 & (D1L23) # !B1L2 & D1L9);
+
+
+--D1L63 is instru_fetch:G_INSTRU_FETCH|pc~575 at LCCOMB_X37_Y7_N22
+D1L63 = D1L46 & (D1L62 & (E1_data_read[4]) # !D1L62 & C1L17) # !D1L46 & (D1L62);
+
+
+--C1L19 is exe_unit:G_EXE|add~277 at LCCOMB_X35_Y8_N8
+C1L19 = (J1L10 $ J2L10 $ !C1L16) # GND;
+
+--C1L20 is exe_unit:G_EXE|add~278 at LCCOMB_X35_Y8_N8
+C1L20 = CARRY(J1L10 & (J2L10 # !C1L16) # !J1L10 & J2L10 & !C1L16);
+
+
+--C1L63 is exe_unit:G_EXE|result[4]~1579 at LCCOMB_X36_Y7_N30
+C1L63 = C1L69 & (J1L10) # !C1L69 & !B1L3 & (C1L19);
+
+
+--C1L64 is exe_unit:G_EXE|result[4]~1580 at LCCOMB_X36_Y7_N16
+C1L64 = C1L63 # B1L3 & !C1L69 & J2L10;
+
+
+--E1L14 is memory_unit:G_MEMORY|DR_data_out[4]~884 at LCCOMB_X36_Y6_N12
+E1L14 = D1_IR[7] & (B1L1 & E1_data_read[4] # !B1L1 & (C1L64)) # !D1_IR[7] & (C1L64);
+
+
+--D1L25 is instru_fetch:G_INSTRU_FETCH|add~253 at LCCOMB_X36_Y9_N16
+D1L25 = D1_pc[5] & (D1L24 $ GND) # !D1_pc[5] & !D1L24 & VCC;
+
+--D1L26 is instru_fetch:G_INSTRU_FETCH|add~254 at LCCOMB_X36_Y9_N16
+D1L26 = CARRY(D1_pc[5] & !D1L24);
+
+
+--C1L21 is exe_unit:G_EXE|add~279 at LCCOMB_X37_Y8_N10
+C1L21 = D1_IR[3] & (D1L11 & C1L18 & VCC # !D1L11 & !C1L18) # !D1_IR[3] & (D1L11 & !C1L18 # !D1L11 & (C1L18 # GND));
+
+--C1L22 is exe_unit:G_EXE|add~280 at LCCOMB_X37_Y8_N10
+C1L22 = CARRY(D1_IR[3] & !D1L11 & !C1L18 # !D1_IR[3] & (!C1L18 # !D1L11));
+
+
+--D1L64 is instru_fetch:G_INSTRU_FETCH|pc~576 at LCCOMB_X37_Y8_N20
+D1L64 = B1L2 & (D1L46) # !B1L2 & (D1L46 & C1L21 # !D1L46 & (D1L11));
+
+
+--D1L65 is instru_fetch:G_INSTRU_FETCH|pc~577 at LCCOMB_X37_Y9_N4
+D1L65 = B1L2 & (D1L64 & E1_data_read[5] # !D1L64 & (D1L25)) # !B1L2 & (D1L64);
+
+
+--C1L23 is exe_unit:G_EXE|add~281 at LCCOMB_X35_Y8_N10
+C1L23 = J2L12 & (J1L12 & C1L20 & VCC # !J1L12 & !C1L20) # !J2L12 & (J1L12 & !C1L20 # !J1L12 & (C1L20 # GND));
+
+--C1L24 is exe_unit:G_EXE|add~282 at LCCOMB_X35_Y8_N10
+C1L24 = CARRY(J2L12 & !J1L12 & !C1L20 # !J2L12 & (!C1L20 # !J1L12));
+
+
+--C1L65 is exe_unit:G_EXE|result[5]~1581 at LCCOMB_X36_Y7_N10
+C1L65 = C1L69 & (J1L12) # !C1L69 & C1L23 & !B1L3;
+
+
+--C1L66 is exe_unit:G_EXE|result[5]~1582 at LCCOMB_X36_Y8_N30
+C1L66 = C1L65 # B1L3 & J2L12 & !C1L69;
+
+
+--E1L15 is memory_unit:G_MEMORY|DR_data_out[5]~885 at LCCOMB_X36_Y8_N8
+E1L15 = D1_IR[7] & (B1L1 & (E1_data_read[5]) # !B1L1 & C1L66) # !D1_IR[7] & C1L66;
+
+
+--C1L25 is exe_unit:G_EXE|add~283 at LCCOMB_X37_Y8_N12
+C1L25 = (D1L13 $ D1_IR[3] $ !C1L22) # GND;
+
+--C1L26 is exe_unit:G_EXE|add~284 at LCCOMB_X37_Y8_N12
+C1L26 = CARRY(D1L13 & (D1_IR[3] # !C1L22) # !D1L13 & D1_IR[3] & !C1L22);
+
+
+--D1L27 is instru_fetch:G_INSTRU_FETCH|add~255 at LCCOMB_X36_Y9_N18
+D1L27 = D1_pc[6] & !D1L26 # !D1_pc[6] & (D1L26 # GND);
+
+--D1L28 is instru_fetch:G_INSTRU_FETCH|add~256 at LCCOMB_X36_Y9_N18
+D1L28 = CARRY(!D1L26 # !D1_pc[6]);
+
+
+--D1L66 is instru_fetch:G_INSTRU_FETCH|pc~578 at LCCOMB_X37_Y9_N26
+D1L66 = D1L46 & (B1L2) # !D1L46 & (B1L2 & (D1L27) # !B1L2 & D1L13);
+
+
+--D1L67 is instru_fetch:G_INSTRU_FETCH|pc~579 at LCCOMB_X37_Y9_N28
+D1L67 = D1L46 & (D1L66 & E1_data_read[6] # !D1L66 & (C1L25)) # !D1L46 & D1L66;
+
+
+--C1L27 is exe_unit:G_EXE|add~285 at LCCOMB_X35_Y8_N12
+C1L27 = (J2L14 $ J1L14 $ !C1L24) # GND;
+
+--C1L28 is exe_unit:G_EXE|add~286 at LCCOMB_X35_Y8_N12
+C1L28 = CARRY(J2L14 & (J1L14 # !C1L24) # !J2L14 & J1L14 & !C1L24);
+
+
+--C1L67 is exe_unit:G_EXE|result[6]~1583 at LCCOMB_X35_Y8_N28
+C1L67 = C1L69 & J1L14 # !C1L69 & (!B1L3 & C1L27);
+
+
+--C1L68 is exe_unit:G_EXE|result[6]~1584 at LCCOMB_X35_Y8_N24
+C1L68 = C1L67 # !C1L69 & B1L3 & J2L14;
+
+
+--E1L16 is memory_unit:G_MEMORY|DR_data_out[6]~886 at LCCOMB_X36_Y8_N20
+E1L16 = D1_IR[7] & (B1L1 & E1_data_read[6] # !B1L1 & (C1L68)) # !D1_IR[7] & (C1L68);
+
+
+--D1L29 is instru_fetch:G_INSTRU_FETCH|add~257 at LCCOMB_X36_Y9_N20
+D1L29 = D1L28 $ !D1_pc[7];
+
+
+--C1L29 is exe_unit:G_EXE|add~287 at LCCOMB_X37_Y8_N14
+C1L29 = D1_IR[3] $ C1L26 $ D1L15;
+
+
+--D1L68 is instru_fetch:G_INSTRU_FETCH|pc~580 at LCCOMB_X37_Y8_N16
+D1L68 = D1L46 & (C1L29 # B1L2) # !D1L46 & (!B1L2 & D1L15);
+
+
+--D1L69 is instru_fetch:G_INSTRU_FETCH|pc~581 at LCCOMB_X37_Y9_N30
+D1L69 = D1L68 & (E1_data_read[7] # !B1L2) # !D1L68 & (B1L2 & D1L29);
+
+
+--C1L31 is exe_unit:G_EXE|add~289 at LCCOMB_X35_Y8_N14
+C1L31 = J2L16 & (J1L16 & C1L28 & VCC # !J1L16 & !C1L28) # !J2L16 & (J1L16 & !C1L28 # !J1L16 & (C1L28 # GND));
+
+--C1L32 is exe_unit:G_EXE|add~290 at LCCOMB_X35_Y8_N14
+C1L32 = CARRY(J2L16 & !J1L16 & !C1L28 # !J2L16 & (!C1L28 # !J1L16));
+
+
+--C1L70 is exe_unit:G_EXE|result[7]~1585 at LCCOMB_X35_Y8_N22
+C1L70 = C1L69 & (J1L16) # !C1L69 & !B1L3 & C1L31;
+
+
+--C1L71 is exe_unit:G_EXE|result[7]~1586 at LCCOMB_X35_Y8_N26
+C1L71 = C1L70 # !C1L69 & B1L3 & J2L16;
+
+
+--E1L17 is memory_unit:G_MEMORY|DR_data_out[7]~887 at LCCOMB_X35_Y8_N30
+E1L17 = D1_IR[7] & (B1L1 & E1_data_read[7] # !B1L1 & (C1L71)) # !D1_IR[7] & (C1L71);
+
+
+--C1L33 is exe_unit:G_EXE|add~291 at LCCOMB_X35_Y8_N16
+C1L33 = !C1L32;
+
+
+--C1L35 is exe_unit:G_EXE|c_tmp~24 at LCCOMB_X39_Y8_N10
+C1L35 = !D1_IR[7] & D1_IR[5] & D1_IR[4] & C1L33;
+
+
+--B1L4 is decoder_unit:G_DECODER|op_code[2]~39 at LCCOMB_X38_Y8_N30
+B1L4 = D1_IR[6] & !D1_IR[7];
+
+
+--C1L72 is exe_unit:G_EXE|z_tmp~44 at LCCOMB_X36_Y7_N12
+C1L72 = C1L58 # C1L56;
+
+
+--C1L73 is exe_unit:G_EXE|z_tmp~45 at LCCOMB_X35_Y8_N18
+C1L73 = C1L64 # C1L66 # C1L68 # C1L71;
+
+
+--C1L74 is exe_unit:G_EXE|z_tmp~46 at LCCOMB_X35_Y8_N20
+C1L74 = !C1L72 & !C1L62 & !C1L60 & !C1L73;
+
+
+--E1L18 is memory_unit:G_MEMORY|R_W_Memory_proc~10 at LCCOMB_X38_Y8_N22
+E1L18 = reset & (D1_IR[6] # !D1_state.s3 # !C1L36);
+
+
+--D1L37 is instru_fetch:G_INSTRU_FETCH|IR[4]~65 at LCCOMB_X37_Y7_N2
+D1L37 = !E1_data_read[4];
+
+
+--D1L39 is instru_fetch:G_INSTRU_FETCH|IR[5]~66 at LCCOMB_X37_Y7_N20
+D1L39 = !E1_data_read[5];
+
+
+--D1L41 is instru_fetch:G_INSTRU_FETCH|IR[6]~67 at LCCOMB_X37_Y9_N2
+D1L41 = !E1_data_read[6];
+
+
+--E1_data_read[0] is memory_unit:G_MEMORY|data_read[0] at LCCOMB_X36_Y6_N20
+E1_data_read[0] = GLOBAL(E1L19) & A1L61 # !GLOBAL(E1L19) & (E1_data_read[0]);
+
+
+--E1_data_read[1] is memory_unit:G_MEMORY|data_read[1] at LCCOMB_X36_Y6_N4
+E1_data_read[1] = GLOBAL(E1L19) & A1L63 # !GLOBAL(E1L19) & (E1_data_read[1]);
+
+
+--E1_data_read[2] is memory_unit:G_MEMORY|data_read[2] at LCCOMB_X37_Y8_N18
+E1_data_read[2] = GLOBAL(E1L19) & (A1L65) # !GLOBAL(E1L19) & E1_data_read[2];
+
+
+--E1_data_read[3] is memory_unit:G_MEMORY|data_read[3] at LCCOMB_X37_Y8_N24
+E1_data_read[3] = GLOBAL(E1L19) & A1L67 # !GLOBAL(E1L19) & (E1_data_read[3]);
+
+
+--E1_data_read[4] is memory_unit:G_MEMORY|data_read[4] at LCCOMB_X37_Y7_N18
+E1_data_read[4] = GLOBAL(E1L19) & (A1L69) # !GLOBAL(E1L19) & E1_data_read[4];
+
+
+--E1_data_read[5] is memory_unit:G_MEMORY|data_read[5] at LCCOMB_X37_Y7_N30
+E1_data_read[5] = GLOBAL(E1L19) & A1L71 # !GLOBAL(E1L19) & (E1_data_read[5]);
+
+
+--E1_data_read[6] is memory_unit:G_MEMORY|data_read[6] at LCCOMB_X37_Y9_N8
+E1_data_read[6] = GLOBAL(E1L19) & A1L73 # !GLOBAL(E1L19) & (E1_data_read[6]);
+
+
+--E1_data_read[7] is memory_unit:G_MEMORY|data_read[7] at LCCOMB_X37_Y7_N24
+E1_data_read[7] = GLOBAL(E1L19) & A1L75 # !GLOBAL(E1L19) & (E1_data_read[7]);
+
+
+--reg_sel[2] is reg_sel[2] at PIN_116
+--operation mode is input
+
+reg_sel[2] = INPUT();
+
+
+--reg_sel[1] is reg_sel[1] at PIN_114
+--operation mode is input
+
+reg_sel[1] = INPUT();
+
+
+--reg_sel[3] is reg_sel[3] at PIN_117
+--operation mode is input
+
+reg_sel[3] = INPUT();
+
+
+--reg_sel[0] is reg_sel[0] at PIN_113
+--operation mode is input
+
+reg_sel[0] = INPUT();
+
+
+--reg_sel[4] is reg_sel[4] at PIN_118
+--operation mode is input
+
+reg_sel[4] = INPUT();
+
+
+--reg_sel[5] is reg_sel[5] at PIN_119
+--operation mode is input
+
+reg_sel[5] = INPUT();
+
+
+--clk is clk at PIN_95
+--operation mode is input
+
+clk = INPUT();
+
+
+--reset is reset at PIN_94
+--operation mode is input
+
+reset = INPUT();
+
+
+--reg_content[0] is reg_content[0] at PIN_87
+--operation mode is output
+
+reg_content[0] = OUTPUT(A1L21);
+
+
+--reg_content[1] is reg_content[1] at PIN_86
+--operation mode is output
+
+reg_content[1] = OUTPUT(A1L28);
+
+
+--reg_content[2] is reg_content[2] at PIN_84
+--operation mode is output
+
+reg_content[2] = OUTPUT(A1L35);
+
+
+--reg_content[3] is reg_content[3] at PIN_80
+--operation mode is output
+
+reg_content[3] = OUTPUT(A1L42);
+
+
+--reg_content[4] is reg_content[4] at PIN_79
+--operation mode is output
+
+reg_content[4] = OUTPUT(A1L46);
+
+
+--reg_content[5] is reg_content[5] at PIN_78
+--operation mode is output
+
+reg_content[5] = OUTPUT(A1L50);
+
+
+--reg_content[6] is reg_content[6] at PIN_73
+--operation mode is output
+
+reg_content[6] = OUTPUT(A1L54);
+
+
+--reg_content[7] is reg_content[7] at PIN_72
+--operation mode is output
+
+reg_content[7] = OUTPUT(A1L58);
+
+
+--c_flag is c_flag at PIN_131
+--operation mode is output
+
+c_flag = OUTPUT(F1_c_out);
+
+
+--z_flag is z_flag at PIN_130
+--operation mode is output
+
+z_flag = OUTPUT(F1_z_out);
+
+
+--WE is WE at PIN_6
+--operation mode is output
+
+WE = OUTPUT(E1L21);
+
+
+--AR[0] is AR[0] at PIN_51
+--operation mode is output
+
+AR[0] = OUTPUT(C1L38);
+
+
+--AR[1] is AR[1] at PIN_50
+--operation mode is output
+
+AR[1] = OUTPUT(C1L40);
+
+
+--AR[2] is AR[2] at PIN_49
+--operation mode is output
+
+AR[2] = OUTPUT(C1L42);
+
+
+--AR[3] is AR[3] at PIN_47
+--operation mode is output
+
+AR[3] = OUTPUT(C1L44);
+
+
+--AR[4] is AR[4] at PIN_46
+--operation mode is output
+
+AR[4] = OUTPUT(C1L46);
+
+
+--AR[5] is AR[5] at PIN_44
+--operation mode is output
+
+AR[5] = OUTPUT(C1L48);
+
+
+--AR[6] is AR[6] at PIN_42
+--operation mode is output
+
+AR[6] = OUTPUT(C1L50);
+
+
+--AR[7] is AR[7] at PIN_41
+--operation mode is output
+
+AR[7] = OUTPUT(C1L54);
+
+
+--A1L61 is OB[0]~7 at PIN_238
+--operation mode is bidir
+
+A1L61 = OB[0];
+
+--OB[0] is OB[0] at PIN_238
+--operation mode is bidir
+
+OB[0]_tri_out = TRI(J2L2, E1L20);
+OB[0] = BIDIR(OB[0]_tri_out);
+
+
+--A1L63 is OB[1]~6 at PIN_237
+--operation mode is bidir
+
+A1L63 = OB[1];
+
+--OB[1] is OB[1] at PIN_237
+--operation mode is bidir
+
+OB[1]_tri_out = TRI(J2L4, E1L20);
+OB[1] = BIDIR(OB[1]_tri_out);
+
+
+--A1L65 is OB[2]~5 at PIN_236
+--operation mode is bidir
+
+A1L65 = OB[2];
+
+--OB[2] is OB[2] at PIN_236
+--operation mode is bidir
+
+OB[2]_tri_out = TRI(J2L6, E1L20);
+OB[2] = BIDIR(OB[2]_tri_out);
+
+
+--A1L67 is OB[3]~4 at PIN_235
+--operation mode is bidir
+
+A1L67 = OB[3];
+
+--OB[3] is OB[3] at PIN_235
+--operation mode is bidir
+
+OB[3]_tri_out = TRI(J2L8, E1L20);
+OB[3] = BIDIR(OB[3]_tri_out);
+
+
+--A1L69 is OB[4]~3 at PIN_234
+--operation mode is bidir
+
+A1L69 = OB[4];
+
+--OB[4] is OB[4] at PIN_234
+--operation mode is bidir
+
+OB[4]_tri_out = TRI(J2L10, E1L20);
+OB[4] = BIDIR(OB[4]_tri_out);
+
+
+--A1L71 is OB[5]~2 at PIN_233
+--operation mode is bidir
+
+A1L71 = OB[5];
+
+--OB[5] is OB[5] at PIN_233
+--operation mode is bidir
+
+OB[5]_tri_out = TRI(J2L12, E1L20);
+OB[5] = BIDIR(OB[5]_tri_out);
+
+
+--A1L73 is OB[6]~1 at PIN_232
+--operation mode is bidir
+
+A1L73 = OB[6];
+
+--OB[6] is OB[6] at PIN_232
+--operation mode is bidir
+
+OB[6]_tri_out = TRI(J2L14, E1L20);
+OB[6] = BIDIR(OB[6]_tri_out);
+
+
+--A1L75 is OB[7]~0 at PIN_231
+--operation mode is bidir
+
+A1L75 = OB[7];
+
+--OB[7] is OB[7] at PIN_231
+--operation mode is bidir
+
+OB[7]_tri_out = TRI(J2L16, E1L20);
+OB[7] = BIDIR(OB[7]_tri_out);
+
+
+
+
+
+--D1L74 is instru_fetch:G_INSTRU_FETCH|state.s2~clkctrl at CLKCTRL_G12
+D1L74 = cycloneii_clkctrl(.INCLK[0] = D1_state.s2) WITH (clock_type = "Global Clock");
+
+
+--D1L76 is instru_fetch:G_INSTRU_FETCH|state.s3~clkctrl at CLKCTRL_G15
+D1L76 = cycloneii_clkctrl(.INCLK[0] = D1_state.s3) WITH (clock_type = "Global Clock");
+
+
+--E1L19 is memory_unit:G_MEMORY|R_W_Memory_proc~10clkctrl at CLKCTRL_G4
+E1L19 = cycloneii_clkctrl(.INCLK[0] = E1L18) WITH (clock_type = "Global Clock");
+
+
+--A1L93 is reset~clkctrl at CLKCTRL_G13
+A1L93 = cycloneii_clkctrl(.INCLK[0] = reset) WITH (clock_type = "Global Clock");
+
+
+--A1L12 is clk~clkctrl at CLKCTRL_G14
+A1L12 = cycloneii_clkctrl(.INCLK[0] = clk) WITH (clock_type = "Global Clock");
+
+
+--D1L71 is instru_fetch:G_INSTRU_FETCH|state.s0~feeder at LCCOMB_X38_Y8_N28
+D1L71 = VCC;
+
+
